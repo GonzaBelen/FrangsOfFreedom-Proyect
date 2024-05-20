@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638518209741034091
-    m_Hash: 3714158398
+      ticks: 638518224230090904
+    m_Hash: 1772117598
   m_LockFileStatus:
     m_FilePath: D:/TDJ4/FrangsOfFreedom-Proyect/FangsOfFreedom/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638518209741084101
-    m_Hash: 3151944573
+      ticks: 638518224230090904
+    m_Hash: 3862998158
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
