@@ -56,5 +56,9 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "FangsOfFreedom.sln"
+    "dotnet.defaultSolution": "FangsOfFreedom.sln",
+    "cSpell.words": [
+        "enemie",
+        "UGUI"
+    ]
 }
