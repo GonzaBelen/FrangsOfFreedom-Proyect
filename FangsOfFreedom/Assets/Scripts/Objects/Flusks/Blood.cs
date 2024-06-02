@@ -30,13 +30,13 @@ public class Blood : MonoBehaviour
         if (isPlaying && !clip.isPlaying)
         {
             isPlaying = false;
-            gameObject.SetActive(false); // Desactivar el objeto cuando el sonido deja de reproducirse
-            Invoke("ActiveBlood", 5f); // Activar el objeto después de 5 segundos
+            gameObject.SetActive(false);
+            Invoke("ActiveBlood", 5f);
         }
     }
 
     private void ActiveBlood()
     {
-        gameObject.SetActive(true); // Activar el objeto después de 5 segundos
+        gameObject.SetActive(true);
     }
 }

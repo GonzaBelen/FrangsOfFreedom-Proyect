@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2D;
     private AnimationController animationController;
+    private Attack attack;
+    public bool stop = false;
 
     [Header("Jump")]
     [SerializeField] private float jumpForce;
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         animationController = GetComponent<AnimationController>();
+        attack = GetComponent<Attack>();
     }
 
     private void Update()
@@ -35,6 +38,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(stop)
+        {
+            return;
+        }
+
         isGrounded = Physics2D.OverlapBox(groundController.position, boxDimensions, 0f, whatIsGround);
 
         if (canMove)
@@ -56,6 +64,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             remainingJumps = 2;
+            attack.canAttack = true;
             if (movementHor != 0)
             {
                 animationController.ChangeAnimation("Move");
@@ -65,13 +74,14 @@ public class PlayerController : MonoBehaviour
             }
         } else 
         {
+            attack.canAttack = false;
             animationController.ChangeAnimation("Jump");
         }
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed && remainingJumps > 0)
+        if (context.performed && remainingJumps > 0 && !stop)
         {
             rb2D.velocity = new Vector2(rb2D.velocity.x, jumpForce);
             isJumping = true;
