@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private AnimationController animationController;
     private Attack attack;
     public bool stop = false;
+    private bool changeAnimation = false;
 
     [Header("Jump")]
     [SerializeField] private float jumpForce;
@@ -120,6 +121,28 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = true;
             remainingJumps = 1;
+        }
+    }
+
+    public void SmokeAnimation()
+    {
+        changeAnimation = !changeAnimation;
+        animationController.ChangeAnimation("Smoke");
+    }
+
+    public void BatAnimation()
+    {
+        if (changeAnimation)
+        {
+            animationController.ChangeAnimation("Bat");
+        }
+    }
+
+    public void NowStop()
+    {
+        if (!changeAnimation)
+        {
+            stop = false;
         }
     }
 }

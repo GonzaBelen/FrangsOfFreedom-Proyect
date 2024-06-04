@@ -9,7 +9,7 @@ public class HungerBar : MonoBehaviour
 
     private void Update()
     {
-        hungerText.text = "Hambre: " + hungerSlider.value.ToString() + " / 100";
+        //hungerText.text = "Hambre: " + hungerSlider.value.ToString() + " / 100";
     }
     
     public void UpdateSlider (float newValue)

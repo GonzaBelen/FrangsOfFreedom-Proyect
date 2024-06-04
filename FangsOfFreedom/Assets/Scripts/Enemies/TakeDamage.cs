@@ -24,15 +24,17 @@ public class TakeDamage : MonoBehaviour
     public void BeginRespawn()
     {
         OnBeginRespawn?.Invoke();
-        gravity = 0;
+        rb2D.gravityScale = 0;
         rb2D.AddForce(transform.up * strength, ForceMode2D.Impulse);
         respawns.isTakingDamage = true;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), true);
     }
 
     public void DoneRespawn()
     {
         OnDoneRespawn?.Invoke();
-        gravity = 1.7f;
+        rb2D.gravityScale = 1.7f;
         respawns.isTakingDamage = false;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), false);
     }
 }

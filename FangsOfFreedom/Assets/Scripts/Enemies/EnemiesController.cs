@@ -23,9 +23,10 @@ public class EnemiesController : MonoBehaviour
 
     public void TakeDamage()
     {
-        animationController.ChangeAnimation("Death");
+        //animationController.ChangeAnimation("Death");
         //clip.Play();
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemie"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), true);
+        Death();
     }
 
     public void Death()
