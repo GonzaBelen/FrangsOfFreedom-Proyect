@@ -45,3 +45,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1931907443
+    locked: 0
+  - name: Scene
+    uniqueID: 2719230585
+    locked: 0
+  - name: Shadow
+    uniqueID: 2645868201
+    locked: 0

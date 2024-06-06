@@ -28,6 +28,8 @@ public class TakeDamage : MonoBehaviour
         rb2D.AddForce(transform.up * strength, ForceMode2D.Impulse);
         respawns.isTakingDamage = true;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Objects"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Ground"), true);
     }
 
     public void DoneRespawn()
@@ -36,5 +38,7 @@ public class TakeDamage : MonoBehaviour
         rb2D.gravityScale = 1.7f;
         respawns.isTakingDamage = false;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), false);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Objects"), false);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Ground"), false);
     }
 }
