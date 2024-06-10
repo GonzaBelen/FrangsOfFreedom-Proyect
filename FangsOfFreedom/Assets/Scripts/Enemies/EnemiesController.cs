@@ -4,22 +4,8 @@ using UnityEngine;
 
 public class EnemiesController : MonoBehaviour
 {
-    private TakeDamage takeDamage;
     private AnimationController animationController;
     //[SerializeField] private AudioSource clip;
-
-    private void Start()
-    {
-        takeDamage = GetComponent<TakeDamage>();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.CompareTag("Player"))
-        {
-            takeDamage.BeginRespawn();
-        }
-    }
 
     public void TakeDamage()
     {

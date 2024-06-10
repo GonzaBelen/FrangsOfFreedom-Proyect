@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1843718176619849642}
   - component: {fileID: 7166579551560623399}
-  - component: {fileID: 7023379694896694060}
+  - component: {fileID: 4187757553147687052}
   m_Layer: 0
   m_Name: Respawn
-  m_TagString: DamageController
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1843718176619849642
 Transform:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &7023379694896694060
+--- !u!114 &4187757553147687052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,12 +77,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5718844586927943896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d8eb47f2adf984f9192bcf9ff638dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 54c057b0b4b7b3f4792a5b695952c731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1843718176619849642}
-  player: {fileID: 0}
-  enemie: {fileID: 0}
-  t: 0.25
-  speed: 0.25
-  isTakingDamage: 0

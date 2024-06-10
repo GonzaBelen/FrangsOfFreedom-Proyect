@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 8515079869010610172}
   - component: {fileID: 2988315890104363964}
   - component: {fileID: 717181080313744449}
-  - component: {fileID: 7468181146947540716}
   - component: {fileID: 5221217443820464529}
   m_Layer: 7
   m_Name: Bat
@@ -108,8 +107,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1575736711
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -603468154, guid: 2c8a2dd5bc4b26d48b464a50a1ebe522, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -217,75 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204c8e756b341a14b8d4281b73ecbfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7468181146947540716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8922057917734673938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02c2b113c77cfcf4c8b2436cf825cde2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respwan: {fileID: 0}
-  player: {fileID: 0}
-  strength: 4
-  OnBeginRespawn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StopControl, Assembly-CSharp
-        m_MethodName: NeedToStop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnDoneRespawn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StopControl, Assembly-CSharp
-        m_MethodName: DisableStop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &5221217443820464529
 MonoBehaviour:
   m_ObjectHideFlags: 0
