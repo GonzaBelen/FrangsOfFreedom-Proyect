@@ -5,14 +5,18 @@ ScriptsOnlyBuild:
     - Attack
     - Blood
     - CameraFit
+    - CheckpointController
+    - Combos
     - EnemiesController
     - EnemiesMovement
+    - Frenzy
+    - FrenzyBar
     - HungerBar
     - HungerController
     - PlayerController
-    - Respawns
+    - RespawnController
+    - Stats
     - StopControl
-    - TakeDamage
     - Trampoline
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -88,12 +92,12 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.UI.DebugUIHandlerVector4
     - UnityEngine.Rendering.UI.UIFoldout
     Unity.RenderPipelines.Universal.Editor.dll:
-    - UnityEditor.Rendering.Universal.Path2D.ScriptablePathInspector
     - UnityEditor.Rendering.Universal.UniversalProjectSettings
     Unity.RenderPipelines.Universal.Runtime.dll:
     - UnityEngine.Rendering.Universal.Light2D
     - UnityEngine.Rendering.Universal.PostProcessData
     - UnityEngine.Rendering.Universal.Renderer2DData
+    - UnityEngine.Rendering.Universal.ShadowCaster2D
     - UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings
@@ -206,21 +210,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.SpriteState
     - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: StopControl
-    methodName: NeedToStop
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: SmokeAnimation
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: SmokeAnimation
   - assembly: Assembly-CSharp
     fullTypeName: PlayerController
     methodName: Move
@@ -230,6 +219,18 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Attack
     methodName: AttackAction
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Dash
+  - assembly: Assembly-CSharp
+    fullTypeName: StopControl
+    methodName: NeedToStop
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: SmokeAnimation
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: SmokeAnimation
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: OnScrollbarClicked
@@ -280,6 +281,8 @@ ScriptsOnlyBuild:
     - Class: 21
       Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
@@ -352,121 +355,131 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4856}
     - Class: 114
-      Script: {instanceID: 5052}
+      Script: {instanceID: 5034}
     - Class: 114
-      Script: {instanceID: 5094}
+      Script: {instanceID: 5054}
     - Class: 114
-      Script: {instanceID: 5160}
+      Script: {instanceID: 5096}
     - Class: 114
-      Script: {instanceID: 5218}
+      Script: {instanceID: 5162}
     - Class: 114
-      Script: {instanceID: 5380}
+      Script: {instanceID: 5220}
     - Class: 114
-      Script: {instanceID: 5398}
+      Script: {instanceID: 5250}
     - Class: 114
-      Script: {instanceID: 5904}
+      Script: {instanceID: 5384}
     - Class: 114
-      Script: {instanceID: 5978}
+      Script: {instanceID: 5402}
     - Class: 114
-      Script: {instanceID: 6082}
+      Script: {instanceID: 5908}
     - Class: 114
-      Script: {instanceID: 6164}
+      Script: {instanceID: 5982}
     - Class: 114
-      Script: {instanceID: 6548}
+      Script: {instanceID: 6086}
     - Class: 114
-      Script: {instanceID: 6558}
+      Script: {instanceID: 6168}
     - Class: 114
-      Script: {instanceID: 6608}
+      Script: {instanceID: 6238}
     - Class: 114
-      Script: {instanceID: 6610}
+      Script: {instanceID: 6554}
     - Class: 114
-      Script: {instanceID: 6874}
+      Script: {instanceID: 6564}
     - Class: 114
-      Script: {instanceID: 6890}
+      Script: {instanceID: 6614}
     - Class: 114
-      Script: {instanceID: 7498}
+      Script: {instanceID: 6866}
     - Class: 114
-      Script: {instanceID: 7994}
+      Script: {instanceID: 6880}
     - Class: 114
-      Script: {instanceID: 8508}
+      Script: {instanceID: 6896}
     - Class: 114
-      Script: {instanceID: 8574}
+      Script: {instanceID: 7328}
     - Class: 114
-      Script: {instanceID: 8580}
+      Script: {instanceID: 7506}
     - Class: 114
-      Script: {instanceID: 8718}
+      Script: {instanceID: 8002}
     - Class: 114
-      Script: {instanceID: 8920}
+      Script: {instanceID: 8516}
     - Class: 114
-      Script: {instanceID: 8986}
+      Script: {instanceID: 8582}
     - Class: 114
-      Script: {instanceID: 9110}
+      Script: {instanceID: 8588}
     - Class: 114
-      Script: {instanceID: 9220}
+      Script: {instanceID: 8726}
     - Class: 114
-      Script: {instanceID: 9446}
+      Script: {instanceID: 8928}
     - Class: 114
-      Script: {instanceID: 9480}
+      Script: {instanceID: 8994}
     - Class: 114
-      Script: {instanceID: 9808}
+      Script: {instanceID: 9118}
     - Class: 114
-      Script: {instanceID: 9878}
+      Script: {instanceID: 9228}
     - Class: 114
-      Script: {instanceID: 9994}
+      Script: {instanceID: 9300}
     - Class: 114
-      Script: {instanceID: 10140}
+      Script: {instanceID: 9454}
     - Class: 114
-      Script: {instanceID: 10248}
+      Script: {instanceID: 9488}
     - Class: 114
-      Script: {instanceID: 10278}
+      Script: {instanceID: 9816}
     - Class: 114
-      Script: {instanceID: 10522}
+      Script: {instanceID: 9886}
     - Class: 114
-      Script: {instanceID: 10600}
+      Script: {instanceID: 10002}
     - Class: 114
-      Script: {instanceID: 11214}
+      Script: {instanceID: 10148}
     - Class: 114
-      Script: {instanceID: 11250}
+      Script: {instanceID: 10256}
     - Class: 114
-      Script: {instanceID: 11274}
+      Script: {instanceID: 10286}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 10530}
     - Class: 114
-      Script: {instanceID: 11530}
+      Script: {instanceID: 10608}
     - Class: 114
-      Script: {instanceID: 11792}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11858}
+      Script: {instanceID: 11260}
     - Class: 114
-      Script: {instanceID: 12002}
+      Script: {instanceID: 11284}
     - Class: 114
-      Script: {instanceID: 12034}
+      Script: {instanceID: 11338}
     - Class: 114
-      Script: {instanceID: 12116}
+      Script: {instanceID: 11540}
     - Class: 114
-      Script: {instanceID: 12254}
+      Script: {instanceID: 11802}
     - Class: 114
-      Script: {instanceID: 12348}
+      Script: {instanceID: 11868}
     - Class: 114
-      Script: {instanceID: 12436}
+      Script: {instanceID: 12042}
     - Class: 114
-      Script: {instanceID: 12562}
+      Script: {instanceID: 12124}
     - Class: 114
-      Script: {instanceID: 12712}
+      Script: {instanceID: 12262}
     - Class: 114
-      Script: {instanceID: 12956}
+      Script: {instanceID: 12356}
     - Class: 114
-      Script: {instanceID: 12994}
+      Script: {instanceID: 12444}
     - Class: 114
-      Script: {instanceID: 13312}
+      Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 13622}
+      Script: {instanceID: 12720}
     - Class: 114
-      Script: {instanceID: 13826}
+      Script: {instanceID: 12964}
     - Class: 114
-      Script: {instanceID: 14016}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 32858}
+      Script: {instanceID: 13320}
+    - Class: 114
+      Script: {instanceID: 13630}
+    - Class: 114
+      Script: {instanceID: 13834}
+    - Class: 114
+      Script: {instanceID: 14024}
+    - Class: 114
+      Script: {instanceID: 14104}
+    - Class: 114
+      Script: {instanceID: 14108}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1150,6 +1163,12 @@ ScriptsOnlyBuild:
     className: CinemachineVolumeSettings
   - hash:
       serializedVersion: 2
+      Hash: 1997c9ec211608d30baf6681e8e01eb5
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FrenzyBar
+  - hash:
+      serializedVersion: 2
       Hash: c833d8ddc320fe5153f6a88cef23c858
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering.UI
@@ -1184,6 +1203,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering.UI
     className: DebugUIHandlerIndirectToggle
+  - hash:
+      serializedVersion: 2
+      Hash: a03e52a822e24bfb27499e2e82f52cc1
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CheckpointController
   - hash:
       serializedVersion: 2
       Hash: 0dd14e314956b0d0d83ffcffe60aa46f
@@ -1342,6 +1367,12 @@ ScriptsOnlyBuild:
     className: UnityOnTriggerStay2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 198458673bbcc6e02bffe43a044d8788
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Combos
+  - hash:
+      serializedVersion: 2
       Hash: 13f262cc0741566a7ab72682984bc3e1
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -1426,12 +1457,6 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: d285dd7d28f43cada97fefba42eb615a
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Respawns
-  - hash:
-      serializedVersion: 2
       Hash: e0cf060d3a0d1afae0c661ac42606ab8
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering
@@ -1472,6 +1497,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: TMPro
     className: TMP_TextEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: e1597e6027c72a97613504ca483cb551
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Frenzy
   - hash:
       serializedVersion: 2
       Hash: 3a2314f8124280a33b8454e049772deb
@@ -1550,6 +1581,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine
     namespaceName: Cinemachine
     className: CinemachineStoryboard
+  - hash:
+      serializedVersion: 2
+      Hash: 6effbe54bc3697fb77cd6f59ddcc8d8c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CameraFit
   - hash:
       serializedVersion: 2
       Hash: 9a174471d4db2c0c6d3ac47d2f818db1
@@ -1822,7 +1859,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerMessageBox
   - hash:
       serializedVersion: 2
-      Hash: 60a46215723bd439072b0123e52fffef
+      Hash: 9e678ca7fd013db6f6aa9156fda04c89
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerController
@@ -1942,7 +1979,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: b3486b32b50f0e1d9535922a42a8bbd9
+      Hash: 270a287553078ebec799393092a00f66
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Attack
@@ -2296,6 +2333,12 @@ ScriptsOnlyBuild:
     className: UnityOnTriggerStayMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 47eee67cd6dde103aace058a91c2da8b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GroundFixer
+  - hash:
+      serializedVersion: 2
       Hash: ab3d19695db8289414a06e6d45fd6c8e
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -2426,12 +2469,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: AspectRatioFitter
-  - hash:
-      serializedVersion: 2
-      Hash: 9524205fc3102bc3db29c81ea9b7c70e
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: TakeDamage
   - hash:
       serializedVersion: 2
       Hash: a8fa08ec295d18ea5753384305393968
@@ -2746,10 +2783,16 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 6effbe54bc3697fb77cd6f59ddcc8d8c
+      Hash: b94f9ded9bf4ab5da33fd2a532a101df
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: CameraFit
+    className: Stats
+  - hash:
+      serializedVersion: 2
+      Hash: 99daf752357ee1b3f2f4a429d2d63834
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RespawnController
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

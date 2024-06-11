@@ -249,7 +249,7 @@ MonoBehaviour:
     x: 0
     y: 73
     width: 648
-    height: 370
+    height: 372
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -35260
+  m_LastSelectedObjectID: 36628
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -325,10 +325,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 4476ffff
-      m_LastClickedID: -35260
-      m_ExpandedIDs: 3e6bffff9273ffff4476fffffcfaffff727400009a74000038750000
+      scrollPos: {x: 0, y: 65}
+      m_SelectedIDs: 368f0000
+      m_LastClickedID: 36662
+      m_ExpandedIDs: 0cd5ffffbed5ffff30d9ffffd4e8ffff86e9ffff12edffffdefaffff7874000096740000a47400002c7500003a89000058890000f28900006e8e0000bc8e0000da8e0000328f0000848f0000968f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 5437
+  controlID: 8065
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -799,9 +799,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -22.1437, y: -9.75721, z: -0.06449184}
+    m_Target: {x: -19.600977, y: -9.374068, z: 0.01181568}
     speed: 2
-    m_Value: {x: -22.1437, y: -9.75721, z: -0.06449184}
+    m_Value: {x: -19.63458, y: -9.339886, z: 0.009921143}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -851,9 +851,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 11.664303
+    m_Target: 4.020618
     speed: 2
-    m_Value: 11.664303
+    m_Value: 4.210071
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -900,7 +900,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 466
-    width: 649
+    width: 644
     height: 353
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -1001,14 +1001,14 @@ MonoBehaviour:
     y: 0
     width: 262
     height: 374
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 15}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1054,7 +1054,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UI
+    - Assets/Sprites/Objects
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1070,7 +1070,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: a6640000
     m_LastClickedID: 25766
-    m_ExpandedIDs: ffffffff00000000be760000c0760000c2760000c4760000c6760000cc760000d07600005a79000008840000
+    m_ExpandedIDs: ffffffff0000000036760000dc760000de760000e0760000e2760000e4760000e6760000e8760000ea760000ec760000687900007a790000a08f0000a88f0000ac8f0000ee940000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1095,24 +1095,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 109}
-    m_SelectedIDs: 4476ffff
+    scrollPos: {x: 0, y: 500}
+    m_SelectedIDs: 368f0000
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000be760000c0760000c2760000c4760000c6760000ca760000cc760000d07600005679000008840000
+    m_ExpandedIDs: ffffffff0000000036760000dc760000de760000e0760000e2760000e4760000e6760000e8760000ea760000ec760000687900007a790000a08f0000a88f0000ac8f0000ee940000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: FrenzyBar
-      m_OriginalName: FrenzyBar
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 34350
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 14}
     m_SearchString: 
@@ -1123,8 +1123,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 4476ffff
-    m_LastClickedInstanceID: -35260
+    m_SelectedInstanceIDs: 368f0000
+    m_LastClickedInstanceID: 36662
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000e46100006e5400007c55000022590000aa1a0000021b0000285b0000625b0000de5b0000e06a0000b65a0000c26a0000a46700005e5f0000acfd00001474000086280000c228000000000000ca28000058600000fc8d0000d4f70000748a000042760100246300004a2e00006a2e0000d8700000042e0000e6620000
     m_RenameOverlay:
