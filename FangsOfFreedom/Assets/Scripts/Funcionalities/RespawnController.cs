@@ -18,6 +18,7 @@ public class RespawnController : MonoBehaviour
     public UnityEvent OnDoneRespawn;
     [SerializeField] private AudioSource clip;
     private Vector2 direction;
+    private bool stop = false;
 
     void Start()
     {
@@ -63,13 +64,14 @@ public class RespawnController : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), i, true);
             }
         }
+        stop = false;
         StartCoroutine(FixGround());
     }
 
     public void DoneRespawn()
     {
         OnDoneRespawn?.Invoke();
-        rb2D.gravityScale = 1.7f;
+        rb2D.gravityScale = 2.1f;
         isTakingDamage = false;
         for (int i = 0; i < 32; i++)
         {
@@ -78,7 +80,7 @@ public class RespawnController : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), i, false);
             }
         }
-        StopCoroutine(FixGround());
+        stop = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -109,7 +111,9 @@ public class RespawnController : MonoBehaviour
     private IEnumerator FixGround()
     {
         yield return new WaitForSeconds(2);
-        rb2D.AddForce(direction * strength, ForceMode2D.Impulse);
-        Debug.Log("Se aplico la fuerza");
+        if (!stop)
+        {
+            rb2D.AddForce(direction * strength, ForceMode2D.Impulse);
+        }        
     }
 }

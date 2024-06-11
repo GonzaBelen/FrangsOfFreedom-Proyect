@@ -5,14 +5,18 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb2D;
-    private AnimationController animationController;
+    [Header("Scripts")]
     private Attack attack;
-    public bool stop = false;
-    private bool changeAnimation = false;
+    private Stats stats;
+    private Combos combos;
+    private AnimationController animationController;
+
+    [Header("Components")]
+    private Rigidbody2D rb2D;
+     
+    [SerializeField] private LayerMask enemiesLayer;
 
     [Header("Jump")]
-    [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform groundController;
     [SerializeField] private Vector3 boxDimensions;
@@ -21,25 +25,30 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isJumping = false;
 
     [Header("Movement")]
-    [SerializeField] private float movementSpeed;
-    private float movementHor = 0;
-    private bool canMove = true;
+    [SerializeField] private float movementHor = 0;
+    [SerializeField] private bool canMove = true;
+
+    [Header("Dash")]    
+    public bool isDashing;
+    [SerializeField] private bool canDash = true;
+    [SerializeField] private int remainingDash = 1;
+
+    [Header("Secondary variables")]
+    public bool stop = false;
+    private bool changeAnimation = false;
 
      private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         animationController = GetComponent<AnimationController>();
         attack = GetComponent<Attack>();
-    }
-
-    private void Update()
-    {
-        
+        stats = GetComponent<Stats>();
+        combos= GetComponent<Combos>();
     }
 
     private void FixedUpdate()
     {
-        if(stop)
+        if(stop || isDashing)
         {
             return;
         }
@@ -48,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
         if (canMove)
         {
-            rb2D.velocity = new Vector2(movementHor * movementSpeed, rb2D.velocity.y);
+            rb2D.velocity = new Vector2(movementHor * stats.movementSpeed, rb2D.velocity.y);
             Flip(movementHor);
         }
 
@@ -65,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             remainingJumps = 2;
+            remainingDash = 1;
             attack.canAttack = true;
             if (movementHor != 0)
             {
@@ -82,9 +92,9 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed && remainingJumps > 0 && !stop)
+        if (context.performed && remainingJumps > 0 && !stop && !isDashing)
         {
-            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpForce);
+            rb2D.velocity = new Vector2(rb2D.velocity.x, stats.jumpForce);
             isJumping = true;
             remainingJumps--;
         }
@@ -93,6 +103,15 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         movementHor = context.ReadValue<Vector2>().x;
+    }
+
+    public void Dash(InputAction.CallbackContext context)
+    {
+        if (context.performed && canDash && combos.isInFrenzy && !stop && remainingDash > 0)
+        {
+            StartCoroutine(Dash());
+            remainingDash--;
+        }
     }
 
     private void Flip (float lookDirection)
@@ -121,6 +140,7 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = true;
             remainingJumps = 1;
+            remainingDash = 1;
         }
     }
 
@@ -144,5 +164,20 @@ public class PlayerController : MonoBehaviour
         {
             stop = false;
         }
+    }
+
+    public IEnumerator Dash()
+    {
+        isDashing = true;
+        canDash = false;
+        canMove = false;
+        stats.ChangeGravity(0);
+        rb2D.velocity = new Vector2(transform.localScale.x * stats.dashForce, 0f);
+        yield return new WaitForSeconds(stats.dashingTime);
+        stats.ChangeGravity(3f);
+        canMove = true;
+        isDashing = false;
+        yield return new WaitForSeconds(stats.coolDown);
+        canDash = true;
     }
 }
