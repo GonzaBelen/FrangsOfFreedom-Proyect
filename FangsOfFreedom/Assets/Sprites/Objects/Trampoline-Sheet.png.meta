@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b0ab9722cf307aa47b9b1e6ebcbe9eec
+guid: 03c7a81ab0628e34a9eed9d1fdb32986
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Trampoline-Sheet_0
+      name: Trampoline-Sheet-1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d19ad5c525eb53447973468d743f67bb
-      internalID: -2120114401
+      spriteID: 1b24eb37b8ef0e5498b3405a38a4e47b
+      internalID: -741285496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trampoline-Sheet_1
+      name: Trampoline-Sheet-1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76ef855b9be408f4fae80794241c95dd
-      internalID: -457570829
+      spriteID: d91cfa64a5269924c9f7ebcf8440bf88
+      internalID: -266333481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trampoline-Sheet_2
+      name: Trampoline-Sheet-1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb5222902aadb3e48bde50d475c5207e
-      internalID: -1243957926
+      spriteID: d3ed2a71c1114ec4e8d12e2f80b6acbc
+      internalID: 104878091
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Trampoline-Sheet_0: -2120114401
-      Trampoline-Sheet_1: -457570829
-      Trampoline-Sheet_2: -1243957926
+      Trampoline-Sheet-1_0: -741285496
+      Trampoline-Sheet-1_1: -266333481
+      Trampoline-Sheet-1_2: 104878091
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

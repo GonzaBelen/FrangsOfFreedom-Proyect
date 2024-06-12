@@ -10,6 +10,8 @@ TagManager:
   - DamageController
   - Checkpoint
   - Obstacle
+  - Curtain
+  - Light
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Player
   - Enemies
   - Objects
-  - 
+  - Curtain
   - 
   - 
   - 

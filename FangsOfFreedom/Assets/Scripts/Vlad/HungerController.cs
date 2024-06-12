@@ -47,4 +47,15 @@ public class HungerController : MonoBehaviour
         hunger = Mathf.Clamp(hunger, 0, 100);
     }
 
+    public void LightExposing()
+    {
+        Debug.Log("se esta afectando con la luz");
+        timeToReduceHunger = 2.5f;
+    }
+
+    public void FinishLightExposing()
+    {
+        Debug.Log("No se esta afectando con la luz");
+        timeToReduceHunger = 5;
+    }
 }

@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     [Header("Secondary variables")]
     public bool stop = false;
     private bool changeAnimation = false;
+    [SerializeField] private bool shouldCloseCurtain = false;
 
      private void Start()
     {
@@ -114,6 +115,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Curtain(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            shouldCloseCurtain = true;
+            StartCoroutine(StopCloseCurtain());
+        }
+    }
+
     private void Flip (float lookDirection)
     {
         Vector3 scale = transform.localScale;
@@ -179,5 +189,24 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(stats.coolDown);
         canDash = true;
+    }
+
+    private IEnumerator StopCloseCurtain()
+    {
+        yield return new WaitForSeconds(1);
+        shouldCloseCurtain = false;
+    }
+
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        if (shouldCloseCurtain && collider.gameObject.CompareTag("Curtain"))
+        {
+            Debug.Log("Se debe cerrar cortina");
+            Curtain curtain = collider.gameObject.GetComponent<Curtain>();
+            if (curtain != null)
+            {
+                curtain.CloseCurtain();
+            }
+        }
     }
 }

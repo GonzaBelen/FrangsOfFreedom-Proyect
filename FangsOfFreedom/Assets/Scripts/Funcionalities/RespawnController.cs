@@ -24,6 +24,7 @@ public class RespawnController : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
+        Respawn();
     }
 
     private void FixedUpdate()
