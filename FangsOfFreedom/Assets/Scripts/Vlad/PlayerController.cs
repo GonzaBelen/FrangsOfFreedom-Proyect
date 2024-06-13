@@ -206,6 +206,7 @@ public class PlayerController : MonoBehaviour
             if (curtain != null)
             {
                 curtain.CloseCurtain();
+                combos.Combo();
             }
         }
     }

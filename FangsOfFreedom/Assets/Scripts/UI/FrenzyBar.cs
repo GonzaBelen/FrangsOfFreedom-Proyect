@@ -6,21 +6,31 @@ public class FrenzyBar : MonoBehaviour
 {
     [SerializeField] private Slider frenzySlider;
     public float frenzyReduction;
-    [SerializeField] private float currentFrenzy;
+    public float currentFrenzy;
+    private float initialFrenzy = 0;
+
+    private void Start()
+    {
+        frenzySlider.value = initialFrenzy;
+    }
 
     private void FixedUpdate()
     {
-        if (frenzySlider.value <= 0)
+        if (currentFrenzy <= 0)
         {
-            frenzySlider.value = 0;
+            currentFrenzy = 0;
             return;
+        }
+        if (currentFrenzy >= 100)
+        {
+            currentFrenzy = 100;
         }
         frenzySlider.value = currentFrenzy;
         currentFrenzy -= frenzyReduction * Time.deltaTime;
     }
     
-    public void UpdateSlider (float newValue)
+    public void UpdateSlider (float amount)
     {
-        currentFrenzy = newValue;
+        currentFrenzy += amount;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class HungerController : MonoBehaviour
 {
+    private Combos combos;
     [SerializeField] private HungerBar hungerBar;
     private float hunger = 100;
     private float hungerReduction = 10;
@@ -13,6 +14,7 @@ public class HungerController : MonoBehaviour
 
     private void Start()
     {
+        combos = GetComponent<Combos>();
         currentTimeToReduceHunger = timeToReduceHunger;
         hungerBar.UpdateSlider(hunger);
     }
@@ -45,6 +47,7 @@ public class HungerController : MonoBehaviour
     {
         hunger += amount;
         hunger = Mathf.Clamp(hunger, 0, 100);
+        combos.Combo();
     }
 
     public void LightExposing()

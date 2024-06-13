@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class Attack : MonoBehaviour
 {
     private Stats stats;
+    private Combos combos;
+    private Rigidbody2D rb2D;
     [SerializeField] private GameObject attackRange;
     [SerializeField] private LayerMask enemiesLayer;
     private AnimationController animationController;
@@ -17,9 +19,11 @@ public class Attack : MonoBehaviour
 
     private void Start()
     {
+        combos = GetComponent<Combos>();
         stats = GetComponent<Stats>();
         animationController = GetComponent<AnimationController>();
         playerController = GetComponent<PlayerController>();
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -39,12 +43,15 @@ public class Attack : MonoBehaviour
     {
         if (context.performed && canAttack && !playerController.stop)
         {
+            rb2D.velocity = Vector2.zero;
+            rb2D.angularVelocity = 0; 
             animationController.ChangeAnimation("Attack");
             Collider2D[] enemies = Physics2D.OverlapCircleAll(attackRange.transform.position, stats.attackRange, enemiesLayer);
             foreach (Collider2D enemie in enemies)
             {
                 EnemiesController enemiesController = enemie.GetComponent<EnemiesController>();
                 enemiesController.TakeDamage();
+                combos.Combo();
             }
         }
     }
@@ -54,14 +61,4 @@ public class Attack : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackRange.transform.position, range);
     }
-
-    // public void BeginAttack()
-    // {
-    //     isAttacking = true;
-    // }
-
-    // public void FinishedAttack()
-    // {
-    //     isAttacking = false;
-    // }
 }
