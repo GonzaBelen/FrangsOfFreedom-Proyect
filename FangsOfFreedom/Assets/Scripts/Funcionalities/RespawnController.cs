@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,6 +8,7 @@ using static EventManager;
 
 public class RespawnController : MonoBehaviour
 {
+    private Combos combos;
     [SerializeField] private LayerMask layersToIgnore;
     private Rigidbody2D rb2D;
     private Vector3 startPosition;
@@ -25,9 +27,9 @@ public class RespawnController : MonoBehaviour
 
     void Start()
     {
+        combos = GetComponent<Combos>();
         rb2D = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
-        Respawn();
     }
 
     private void FixedUpdate()
@@ -43,16 +45,8 @@ public class RespawnController : MonoBehaviour
 
     private void Respawn()
     {
-        if (lastCheckpoint != null)
-        {
-            positionToMove = lastCheckpoint.GetCheckpointPosition();
-            Debug.Log("hay checkpoint");
-        }
-        else
-        {
-            Debug.Log("No hay checkpoint");
-            positionToMove = startPosition;
-        }
+        positionToMove = lastCheckpoint.GetCheckpointPosition();
+        Debug.Log("hay checkpoint");   
     }
 
     public void BeginRespawn()
@@ -71,13 +65,20 @@ public class RespawnController : MonoBehaviour
             }
         }
         stop = false;
-        StartCoroutine(FixGround());
+        FixGround();
     }
 
     public void DoneRespawn()
     {
         OnDoneRespawn?.Invoke();
-        rb2D.gravityScale = 3.5f;
+        if (!combos.isInFrenzy)
+        {
+            rb2D.gravityScale = 3.5f;
+        } else
+        {
+            rb2D.gravityScale = 5;
+        }
+        
         isTakingDamage = false;
         for (int i = 0; i < 32; i++)
         {
@@ -89,7 +90,7 @@ public class RespawnController : MonoBehaviour
         stop = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Checkpoint"))
         {
@@ -97,7 +98,7 @@ public class RespawnController : MonoBehaviour
             {
                 lastCheckpoint = other.GetComponent<CheckpointController>();
                 Debug.Log("Checkpoint alcanzado!");
-                Respawn(); // Llama al método para hacer respawn del jugador
+                Respawn();
                 //clip.Play();
             } else 
             {
@@ -112,7 +113,7 @@ public class RespawnController : MonoBehaviour
         {
             DamagedEvent damaged = new DamagedEvent
             {
-                enemy = this.gameObject.name.ToString(),
+                enemy = other.gameObject.name.ToString(),
                 safeSlain = multipleKills,
                 level = 0,
             };
@@ -123,12 +124,12 @@ public class RespawnController : MonoBehaviour
         }
     }
 
-    private IEnumerator FixGround()
+    async void FixGround()
     {
         while (!stop)
         {
-            yield return new WaitForSeconds(2);
             rb2D.AddForce(direction * strength, ForceMode2D.Impulse);
+            await Task.Delay(1000);
         }        
     }
 }

@@ -278,7 +278,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2.1
+  m_GravityScale: 3.5
   m_Material: {fileID: 6200000, guid: e92cc213d6a7b63479dfcf6e24f7f67d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -490,6 +490,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   clip: {fileID: 0}
+  multipleKills: 0
 --- !u!114 &7627298444988884806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,11 +504,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
-  jumpForce: 11
+  jumpForce: 15
   attackRange: 1.3
   dashForce: 15
   dashingTime: 0.15
-  coolDown: 2
+  coolDown: 1.5
 --- !u!114 &5277752116846048866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frenzyMeter: {fileID: 0}
-  comboValue: 50
+  comboValue: 15
 --- !u!114 &5479778394173456954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +566,7 @@ MonoBehaviour:
   - {x: 0.021666214, y: 0.28567812, z: 0}
   m_ShapePathHash: 1373796918
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29970
+  m_InstanceId: 36104
   m_LocalBounds:
     m_Center: {x: -0.001761362, y: 0.43076098, z: 0}
     m_Extent: {x: 0.15143128, y: 0.14508288, z: 0}

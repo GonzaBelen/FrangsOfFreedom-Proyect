@@ -13,9 +13,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Components")]
     private Rigidbody2D rb2D;
-     
-    [SerializeField] private LayerMask enemiesLayer;
-
+    
     [Header("Jump")]
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform groundController;
@@ -184,7 +182,7 @@ public class PlayerController : MonoBehaviour
         stats.ChangeGravity(0);
         rb2D.velocity = new Vector2(transform.localScale.x * stats.dashForce, 0f);
         yield return new WaitForSeconds(stats.dashingTime);
-        stats.ChangeGravity(3f);
+        stats.ChangeGravity(5f);
         canMove = true;
         isDashing = false;
         yield return new WaitForSeconds(stats.coolDown);

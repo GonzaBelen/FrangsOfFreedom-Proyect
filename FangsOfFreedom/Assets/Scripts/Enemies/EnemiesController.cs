@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class EnemiesController : MonoBehaviour
 {
+    private CircleCollider2D circleCollider2D;
     private AnimationController animationController;
     //[SerializeField] private AudioSource clip;
+
+    private void Start()
+    {
+        circleCollider2D = GetComponent<CircleCollider2D>();
+    }
 
     public void TakeDamage()
     {
         //animationController.ChangeAnimation("Death");
         //clip.Play();
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), true);
+        circleCollider2D.isTrigger = true;
         Death();
     }
 

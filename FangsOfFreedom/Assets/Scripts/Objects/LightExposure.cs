@@ -11,7 +11,7 @@ public class LightExposure : MonoBehaviour
     [SerializeField] private Light2D globalLight;
     [SerializeField] private float maxFlashLight;
     [SerializeField] private float minFlashLight;
-    private bool isInExposure = false;
+    private bool isInExposure;
 
     private void Start()
     {

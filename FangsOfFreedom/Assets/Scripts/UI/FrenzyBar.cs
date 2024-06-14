@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.Mathematics;
 
 public class FrenzyBar : MonoBehaviour
 {
