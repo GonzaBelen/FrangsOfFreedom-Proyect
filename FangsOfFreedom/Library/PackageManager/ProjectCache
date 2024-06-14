@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638531947113897148
-    m_Hash: 431026715
+      ticks: 638539847532927702
+    m_Hash: 3213915498
   m_LockFileStatus:
     m_FilePath: D:/TDJ4/FrangsOfFreedom-Proyect/FangsOfFreedom/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638531947113977174
-    m_Hash: 2625222282
+      ticks: 638539847532927702
+    m_Hash: 1815342972
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -3849,12 +3849,14 @@ m_ResolvedPackages:
     - 1.8.13
     - 1.8.14
     - 1.8.15
+    - 1.8.16
     compatible:
     - 1.8.12
     - 1.8.13
     - 1.8.14
     - 1.8.15
-    recommended: 1.8.15
+    - 1.8.16
+    recommended: 1.8.16
     deprecated: []
   dependencies:
   - name: com.unity.mathematics
@@ -4435,6 +4437,7 @@ m_ResolvedPackages:
     - 7.0.12
     - 7.0.13
     - 7.1.0
+    - 7.1.1
     - 8.0.0-pre.3
     - 8.0.0-pre.4
     - 8.0.0
