@@ -35,7 +35,7 @@ public class Frenzy : MonoBehaviour
         combos.stopFrenzy = true;
         stats.movementSpeed *= 1.5f;
         stats.jumpForce *= 1.25f;
-        stats.ChangeGravity(3);
+        stats.ChangeGravity(5);
     }
 
     public void FinishFrenzy()
@@ -43,7 +43,7 @@ public class Frenzy : MonoBehaviour
         combos.stopFrenzy = false;
         stats.movementSpeed /= 1.5f;
         stats.jumpForce /= 1.25f;
-        stats.ChangeGravity(2.1f);
+        stats.ChangeGravity(3.5f);
     }
 
     public void GainFrenzy()

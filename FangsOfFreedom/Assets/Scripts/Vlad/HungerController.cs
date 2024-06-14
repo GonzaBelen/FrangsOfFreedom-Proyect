@@ -39,7 +39,7 @@ public class HungerController : MonoBehaviour
         if (hunger <= 0)
         {
             // Aquí puedes agregar la lógica para la muerte por hambre, como cargar una escena de Game Over o reiniciar el nivel.
-            SceneManager.LoadScene("GameOver");
+            // SceneManager.LoadScene("GameOver");
         }
     }
 
@@ -52,13 +52,11 @@ public class HungerController : MonoBehaviour
 
     public void LightExposing()
     {
-        Debug.Log("se esta afectando con la luz");
         timeToReduceHunger = 2.5f;
     }
 
     public void FinishLightExposing()
     {
-        Debug.Log("No se esta afectando con la luz");
         timeToReduceHunger = 5;
     }
 }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.Events;
+using static EventManager;
 
 public class RespawnController : MonoBehaviour
 {
@@ -19,6 +21,7 @@ public class RespawnController : MonoBehaviour
     [SerializeField] private AudioSource clip;
     private Vector2 direction;
     private bool stop = false;
+    public int multipleKills = 0;
 
     void Start()
     {
@@ -43,9 +46,11 @@ public class RespawnController : MonoBehaviour
         if (lastCheckpoint != null)
         {
             positionToMove = lastCheckpoint.GetCheckpointPosition();
+            Debug.Log("hay checkpoint");
         }
         else
         {
+            Debug.Log("No hay checkpoint");
             positionToMove = startPosition;
         }
     }
@@ -72,7 +77,7 @@ public class RespawnController : MonoBehaviour
     public void DoneRespawn()
     {
         OnDoneRespawn?.Invoke();
-        rb2D.gravityScale = 2.1f;
+        rb2D.gravityScale = 3.5f;
         isTakingDamage = false;
         for (int i = 0; i < 32; i++)
         {
@@ -105,15 +110,24 @@ public class RespawnController : MonoBehaviour
     {
         if (other.transform.CompareTag("Enemie") || other.transform.CompareTag("Obstacle"))
         {
+            DamagedEvent damaged = new DamagedEvent
+            {
+                enemy = this.gameObject.name.ToString(),
+                safeSlain = multipleKills,
+                level = 0,
+            };
+
+            AnalyticsService.Instance.RecordEvent(damaged);
+            AnalyticsService.Instance.Flush();
             BeginRespawn();
         }
     }
 
     private IEnumerator FixGround()
     {
-        yield return new WaitForSeconds(2);
-        if (!stop)
+        while (!stop)
         {
+            yield return new WaitForSeconds(2);
             rb2D.AddForce(direction * strength, ForceMode2D.Impulse);
         }        
     }
