@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public int enemigosderrotadosantesdeperder;
     [Header("Scripts")]
     private Attack attack;
     private Stats stats;

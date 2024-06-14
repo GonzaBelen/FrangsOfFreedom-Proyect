@@ -9,7 +9,6 @@ using static EventManager;
 public class NewBehaviourScript : MonoBehaviour
 {
     private bool firstSession = true;
-
     async void Start()
     {
         if (firstSession)

@@ -59,6 +59,7 @@ public class HungerController : MonoBehaviour
 
     public void GainHunger(int amount)
     {
+        //parametro para saber si junto botella
         hunger += amount;
         hunger = Mathf.Clamp(hunger, 0, 100);
         combos.Combo();

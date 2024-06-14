@@ -23,6 +23,7 @@ public class EnemiesController : MonoBehaviour
 
     public void Death()
     {
+        //Parametro de muerte de enemigo
         Destroy(gameObject);
     }
 
