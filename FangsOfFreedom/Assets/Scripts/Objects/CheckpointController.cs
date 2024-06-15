@@ -11,7 +11,7 @@ public class CheckpointController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            checkpointPosition = other.transform.position;
+            checkpointPosition = transform.position;
         }
     }
 
