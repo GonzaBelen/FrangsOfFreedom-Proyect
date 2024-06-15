@@ -7,7 +7,7 @@ public class Combos : MonoBehaviour
     private Frenzy frenzy;
     public bool isInFrenzy = false;
     public bool stopFrenzy = false;
-    [SerializeField] private int combo = 0;
+    [SerializeField] public int combo = 0;
 
     private void Start()
     {

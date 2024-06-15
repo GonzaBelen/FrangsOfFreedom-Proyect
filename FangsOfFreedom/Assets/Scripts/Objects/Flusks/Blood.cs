@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using static StaticsVariables;
 
 public class Blood : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Blood : MonoBehaviour
             if (hungerController != null)
             {
                 hungerController.GainHunger(10);
+                SessionData.fluskCounting++;
                 if (!isPlaying)
                 {
                     clip.Play();

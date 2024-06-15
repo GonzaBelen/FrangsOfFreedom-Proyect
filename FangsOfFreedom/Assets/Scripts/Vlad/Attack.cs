@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class Attack : MonoBehaviour
 {
+    private RespawnController respawnController;
     private Stats stats;
     private Combos combos;
     private Rigidbody2D rb2D;
@@ -24,6 +25,7 @@ public class Attack : MonoBehaviour
         animationController = GetComponent<AnimationController>();
         playerController = GetComponent<PlayerController>();
         rb2D = GetComponent<Rigidbody2D>();
+        respawnController = GetComponent<RespawnController>();
     }
 
     private void FixedUpdate()
@@ -51,6 +53,10 @@ public class Attack : MonoBehaviour
             {
                 EnemiesController enemiesController = enemie.GetComponent<EnemiesController>();
                 enemiesController.TakeDamage();
+                if (!respawnController.hasTakeDamage)
+                {
+                    respawnController.multipleKills++;
+                }                
                 combos.Combo();
             }
         }

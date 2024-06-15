@@ -23,7 +23,8 @@ public class RespawnController : MonoBehaviour
     [SerializeField] private AudioSource clip;
     private Vector2 direction;
     private bool stop = false;
-    public int multipleKills = 0;
+    public int multipleKills;
+    public bool hasTakeDamage = false;
 
     void Start()
     {
@@ -120,6 +121,7 @@ public class RespawnController : MonoBehaviour
 
             AnalyticsService.Instance.RecordEvent(damaged);
             AnalyticsService.Instance.Flush();
+            hasTakeDamage = true;
             BeginRespawn();
         }
     }

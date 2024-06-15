@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using static EventManager;
 using Unity.Services.Analytics;
+using static StaticsVariables;
 
 public class HungerController : MonoBehaviour
 {
@@ -41,13 +42,15 @@ public class HungerController : MonoBehaviour
 
         if (hunger <= 0)
         {
+            SessionData.deathsCounting++;
+            SessionData.canCount = false;
             if(!stopReceivingData)
             {
                 stopReceivingData = true;
                 GameOverEvent gameOver = new GameOverEvent
                 {
                     level = 0,
-                    deathsGO = 0,
+                    deathsGO = SessionData.deathsCounting,
                 };
 
                 AnalyticsService.Instance.RecordEvent(gameOver);

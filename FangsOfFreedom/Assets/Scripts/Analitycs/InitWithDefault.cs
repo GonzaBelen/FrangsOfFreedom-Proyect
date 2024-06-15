@@ -5,6 +5,7 @@ using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static EventManager;
+using static StaticsVariables;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -33,5 +34,10 @@ public class NewBehaviourScript : MonoBehaviour
         AnalyticsService.Instance.RecordEvent(levelStart);
         AnalyticsService.Instance.Flush();
         SceneManager.LoadScene("Level0");
+    }
+
+    public void ResetDeaths()
+    {
+        SessionData.deathsCounting = 0;
     }
 }

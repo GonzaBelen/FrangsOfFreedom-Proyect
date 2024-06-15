@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Services.Analytics;
 using UnityEngine;
 using static EventManager;
+using static StaticsVariables;
 
 public class Frenzy : MonoBehaviour
 {
@@ -47,6 +48,8 @@ public class Frenzy : MonoBehaviour
         stats.movementSpeed *= 1.5f;
         stats.jumpForce *= 1.25f;
         stats.ChangeGravity(5);
+        SessionData.frenzyCounting++;
+        SessionData.hasFrenzy = true;
     }
 
     public void FinishFrenzy()

@@ -1,17 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Services.Analytics;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static EventManager;
+using static StaticsVariables;
 
 public class GameWin : MonoBehaviour
 {
-    public float elapsedTime;
+    [SerializeField] private GameObject vlad;
+    private RespawnController respawnController;
+    private Timer timer;
+    [SerializeField] GameObject timerObject;
+    private Combos combos;
+    private Blood blood;
 
-    private void FixedUpdate()
+    private void Start()
     {
-        
+        timer = timerObject.gameObject.GetComponent<Timer>();
+        respawnController = vlad.gameObject.GetComponent<RespawnController>();
+        combos = vlad.gameObject.GetComponent<Combos>();
+        blood = vlad.gameObject.GetComponent<Blood>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -19,14 +29,15 @@ public class GameWin : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             {
+                SessionData.canCount = false;
                 LevelCompleteEvent levelComplete = new LevelCompleteEvent
                 {
                     level = 0,
-                    flusks = 0,
-                    combo = 0,
-                    deaths = 0,
-                    safe = true,
-                    time = 0,
+                    flusks = SessionData.fluskCounting,
+                    combo = combos.combo,
+                    deaths = SessionData.deathsCounting,
+                    safe = respawnController.hasTakeDamage,
+                    time = timer.elapsedTime,
                 };
 
                 AnalyticsService.Instance.RecordEvent(levelComplete);
