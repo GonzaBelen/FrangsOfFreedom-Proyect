@@ -91,7 +91,7 @@ public class RespawnController : MonoBehaviour
         stop = true;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Checkpoint"))
         {
@@ -100,8 +100,15 @@ public class RespawnController : MonoBehaviour
                 lastCheckpoint = other.GetComponent<CheckpointController>();
                 Debug.Log("Checkpoint alcanzado!");
                 Respawn();
-                //clip.Play();
-            } else 
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+         if (other.CompareTag("Checkpoint"))
+        {
+            if (isTakingDamage)
             {
                 DoneRespawn();
             }

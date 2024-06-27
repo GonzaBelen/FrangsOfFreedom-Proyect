@@ -5,15 +5,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public int enemigosderrotadosantesdeperder;
     [Header("Scripts")]
     private Attack attack;
     private Stats stats;
     private Combos combos;
     private AnimationController animationController;
+    private Dialogues dialogues;
 
     [Header("Components")]
     private Rigidbody2D rb2D;
+    private PlayerInput playerInput;
     
     [Header("Jump")]
     [SerializeField] private LayerMask whatIsGround;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public bool stop = false;
     private bool changeAnimation = false;
     [SerializeField] private bool shouldCloseCurtain = false;
+    public bool isInDialogue = false;
 
      private void Start()
     {
@@ -44,10 +46,17 @@ public class PlayerController : MonoBehaviour
         attack = GetComponent<Attack>();
         stats = GetComponent<Stats>();
         combos= GetComponent<Combos>();
+        playerInput = GetComponent<PlayerInput>();
+        dialogues = GetComponent<Dialogues>();
     }
 
     private void FixedUpdate()
     {
+        if (isInDialogue)
+        {
+            animationController.ChangeAnimation("Idle");
+            return;
+        }
         if(stop || isDashing)
         {
             return;

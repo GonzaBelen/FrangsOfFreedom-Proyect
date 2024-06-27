@@ -7,19 +7,19 @@ using static StaticsVariables;
 
 public class HungerController : MonoBehaviour
 {
+    private Stats stats;
     private bool stopReceivingData = false;
     private Combos combos;
     [SerializeField] private HungerBar hungerBar;
     private float hunger = 100;
-    private float hungerReduction = 10;
-    [SerializeField] private float timeToReduceHunger = 3;
     private float currentTimeToReduceHunger;
     
 
     private void Start()
     {
+        stats = GetComponent<Stats>();
         combos = GetComponent<Combos>();
-        currentTimeToReduceHunger = timeToReduceHunger;
+        currentTimeToReduceHunger = stats.timeToReduceHunger;
         hungerBar.UpdateSlider(hunger);
     }
 
@@ -28,8 +28,8 @@ public class HungerController : MonoBehaviour
         currentTimeToReduceHunger -= Time.deltaTime;
         if(currentTimeToReduceHunger <= 0)
         {
-            hunger -= hungerReduction;
-            currentTimeToReduceHunger = timeToReduceHunger;
+            hunger -= stats.hungerReduction;
+            currentTimeToReduceHunger = stats.timeToReduceHunger;
         }
 
         if (hunger < 0)
@@ -70,11 +70,11 @@ public class HungerController : MonoBehaviour
 
     public void LightExposing()
     {
-        timeToReduceHunger = 2.5f;
+        stats.timeToReduceHunger = 2.5f;
     }
 
     public void FinishLightExposing()
     {
-        timeToReduceHunger = 5;
+        stats.timeToReduceHunger = 5;
     }
 }

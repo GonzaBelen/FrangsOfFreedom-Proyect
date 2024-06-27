@@ -33,7 +33,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         AnalyticsService.Instance.RecordEvent(levelStart);
         AnalyticsService.Instance.Flush();
-        SceneManager.LoadScene("Level0");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void ResetDeaths()

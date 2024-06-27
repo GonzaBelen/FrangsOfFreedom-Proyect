@@ -42,7 +42,7 @@ public class GameWin : MonoBehaviour
 
                 AnalyticsService.Instance.RecordEvent(levelComplete);
                 AnalyticsService.Instance.Flush();
-                SceneManager.LoadScene("GameWin");
+                SceneManager.LoadScene("Level1");
             }
         }
     }

@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 public class CheckpointController : MonoBehaviour
 {
     private Vector3 checkpointPosition;
+    [SerializeField] private AudioSource clip;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,6 +18,7 @@ public class CheckpointController : MonoBehaviour
 
     public Vector3 GetCheckpointPosition()
     {
+        clip.Play();
         return checkpointPosition;
-    }
+    } 
 }
