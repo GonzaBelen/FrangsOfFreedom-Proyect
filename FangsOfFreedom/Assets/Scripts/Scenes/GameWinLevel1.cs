@@ -32,7 +32,7 @@ public class GameWinLevel1 : MonoBehaviour
                 SessionData.canCount = false;
                 LevelCompleteEvent levelComplete = new LevelCompleteEvent
                 {
-                    level = 1,
+                    level = SessionData.level,
                     flusks = SessionData.fluskCounting,
                     combo = combos.combo,
                     deaths = SessionData.deathsCounting,

@@ -12,12 +12,17 @@ public class Frenzy : MonoBehaviour
     private Stats stats;
     private Combos combos;
     [SerializeField] private float comboValue;
+    private int timesFrenzy;
+    private Timer timer;
+    [SerializeField] GameObject timerObject;
 
     private void Start()
     {
+        timer = timerObject.gameObject.GetComponent<Timer>();
         frenzyBar = frenzyMeter.GetComponent<FrenzyBar>();
         combos = GetComponent<Combos>();
         stats = GetComponent<Stats>();
+        timesFrenzy = 0;
     }
 
     private void FixedUpdate()
@@ -35,10 +40,10 @@ public class Frenzy : MonoBehaviour
 
     public void IsInFrenzy()
     {
+        timesFrenzy++;
         PowerEvent power = new PowerEvent
         {
-            timeFrenzy = 0,
-            frenzy = 0,
+            frenzy = timesFrenzy,
         };
 
         AnalyticsService.Instance.RecordEvent(power);
@@ -58,6 +63,12 @@ public class Frenzy : MonoBehaviour
         stats.movementSpeed /= 1.5f;
         stats.jumpForce /= 1.25f;
         stats.ChangeGravity(3.5f);
+        PowerEvent power = new PowerEvent
+        {
+            timeFrenzy = timer.frenzyTime,
+        };
+        SessionData.hasFrenzy = false;
+        timer.frenzyTime = 0;
     }
 
     public void GainFrenzy()

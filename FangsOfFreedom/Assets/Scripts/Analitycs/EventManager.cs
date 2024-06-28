@@ -58,4 +58,13 @@ public class LevelCompleteEvent : AnalyticsEvent
 		public int frenzy { set { SetParameter("frenzy", value); } }
 		public float timeFrenzy { set { SetParameter("timeFrenzy", value); } }
     }
+
+	public class DialogueEvent : AnalyticsEvent
+    {
+		public DialogueEvent() : base("Dialogue")
+		{
+		}
+
+		public float time { set { SetParameter("time", value); } }
+    }
 }

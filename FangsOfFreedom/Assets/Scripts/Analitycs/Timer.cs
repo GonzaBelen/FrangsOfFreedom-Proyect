@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     public float elapsedTime;
     public float frenzyTime;
+    public float dialogueTime;
 
     private void Start()
     {
@@ -38,6 +39,13 @@ public class Timer : MonoBehaviour
     public void FrenzyTime()
     {
         frenzyTime += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(frenzyTime / 60);
+        int seconds = Mathf.FloorToInt(frenzyTime % 60);
+    }
+
+    public void DialogueTime()
+    {
+        dialogueTime += Time.deltaTime;
         int minutes = Mathf.FloorToInt(frenzyTime / 60);
         int seconds = Mathf.FloorToInt(frenzyTime % 60);
     }

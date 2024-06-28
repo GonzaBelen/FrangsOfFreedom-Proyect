@@ -10,7 +10,9 @@ public class StaticsVariables : MonoBehaviour
         public static bool canCount;
         public static int fluskCounting;
         public static int frenzyCounting;
+        public static float dialogueTimer;
         public static bool hasFrenzy = false;
+        public static int level;
     }
     
     private void Awake()

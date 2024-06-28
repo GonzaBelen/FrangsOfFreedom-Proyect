@@ -32,7 +32,7 @@ public class GameWin : MonoBehaviour
                 SessionData.canCount = false;
                 LevelCompleteEvent levelComplete = new LevelCompleteEvent
                 {
-                    level = 0,
+                    level = SessionData.level,
                     flusks = SessionData.fluskCounting,
                     combo = combos.combo,
                     deaths = SessionData.deathsCounting,
@@ -43,6 +43,7 @@ public class GameWin : MonoBehaviour
                 AnalyticsService.Instance.RecordEvent(levelComplete);
                 AnalyticsService.Instance.Flush();
                 SceneManager.LoadScene("Level1");
+                SessionData.level = 1;
             }
         }
     }

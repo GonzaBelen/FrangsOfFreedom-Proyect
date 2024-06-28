@@ -5,6 +5,7 @@ using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.Events;
 using static EventManager;
+using static StaticsVariables;
 
 public class RespawnController : MonoBehaviour
 {
@@ -123,7 +124,7 @@ public class RespawnController : MonoBehaviour
             {
                 enemy = other.gameObject.name.ToString(),
                 safeSlain = multipleKills,
-                level = 0,
+                level = SessionData.level,
             };
 
             AnalyticsService.Instance.RecordEvent(damaged);

@@ -3,6 +3,8 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.Events;
+using static EventManager;
+using static StaticsVariables;
 
 public class Dialogues : MonoBehaviour
 {
@@ -40,6 +42,10 @@ public class Dialogues : MonoBehaviour
             } else if (dialogueText.text == dialogueLines[lineIndex]  && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z)))
             {
                 NextDialogueLine();
+            } else if (dialogueText.text != dialogueLines[lineIndex] && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z)))
+            {
+                StopAllCoroutines();
+                dialogueText.text = dialogueLines[lineIndex];
             }
         }
     }
@@ -96,6 +102,10 @@ public class Dialogues : MonoBehaviour
             StartCoroutine(ShowLine());
         } else
         {
+            DialogueEvent power = new DialogueEvent
+            {
+                time = SessionData.dialogueTimer,
+            };
             playerController.isInDialogue = false;
             playerController.stop = false;
             stats.hungerReduction = 10;

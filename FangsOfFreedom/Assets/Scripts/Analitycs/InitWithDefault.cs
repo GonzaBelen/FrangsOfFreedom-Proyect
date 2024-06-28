@@ -24,11 +24,12 @@ public class NewBehaviourScript : MonoBehaviour
 		AnalyticsService.Instance.StartDataCollection();
 	}
 
-    public void LoadScene()
-    {  
+    public void LoadTutorial()
+    {
+        SessionData.level = 0;
         LevelStartEvent levelStart = new LevelStartEvent
         {
-            level = 0,
+            level = SessionData.level,
         };
 
         AnalyticsService.Instance.RecordEvent(levelStart);
@@ -36,8 +37,32 @@ public class NewBehaviourScript : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
     }
 
+    public void LoadLevel1()
+    {
+        SessionData.level = 1;
+        LevelStartEvent levelStart = new LevelStartEvent
+        {
+            level = SessionData.level,
+        };
+
+        AnalyticsService.Instance.RecordEvent(levelStart);
+        AnalyticsService.Instance.Flush();
+        SceneManager.LoadScene("Level1");
+    }
+
     public void ResetDeaths()
     {
         SessionData.deathsCounting = 0;
+    }
+
+    public void RestartScene()
+    {
+        if (SessionData.level == 0)
+        {
+            LoadTutorial();
+        } else
+        {
+            LoadLevel1();
+        }
     }
 }

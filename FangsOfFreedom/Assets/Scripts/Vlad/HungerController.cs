@@ -49,7 +49,7 @@ public class HungerController : MonoBehaviour
                 stopReceivingData = true;
                 GameOverEvent gameOver = new GameOverEvent
                 {
-                    level = 0,
+                    level = SessionData.level,
                     deathsGO = SessionData.deathsCounting,
                 };
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static StaticsVariables;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     private Rigidbody2D rb2D;
     private PlayerInput playerInput;
+    private Timer timer;
+    [SerializeField] GameObject timerObject;
     
     [Header("Jump")]
     [SerializeField] private LayerMask whatIsGround;
@@ -48,6 +51,7 @@ public class PlayerController : MonoBehaviour
         combos= GetComponent<Combos>();
         playerInput = GetComponent<PlayerInput>();
         dialogues = GetComponent<Dialogues>();
+        timer = timerObject.gameObject.GetComponent<Timer>();
     }
 
     private void FixedUpdate()
@@ -55,7 +59,13 @@ public class PlayerController : MonoBehaviour
         if (isInDialogue)
         {
             animationController.ChangeAnimation("Idle");
+            timer.DialogueTime();
+            SessionData.dialogueTimer = timer.dialogueTime;
             return;
+        } else
+        {
+            timer.dialogueTime = 0;
+            SessionData.dialogueTimer = timer.dialogueTime;
         }
         if(stop || isDashing)
         {
