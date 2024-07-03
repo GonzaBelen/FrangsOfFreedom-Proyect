@@ -6,6 +6,7 @@ public class EnemiesController : MonoBehaviour
 {
     private CircleCollider2D circleCollider2D;
     private AnimationController animationController;
+    [SerializeField] private GameObject bat;
     //[SerializeField] private AudioSource clip;
 
     private void Start()
@@ -24,7 +25,7 @@ public class EnemiesController : MonoBehaviour
     public void Death()
     {
         //Parametro de muerte de enemigo
-        Destroy(gameObject);
+        Destroy(bat);
     }
 
     // private IEnumerator DestruirDespuesDeAnimacion()

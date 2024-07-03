@@ -97,15 +97,33 @@ public class PlayerController : MonoBehaviour
             attack.canAttack = true;
             if (movementHor != 0)
             {
-                animationController.ChangeAnimation("Move");
+                if(!SessionData.hasFrenzy)
+                {
+                    animationController.ChangeAnimation("Move");
+                } else
+                {
+                    animationController.ChangeAnimation("Move-Frenzy");
+                }
             } else 
             {
-                animationController.ChangeAnimation("Idle");
+                if(!SessionData.hasFrenzy)
+                {
+                    animationController.ChangeAnimation("Idle");
+                } else
+                {
+                    animationController.ChangeAnimation("Idle-Frenzy");
+                }
             }
         } else 
         {
             attack.canAttack = false;
-            animationController.ChangeAnimation("Jump");
+            if(!SessionData.hasFrenzy)
+            {
+                animationController.ChangeAnimation("Jump");
+            } else
+            {
+                animationController.ChangeAnimation("Jump-Frenzy");
+            }
         }
     }
 
@@ -196,6 +214,8 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator Dash()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Obstacles"), true);
         isDashing = true;
         canDash = false;
         canMove = false;
@@ -205,6 +225,8 @@ public class PlayerController : MonoBehaviour
         stats.ChangeGravity(5f);
         canMove = true;
         isDashing = false;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), false);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Obstacles"), false);
         yield return new WaitForSeconds(stats.coolDown);
         canDash = true;
     }

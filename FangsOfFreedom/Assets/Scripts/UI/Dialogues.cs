@@ -5,6 +5,7 @@ using System;
 using UnityEngine.Events;
 using static EventManager;
 using static StaticsVariables;
+using Unity.Services.Analytics;
 
 public class Dialogues : MonoBehaviour
 {
@@ -102,10 +103,15 @@ public class Dialogues : MonoBehaviour
             StartCoroutine(ShowLine());
         } else
         {
-            DialogueEvent power = new DialogueEvent
+            DialogueEvent dialogue = new DialogueEvent
             {
-                time = SessionData.dialogueTimer,
+                dialogueTime = SessionData.dialogueTimer,
+                dialogueName = gameObject.name.ToString(),
             };
+
+            AnalyticsService.Instance.RecordEvent(dialogue);
+            AnalyticsService.Instance.Flush();
+
             playerController.isInDialogue = false;
             playerController.stop = false;
             stats.hungerReduction = 10;

@@ -38,6 +38,7 @@ public class GameWinLevel1 : MonoBehaviour
                     deaths = SessionData.deathsCounting,
                     safe = respawnController.hasTakeDamage,
                     time = timer.elapsedTime,
+                    frenzy = SessionData.frenzyCounting,
                 };
 
                 AnalyticsService.Instance.RecordEvent(levelComplete);

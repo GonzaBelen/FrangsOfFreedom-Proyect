@@ -53,12 +53,16 @@ public class RespawnController : MonoBehaviour
 
     public void BeginRespawn()
     {
+        if (isTakingDamage)
+        {
+            return;
+        }
+        isTakingDamage = true;
         rb2D.velocity = Vector2.zero;
         rb2D.angularVelocity = 0; 
         OnBeginRespawn?.Invoke();
         rb2D.gravityScale = 0;
         rb2D.AddForce(transform.up * strength, ForceMode2D.Impulse);
-        isTakingDamage = true;
         for (int i = 0; i < 32; i++)
         {
             if ((layersToIgnore.value & (1 << i)) != 0)
@@ -72,6 +76,11 @@ public class RespawnController : MonoBehaviour
 
     public void DoneRespawn()
     {
+        if (!isTakingDamage)
+        {
+            return;
+        }
+        isTakingDamage = false;
         OnDoneRespawn?.Invoke();
         if (!combos.isInFrenzy)
         {
@@ -81,7 +90,6 @@ public class RespawnController : MonoBehaviour
             rb2D.gravityScale = 5;
         }
         
-        isTakingDamage = false;
         for (int i = 0; i < 32; i++)
         {
             if ((layersToIgnore.value & (1 << i)) != 0)

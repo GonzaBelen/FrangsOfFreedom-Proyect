@@ -15,6 +15,7 @@ public class Frenzy : MonoBehaviour
     private int timesFrenzy;
     private Timer timer;
     [SerializeField] GameObject timerObject;
+    [SerializeField] GameObject[] eyes;
 
     private void Start()
     {
@@ -40,21 +41,16 @@ public class Frenzy : MonoBehaviour
 
     public void IsInFrenzy()
     {
-        timesFrenzy++;
-        PowerEvent power = new PowerEvent
-        {
-            frenzy = timesFrenzy,
-        };
-
-        AnalyticsService.Instance.RecordEvent(power);
-        AnalyticsService.Instance.Flush();
-
         combos.stopFrenzy = true;
         stats.movementSpeed *= 1.5f;
         stats.jumpForce *= 1.25f;
         stats.ChangeGravity(5);
         SessionData.frenzyCounting++;
         SessionData.hasFrenzy = true;
+        foreach (GameObject eye in eyes)
+        {
+            eye.SetActive(true);
+        }
     }
 
     public void FinishFrenzy()
@@ -67,8 +63,16 @@ public class Frenzy : MonoBehaviour
         {
             timeFrenzy = timer.frenzyTime,
         };
+
+        AnalyticsService.Instance.RecordEvent(power);
+        AnalyticsService.Instance.Flush();
+        
         SessionData.hasFrenzy = false;
         timer.frenzyTime = 0;
+        foreach (GameObject eye in eyes)
+        {
+            eye.SetActive(false);
+        }
     }
 
     public void GainFrenzy()

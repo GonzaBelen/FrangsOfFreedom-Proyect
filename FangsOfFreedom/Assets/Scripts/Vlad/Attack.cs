@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEditor;
+using static StaticsVariables;
 
 public class Attack : MonoBehaviour
 {
@@ -35,7 +37,7 @@ public class Attack : MonoBehaviour
             Collider2D[] enemies = Physics2D.OverlapCircleAll(attackRange.transform.position, stats.attackRange, enemiesLayer);
             foreach (Collider2D enemie in enemies)
             {
-                EnemiesController enemiesController = enemie.GetComponent<EnemiesController>();
+                EnemiesController enemiesController = enemie.GetComponentInChildren<EnemiesController>();
                 enemiesController.TakeDamage();
             }
         }
@@ -46,12 +48,20 @@ public class Attack : MonoBehaviour
         if (context.performed && canAttack && !playerController.stop)
         {
             rb2D.velocity = Vector2.zero;
-            rb2D.angularVelocity = 0; 
-            animationController.ChangeAnimation("Attack");
+            rb2D.angularVelocity = 0;
+            
+            if (!SessionData.hasFrenzy)
+            {
+                animationController.ChangeAnimation("Attack");
+            } else
+            {
+                animationController.ChangeAnimation("Attack-Frenzy");
+            }
+            
             Collider2D[] enemies = Physics2D.OverlapCircleAll(attackRange.transform.position, stats.attackRange, enemiesLayer);
             foreach (Collider2D enemie in enemies)
             {
-                EnemiesController enemiesController = enemie.GetComponent<EnemiesController>();
+                EnemiesController enemiesController = enemie.GetComponentInChildren<EnemiesController>();
                 enemiesController.TakeDamage();
                 if (!respawnController.hasTakeDamage)
                 {

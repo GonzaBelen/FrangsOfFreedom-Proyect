@@ -38,6 +38,7 @@ public class LevelCompleteEvent : AnalyticsEvent
 		public int combo { set { SetParameter("combo", value); } }
 		public bool safe { set { SetParameter("safe", value); } }
 		public float time { set { SetParameter("time", value); } }
+		public int frenzy { set { SetParameter("frenzy", value); } }
     }
 
 	public class LevelStartEvent : AnalyticsEvent
@@ -55,7 +56,6 @@ public class LevelCompleteEvent : AnalyticsEvent
 		{
 		}
 
-		public int frenzy { set { SetParameter("frenzy", value); } }
 		public float timeFrenzy { set { SetParameter("timeFrenzy", value); } }
     }
 
@@ -65,6 +65,7 @@ public class LevelCompleteEvent : AnalyticsEvent
 		{
 		}
 
-		public float time { set { SetParameter("time", value); } }
+		public float dialogueTime { set { SetParameter("dialogueTime", value); } }
+		public string dialogueName { set { SetParameter("dialogueName", value); } }
     }
 }

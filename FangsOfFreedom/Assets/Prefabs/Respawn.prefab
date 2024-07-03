@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4187757553147687052}
   - component: {fileID: 8583393822207026219}
   - component: {fileID: 2186236641842067006}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Respawn
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
