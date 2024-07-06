@@ -32,7 +32,7 @@ public class Frenzy : MonoBehaviour
         {
             combos.isInFrenzy = true;
             frenzyBar.frenzyReduction *= 2;
-        } else if (combos.isInFrenzy && frenzyBar.currentFrenzy <= 0)
+        } else if (combos.isInFrenzy && frenzyBar.currentFrenzy <= 0 && SessionData.canChange)
         {
             combos.isInFrenzy = false;
             frenzyBar.frenzyReduction /= 2;
@@ -47,10 +47,7 @@ public class Frenzy : MonoBehaviour
         stats.ChangeGravity(5);
         SessionData.frenzyCounting++;
         SessionData.hasFrenzy = true;
-        foreach (GameObject eye in eyes)
-        {
-            eye.SetActive(true);
-        }
+        ActiveEyes();
     }
 
     public void FinishFrenzy()
@@ -69,14 +66,27 @@ public class Frenzy : MonoBehaviour
         
         SessionData.hasFrenzy = false;
         timer.frenzyTime = 0;
-        foreach (GameObject eye in eyes)
-        {
-            eye.SetActive(false);
-        }
+        DisableEyes();
     }
 
     public void GainFrenzy()
     {
         frenzyBar.UpdateSlider(comboValue);
+    }
+
+    public void ActiveEyes()
+    {
+        foreach (GameObject eye in eyes)
+        {
+            eye.SetActive(true);
+        }
+    }
+
+    public void DisableEyes()
+    {
+        foreach (GameObject eye in eyes)
+        {
+            eye.SetActive(false);
+        }
     }
 }

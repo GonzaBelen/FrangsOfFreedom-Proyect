@@ -4942,6 +4942,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Rigidbody2D_set_angularVelocity();
 		Register_UnityEngine_Rigidbody2D_set_angularVelocity();
 
+		//System.Void UnityEngine.Rigidbody2D::set_constraints(UnityEngine.RigidbodyConstraints2D)
+		void Register_UnityEngine_Rigidbody2D_set_constraints();
+		Register_UnityEngine_Rigidbody2D_set_constraints();
+
 		//System.Void UnityEngine.Rigidbody2D::set_gravityScale(System.Single)
 		void Register_UnityEngine_Rigidbody2D_set_gravityScale();
 		Register_UnityEngine_Rigidbody2D_set_gravityScale();

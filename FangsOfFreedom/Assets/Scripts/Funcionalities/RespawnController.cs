@@ -26,9 +26,12 @@ public class RespawnController : MonoBehaviour
     private bool stop = false;
     public int multipleKills;
     public bool hasTakeDamage = false;
+    private string lastCheckpointName;
+    private Frenzy frenzy;
 
     void Start()
     {
+        frenzy = GetComponent<Frenzy>();
         combos = GetComponent<Combos>();
         rb2D = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
@@ -47,8 +50,9 @@ public class RespawnController : MonoBehaviour
 
     private void Respawn()
     {
+        Debug.Log("Checkpoint");
         positionToMove = lastCheckpoint.GetCheckpointPosition();
-        Debug.Log("hay checkpoint");   
+        lastCheckpointName = lastCheckpoint.name;
     }
 
     public void BeginRespawn()
@@ -57,7 +61,11 @@ public class RespawnController : MonoBehaviour
         {
             return;
         }
-        isTakingDamage = true;
+        SessionData.canChange = false;
+        if (SessionData.hasFrenzy)
+        {
+            frenzy.DisableEyes();
+        }
         rb2D.velocity = Vector2.zero;
         rb2D.angularVelocity = 0; 
         OnBeginRespawn?.Invoke();
@@ -72,6 +80,7 @@ public class RespawnController : MonoBehaviour
         }
         stop = false;
         FixGround();
+        isTakingDamage = true;
     }
 
     public void DoneRespawn()
@@ -80,7 +89,10 @@ public class RespawnController : MonoBehaviour
         {
             return;
         }
-        isTakingDamage = false;
+        if (SessionData.hasFrenzy)
+        {
+            frenzy.ActiveEyes();
+        }
         OnDoneRespawn?.Invoke();
         if (!combos.isInFrenzy)
         {
@@ -98,6 +110,8 @@ public class RespawnController : MonoBehaviour
             }
         }
         stop = true;
+        isTakingDamage = false;
+        SessionData.canChange = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -115,7 +129,7 @@ public class RespawnController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-         if (other.CompareTag("Checkpoint"))
+         if (other.CompareTag("Checkpoint") && (other.name == lastCheckpointName))
         {
             if (isTakingDamage)
             {
@@ -147,7 +161,7 @@ public class RespawnController : MonoBehaviour
         while (!stop)
         {
             rb2D.AddForce(direction * strength, ForceMode2D.Impulse);
-            await Task.Delay(1000);
+            await Task.Delay(2000);
         }        
     }
 }

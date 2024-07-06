@@ -1094,6 +1094,7 @@ UnityEngine.Rigidbody2D::get_mass
 UnityEngine.Rigidbody2D::AddForce_Injected
 UnityEngine.Rigidbody2D::get_velocity_Injected
 UnityEngine.Rigidbody2D::set_angularVelocity
+UnityEngine.Rigidbody2D::set_constraints
 UnityEngine.Rigidbody2D::set_gravityScale
 UnityEngine.Rigidbody2D::set_velocity_Injected
 UnityEngine.ScalableBufferManager::get_heightScaleFactor

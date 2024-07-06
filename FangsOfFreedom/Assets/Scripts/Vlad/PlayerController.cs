@@ -69,6 +69,10 @@ public class PlayerController : MonoBehaviour
         }
         if(stop || isDashing)
         {
+            if (isDashing)
+            {
+                animationController.ChangeAnimation("Dash");
+            }
             return;
         }
 

@@ -14,7 +14,7 @@
             "name": "AnimationClip",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -24,7 +24,7 @@
             "name": "Animator",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -34,7 +34,7 @@
             "name": "AnimatorController",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 1,
@@ -84,10 +84,11 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -98,7 +99,8 @@
             "name": "AudioClip",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
+              "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -107,10 +109,11 @@
           {
             "name": "AudioListener",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -127,7 +130,8 @@
             "name": "AudioSource",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
+              "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -137,7 +141,8 @@
             "name": "SampleClip",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
+              "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 1,
@@ -169,10 +174,11 @@
           {
             "name": "Camera",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -212,10 +218,11 @@
           {
             "name": "EditorExtension",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -231,10 +238,11 @@
           {
             "name": "GameObject",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -262,10 +270,11 @@
           {
             "name": "LevelGameManager",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -293,10 +302,11 @@
           {
             "name": "LightmapSettings",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -312,11 +322,9 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/Scenes/GameOver.unity",
-              "Assets/Scenes/GameWin.unity",
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
-              "Assets/Scenes/MainMenu.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -326,7 +334,7 @@
             "name": "Mesh",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -347,10 +355,11 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -366,10 +375,11 @@
           {
             "name": "MonoScript",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -379,10 +389,11 @@
           {
             "name": "NamedObject",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -416,10 +427,11 @@
           {
             "name": "RectTransform",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -435,10 +447,11 @@
           {
             "name": "RenderSettings",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -472,11 +485,9 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/Scenes/GameOver.unity",
-              "Assets/Scenes/GameWin.unity",
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
-              "Assets/Scenes/MainMenu.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -503,10 +514,11 @@
           {
             "name": "Sprite",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -523,7 +535,7 @@
             "name": "SpriteRenderer",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -544,10 +556,11 @@
           {
             "name": "Texture",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -557,10 +570,11 @@
           {
             "name": "Texture2D",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -785,7 +799,7 @@
             "name": "Grid",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -904,7 +918,7 @@
             "name": "ParticleSystem",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -914,7 +928,7 @@
             "name": "ParticleSystemRenderer",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -970,7 +984,7 @@
             "name": "BoxCollider2D",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -980,7 +994,7 @@
             "name": "CircleCollider2D",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -996,7 +1010,7 @@
             "name": "CompositeCollider2D",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1012,7 +1026,7 @@
             "name": "PhysicsMaterial2D",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1022,7 +1036,7 @@
             "name": "PolygonCollider2D",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1032,7 +1046,7 @@
             "name": "Rigidbody2D",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1308,10 +1322,9 @@
           {
             "name": "Font",
             "scenes": [
-              "Assets/Scenes/GameOver.unity",
-              "Assets/Scenes/GameWin.unity",
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/MainMenu.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1362,7 +1375,7 @@
             "name": "Tilemap",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1372,7 +1385,7 @@
             "name": "TilemapCollider2D",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1382,7 +1395,7 @@
             "name": "TilemapRenderer",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1396,10 +1409,11 @@
           {
             "name": "Canvas",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -1415,10 +1429,11 @@
           {
             "name": "CanvasRenderer",
             "scenes": [
+              "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/GameOver.unity",
               "Assets/Scenes/GameWin.unity",
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/LevelPrototype.unity",
+              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],

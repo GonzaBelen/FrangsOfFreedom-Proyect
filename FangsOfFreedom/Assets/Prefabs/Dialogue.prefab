@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 2907602579506243966}
   - component: {fileID: 287557896575059803}
   m_Layer: 5
-  m_Name: Button (Space)
+  m_Name: Button (J)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -673,7 +673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -309.01, y: 5}
+  m_AnchoredPosition: {x: -474, y: 5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2907602579506243966
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 407453450, guid: 2fedf392f2920e84e9801c9690f6089b, type: 3}
+  m_Sprite: {fileID: -1605832577, guid: 2fedf392f2920e84e9801c9690f6089b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -820,7 +820,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 76e67a72b2aae6749a47b8c31529acc0, type: 2}
-  m_sharedMaterial: {fileID: 157984189860417095, guid: f9e76fcfc6b31cf44977faae7f80b90d, type: 2}
+  m_sharedMaterial: {fileID: -9199091704666568949, guid: 76e67a72b2aae6749a47b8c31529acc0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &9114808941133879317

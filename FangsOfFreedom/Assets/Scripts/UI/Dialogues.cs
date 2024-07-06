@@ -40,10 +40,10 @@ public class Dialogues : MonoBehaviour
             if (!didDialogueStart)
             {
                 StartDialogue();
-            } else if (dialogueText.text == dialogueLines[lineIndex]  && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z)))
+            } else if (dialogueText.text == dialogueLines[lineIndex]  && (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z)))
             {
                 NextDialogueLine();
-            } else if (dialogueText.text != dialogueLines[lineIndex] && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z)))
+            } else if (dialogueText.text != dialogueLines[lineIndex] && (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z)))
             {
                 StopAllCoroutines();
                 dialogueText.text = dialogueLines[lineIndex];

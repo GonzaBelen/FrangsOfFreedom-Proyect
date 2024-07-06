@@ -24,8 +24,14 @@ public class NewBehaviourScript : MonoBehaviour
 		AnalyticsService.Instance.StartDataCollection();
 	}
 
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void LoadTutorial()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("UI"), LayerMask.NameToLayer("Checkpoint"), true);
         SessionData.level = 0;
         LevelStartEvent levelStart = new LevelStartEvent
         {
@@ -50,6 +56,19 @@ public class NewBehaviourScript : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
+    public void LoadLevel2()
+    {
+        SessionData.level = 2;
+        LevelStartEvent levelStart = new LevelStartEvent
+        {
+            level = SessionData.level,
+        };
+
+        AnalyticsService.Instance.RecordEvent(levelStart);
+        AnalyticsService.Instance.Flush();
+        SceneManager.LoadScene("Level2");
+    }
+
     public void ResetDeaths()
     {
         SessionData.deathsCounting = 0;
@@ -60,9 +79,12 @@ public class NewBehaviourScript : MonoBehaviour
         if (SessionData.level == 0)
         {
             LoadTutorial();
-        } else
+        } else if (SessionData.level == 1)
         {
             LoadLevel1();
+        } else
+        {
+            LoadLevel2();
         }
     }
 }

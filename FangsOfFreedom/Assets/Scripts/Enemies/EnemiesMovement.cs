@@ -10,6 +10,7 @@ public class EnemiesMovement : MonoBehaviour
     [SerializeField] private bool lookingRight;
     [SerializeField] private LayerMask whatIsGround;
     private Rigidbody2D rb2D;
+    private bool isDeath = false;
 
 
     private void Start()
@@ -19,6 +20,10 @@ public class EnemiesMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDeath)
+        {
+            return;
+        }
         RaycastHit2D groundInformation = Physics2D.Raycast(groundController.position, Vector2.down, distance, whatIsGround);
 
         rb2D.velocity = new Vector2(velocity, rb2D.velocity.y);
@@ -40,5 +45,15 @@ public class EnemiesMovement : MonoBehaviour
     { 
         Gizmos.color = Color.red;
         Gizmos.DrawLine(groundController.transform.position, groundController.transform.position +Vector3.down * distance);
+    }
+
+    public void IsDeath()
+    {
+        isDeath = true;
+        rb2D.gravityScale = 1;
+        rb2D.velocity = Vector2.zero;
+        rb2D.angularVelocity = 0; 
+        rb2D.constraints = RigidbodyConstraints2D.None;  
+        rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 }

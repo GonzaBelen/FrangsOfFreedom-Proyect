@@ -13,6 +13,7 @@ public class StaticsVariables : MonoBehaviour
         public static float dialogueTimer;
         public static bool hasFrenzy = false;
         public static int level;
+        public static bool canChange = true;
     }
     
     private void Awake()

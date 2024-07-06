@@ -54,6 +54,8 @@ public class GameWin : MonoBehaviour
 
                 AnalyticsService.Instance.RecordEvent(levelStart);
                 AnalyticsService.Instance.Flush();
+
+                SessionData.hasFrenzy = false;
             }
         }
     }
