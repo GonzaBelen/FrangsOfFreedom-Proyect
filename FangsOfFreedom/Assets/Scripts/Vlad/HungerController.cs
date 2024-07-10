@@ -1,21 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static EventManager;
+using Unity.Services.Analytics;
+using static StaticsVariables;
 
 public class HungerController : MonoBehaviour
 {
+    private Stats stats;
+    private bool stopReceivingData = false;
     private Combos combos;
     [SerializeField] private HungerBar hungerBar;
     private float hunger = 100;
-    private float hungerReduction = 10;
-    private float timeToReduceHunger = 5;
     private float currentTimeToReduceHunger;
     
 
     private void Start()
     {
+        stats = GetComponent<Stats>();
         combos = GetComponent<Combos>();
-        currentTimeToReduceHunger = timeToReduceHunger;
+        currentTimeToReduceHunger = stats.timeToReduceHunger;
         hungerBar.UpdateSlider(hunger);
     }
 
@@ -24,8 +28,8 @@ public class HungerController : MonoBehaviour
         currentTimeToReduceHunger -= Time.deltaTime;
         if(currentTimeToReduceHunger <= 0)
         {
-            hunger -= hungerReduction;
-            currentTimeToReduceHunger = timeToReduceHunger;
+            hunger -= stats.hungerReduction;
+            currentTimeToReduceHunger = stats.timeToReduceHunger;
         }
 
         if (hunger < 0)
@@ -38,13 +42,27 @@ public class HungerController : MonoBehaviour
 
         if (hunger <= 0)
         {
-            // Aquí puedes agregar la lógica para la muerte por hambre, como cargar una escena de Game Over o reiniciar el nivel.
+            SessionData.deathsCounting++;
+            SessionData.canCount = false;
+            if(!stopReceivingData)
+            {
+                stopReceivingData = true;
+                GameOverEvent gameOver = new GameOverEvent
+                {
+                    level = SessionData.level,
+                    deathsGO = SessionData.deathsCounting,
+                };
+
+                AnalyticsService.Instance.RecordEvent(gameOver);
+                AnalyticsService.Instance.Flush();
+            }
             SceneManager.LoadScene("GameOver");
         }
     }
 
     public void GainHunger(int amount)
     {
+        //parametro para saber si junto botella
         hunger += amount;
         hunger = Mathf.Clamp(hunger, 0, 100);
         combos.Combo();
@@ -52,13 +70,11 @@ public class HungerController : MonoBehaviour
 
     public void LightExposing()
     {
-        Debug.Log("se esta afectando con la luz");
-        timeToReduceHunger = 2.5f;
+        stats.timeToReduceHunger = 2.5f;
     }
 
     public void FinishLightExposing()
     {
-        Debug.Log("No se esta afectando con la luz");
-        timeToReduceHunger = 5;
+        stats.timeToReduceHunger = 5;
     }
 }

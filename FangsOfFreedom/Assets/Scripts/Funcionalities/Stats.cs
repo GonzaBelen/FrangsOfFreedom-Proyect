@@ -20,6 +20,10 @@ public class Stats : MonoBehaviour
     public float dashingTime;
     public float coolDown;
 
+    [Header("Hunger")]
+    public float hungerReduction = 10;
+    public float timeToReduceHunger = 3;
+
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();

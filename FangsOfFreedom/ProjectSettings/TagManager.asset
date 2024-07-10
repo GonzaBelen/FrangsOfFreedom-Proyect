@@ -12,6 +12,8 @@ TagManager:
   - Obstacle
   - Curtain
   - Light
+  - Wall
+  - Damaged
   layers:
   - Default
   - TransparentFX
@@ -23,10 +25,10 @@ TagManager:
   - Enemies
   - Objects
   - Curtain
-  - 
-  - 
-  - 
-  - 
+  - Obstacles
+  - Checkpoint
+  - Wall
+  - Death
   - 
   - 
   - 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static StaticsVariables;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class PlayerController : MonoBehaviour
     private Stats stats;
     private Combos combos;
     private AnimationController animationController;
+    private Dialogues dialogues;
 
     [Header("Components")]
     private Rigidbody2D rb2D;
-     
-    [SerializeField] private LayerMask enemiesLayer;
-
+    private PlayerInput playerInput;
+    private Timer timer;
+    [SerializeField] GameObject timerObject;
+    
     [Header("Jump")]
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform groundController;
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public bool stop = false;
     private bool changeAnimation = false;
     [SerializeField] private bool shouldCloseCurtain = false;
+    public bool isInDialogue = false;
 
      private void Start()
     {
@@ -45,12 +49,30 @@ public class PlayerController : MonoBehaviour
         attack = GetComponent<Attack>();
         stats = GetComponent<Stats>();
         combos= GetComponent<Combos>();
+        playerInput = GetComponent<PlayerInput>();
+        dialogues = GetComponent<Dialogues>();
+        timer = timerObject.gameObject.GetComponent<Timer>();
     }
 
     private void FixedUpdate()
     {
+        if (isInDialogue)
+        {
+            animationController.ChangeAnimation("Idle");
+            timer.DialogueTime();
+            SessionData.dialogueTimer = timer.dialogueTime;
+            return;
+        } else
+        {
+            timer.dialogueTime = 0;
+            SessionData.dialogueTimer = timer.dialogueTime;
+        }
         if(stop || isDashing)
         {
+            if (isDashing)
+            {
+                animationController.ChangeAnimation("Dash");
+            }
             return;
         }
 
@@ -79,15 +101,33 @@ public class PlayerController : MonoBehaviour
             attack.canAttack = true;
             if (movementHor != 0)
             {
-                animationController.ChangeAnimation("Move");
+                if(!SessionData.hasFrenzy)
+                {
+                    animationController.ChangeAnimation("Move");
+                } else
+                {
+                    animationController.ChangeAnimation("Move-Frenzy");
+                }
             } else 
             {
-                animationController.ChangeAnimation("Idle");
+                if(!SessionData.hasFrenzy)
+                {
+                    animationController.ChangeAnimation("Idle");
+                } else
+                {
+                    animationController.ChangeAnimation("Idle-Frenzy");
+                }
             }
         } else 
         {
             attack.canAttack = false;
-            animationController.ChangeAnimation("Jump");
+            if(!SessionData.hasFrenzy)
+            {
+                animationController.ChangeAnimation("Jump");
+            } else
+            {
+                animationController.ChangeAnimation("Jump-Frenzy");
+            }
         }
     }
 
@@ -178,15 +218,19 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator Dash()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Obstacles"), true);
         isDashing = true;
         canDash = false;
         canMove = false;
         stats.ChangeGravity(0);
         rb2D.velocity = new Vector2(transform.localScale.x * stats.dashForce, 0f);
         yield return new WaitForSeconds(stats.dashingTime);
-        stats.ChangeGravity(3f);
+        stats.ChangeGravity(5f);
         canMove = true;
         isDashing = false;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), false);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Obstacles"), false);
         yield return new WaitForSeconds(stats.coolDown);
         canDash = true;
     }

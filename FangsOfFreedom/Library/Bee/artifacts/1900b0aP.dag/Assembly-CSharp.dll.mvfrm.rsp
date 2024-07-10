@@ -17,6 +17,10 @@ Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrar
 Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Universal.Config.Runtime.ref.dll_353B80D40F2F40C5.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Universal.Runtime.ref.dll_F2E669F900AB6F15.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Universal.Shaders.ref.dll_334E79423F1A0A4B.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Services.Analytics.ref.dll_EB4B42A2B9006E39.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Services.Core.Analytics.ref.dll_D88AC28E7AE24D0A.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Services.Core.Environments.ref.dll_29C0C4FBB515A292.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Services.Core.ref.dll_8733AE466239FA82.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.TextMeshPro.ref.dll_B085F143991618E6.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Timeline.ref.dll_54050F91DBE64E14.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Core.ref.dll_27ACA245D8399F39.mvfrm
