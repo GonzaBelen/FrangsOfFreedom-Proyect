@@ -91,7 +91,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -280,8 +280,8 @@ MonoBehaviour:
     y: 0
     width: 273
     height: 471
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -326,7 +326,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e01cf8ff4e28f8ff1e4ef8ff0053f8ff4a56f8ff0e62f8ffca69f8ffec6cf8ffa86df8ff2870f8ff7c7ff8ff0c83f8ff4687f8ffec8bf8ffb6a0f8ff90a8f8ff6eacf8ffdac4f8ff20caf8ff76e8f8ffc4f3f8fff20df9ff981af9ff7442f9ff0058f9ff8c66f9ffcacaf9ff361cfaff7650faff5a63faff6466faff1c7efaff7e80faffa48dfaff7ae9fbffe0abffff88acffff22b6ffff9eb9ffff08baffffdec1ffffd4c9ffff22d7ffff06eaffff38f3ffff54f7fffffcfaffff4a82000070990000be990000ca9900008a9c0000429d0000b4fc000060100100941101001a130100ea2801001e2a01005c3401008c400100d84c0100f24c0100fe5801001059010092590100b45901002a5a0100725a0100765e0100de5f0100e667010000680100ea760100
+      m_ExpandedIDs: fcfaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 50849
+  controlID: 67
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -797,9 +797,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 197.83363, y: 59.658905, z: -1.7416294}
+    m_Target: {x: 132.24681, y: 129.19966, z: -2.8037102}
     speed: 2
-    m_Value: {x: 198.16075, y: 60.78566, z: -1.8321339}
+    m_Value: {x: 132.24681, y: 129.19966, z: -2.8037102}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -849,9 +849,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 192.0691
+    m_Target: 298.27747
     speed: 2
-    m_Value: 201.11949
+    m_Value: 298.27747
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1102,7 +1102,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: a6640000
     m_LastClickedID: 25766
-    m_ExpandedIDs: ffffffff00000000227b0000247b0000267b0000287b00002a7b00002c7b00002e7b0000307b0000327b0000347b0000367b0000387b00003a7b00003c7b00003e7b0000407b0000427b0000447b0000467b0000487b00004c7b00004e7b0000507b0000527b0000547b0000587b00005a7b00005c7b00005e7b0000607b0000627b0000647b0000727c0000b47c0000e47c0000e8840000
+    m_ExpandedIDs: 00000000307b0000327b0000347b0000367b0000387b00003a7b00003c7b00003e7b0000407b0000427b0000447b0000467b0000487b00004a7b00004c7b00004e7b0000507b0000527b0000547b0000567b0000587b00005a7b00005c7b00005e7b0000607b0000627b0000647b0000667b0000687b00006a7b00006c7b00006e7b0000707b0000727b0000747b0000767b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1130,7 +1130,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 1323}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000227b0000247b0000267b0000287b00002a7b00002c7b00002e7b0000307b0000327b0000347b0000367b0000387b00003a7b00003c7b00003e7b0000407b0000427b0000447b0000467b0000487b00004c7b00004e7b0000507b0000527b0000547b0000587b00005a7b00005c7b00005e7b0000607b0000627b0000647b0000727c0000b47c0000e47c0000e8840000
+    m_ExpandedIDs: ffffffff00000000307b0000327b0000347b0000367b0000387b00003a7b00003c7b00003e7b0000407b0000427b0000447b0000467b0000487b00004a7b00004c7b00004e7b0000507b0000527b0000547b0000567b0000587b00005a7b00005c7b00005e7b0000607b0000627b0000647b0000667b0000687b00006a7b00006c7b00006e7b0000707b0000727b0000747b0000767b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1239,8 +1239,8 @@ MonoBehaviour:
     y: 0
     width: 467
     height: 767
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
