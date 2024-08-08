@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
-  jumpForce: 15
+  jumpForce: 16
   attackRange: 1.3
   dashForce: 15
   dashingTime: 0.15
@@ -599,7 +599,7 @@ MonoBehaviour:
   - {x: 0.021666214, y: 0.28567812, z: 0}
   m_ShapePathHash: 1373796918
   m_Mesh: {fileID: 0}
-  m_InstanceId: 76380
+  m_InstanceId: 41926
   m_LocalBounds:
     m_Center: {x: -0.001761362, y: 0.43076098, z: 0}
     m_Extent: {x: 0.15143128, y: 0.14508288, z: 0}

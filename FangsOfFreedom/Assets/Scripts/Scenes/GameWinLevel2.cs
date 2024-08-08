@@ -43,7 +43,9 @@ public class GameWinLevel2 : MonoBehaviour
 
                 AnalyticsService.Instance.RecordEvent(levelComplete);
                 AnalyticsService.Instance.Flush();
-                SceneManager.LoadScene("GameWin");
+
+                SessionData.level = 3;
+                SceneManager.LoadScene("Level3");
 
                 SessionData.hasFrenzy = false;
             }

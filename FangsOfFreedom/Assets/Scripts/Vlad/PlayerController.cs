@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundController;
     [SerializeField] private Vector3 boxDimensions;
     [SerializeField] private bool isGrounded;
-    [SerializeField] private int remainingJumps = 2;
+    [SerializeField] private int remainingJumps;
     [SerializeField] private bool isJumping = false;
 
     [Header("Movement")]
@@ -52,6 +52,13 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         dialogues = GetComponent<Dialogues>();
         timer = timerObject.gameObject.GetComponent<Timer>();
+        if (SessionData.doubleJumpUnlock)
+        {
+            remainingJumps = 2;
+        } else 
+        {
+            remainingJumps = 1;
+        }
     }
 
     private void FixedUpdate()
@@ -96,7 +103,13 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded)
         {
-            remainingJumps = 2;
+            if (SessionData.doubleJumpUnlock)
+            {
+                remainingJumps = 2;
+            } else
+            {
+                remainingJumps = 1;
+            }
             remainingDash = 1;
             attack.canAttack = true;
             if (movementHor != 0)
@@ -148,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-        if (context.performed && canDash && combos.isInFrenzy && !stop && remainingDash > 0)
+        if (context.performed && canDash && combos.isInFrenzy && !stop && remainingDash > 0 && SessionData.dashUnlock)
         {
             StartCoroutine(Dash());
             remainingDash--;
@@ -189,7 +202,13 @@ public class PlayerController : MonoBehaviour
         if (collider.gameObject.CompareTag("Trampoline"))
         {
             isJumping = true;
-            remainingJumps = 1;
+            if(SessionData.doubleJumpUnlock)
+            {
+                remainingJumps = 1;
+            } else
+            {
+                remainingJumps = 0;
+            }  
             remainingDash = 1;
         }
     }

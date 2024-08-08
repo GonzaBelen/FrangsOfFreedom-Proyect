@@ -28,7 +28,7 @@ public class Frenzy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!combos.isInFrenzy && frenzyBar.currentFrenzy >= 99.5f)
+        if (!combos.isInFrenzy && frenzyBar.currentFrenzy >= 99.5f && SessionData.frenzyUnlock)
         {
             combos.isInFrenzy = true;
             frenzyBar.frenzyReduction *= 2;
@@ -41,6 +41,7 @@ public class Frenzy : MonoBehaviour
 
     public void IsInFrenzy()
     {
+        CinemachineShake.Instance.ShakeCamera(7, 1);
         combos.stopFrenzy = true;
         stats.movementSpeed *= 1.5f;
         stats.jumpForce *= 1.25f;

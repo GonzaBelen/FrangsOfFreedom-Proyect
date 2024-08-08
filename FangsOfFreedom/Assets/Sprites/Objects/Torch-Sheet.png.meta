@@ -172,6 +172,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Torch-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa3a5fd30c40664c99986ce2faab021
+      internalID: 2110789684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -186,6 +207,7 @@ TextureImporter:
       Torch-Sheet_0: 1355676701
       Torch-Sheet_1: 1773925427
       Torch-Sheet_2: -1123386246
+      Torch-Sheet_3: 2110789684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -69,6 +69,19 @@ public class NewBehaviourScript : MonoBehaviour
         SceneManager.LoadScene("Level2");
     }
 
+    public void LoadLevel3()
+    {
+        SessionData.level = 3;
+        LevelStartEvent levelStart = new LevelStartEvent
+        {
+            level = SessionData.level,
+        };
+
+        AnalyticsService.Instance.RecordEvent(levelStart);
+        AnalyticsService.Instance.Flush();
+        SceneManager.LoadScene("Level3");
+    }
+
     public void ResetDeaths()
     {
         SessionData.deathsCounting = 0;
@@ -82,9 +95,12 @@ public class NewBehaviourScript : MonoBehaviour
         } else if (SessionData.level == 1)
         {
             LoadLevel1();
-        } else
+        } else if (SessionData.level == 2)
         {
             LoadLevel2();
+        } else
+        {
+            LoadLevel3();
         }
     }
 }

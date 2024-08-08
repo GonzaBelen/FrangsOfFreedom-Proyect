@@ -24,6 +24,7 @@ public class Dialogues : MonoBehaviour
     private bool isPlayerInRange;
     private bool didDialogueStart = false;
     private int lineIndex;
+    public UnityEvent DialogueFinished;
     
     private void Start()
     {
@@ -112,6 +113,7 @@ public class Dialogues : MonoBehaviour
             AnalyticsService.Instance.RecordEvent(dialogue);
             AnalyticsService.Instance.Flush();
 
+            DialogueFinished?.Invoke();
             playerController.isInDialogue = false;
             playerController.stop = false;
             stats.hungerReduction = 10;
