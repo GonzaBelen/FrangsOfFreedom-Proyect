@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private bool changeAnimation = false;
     [SerializeField] private bool shouldCloseCurtain = false;
     public bool isInDialogue = false;
+    private bool hasClosed = false;
 
      private void Start()
     {
@@ -99,6 +100,14 @@ public class PlayerController : MonoBehaviour
         if (isJumping && isGrounded)
         {
             isGrounded = false;
+        }
+
+        if (remainingJumps == 2)
+        {
+            if (!isJumping && !isGrounded)
+            {
+                remainingJumps = 1;
+            }
         }
 
         if (isGrounded)
@@ -173,6 +182,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             shouldCloseCurtain = true;
+            hasClosed = true;
             StartCoroutine(StopCloseCurtain());
         }
     }
@@ -266,10 +276,11 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Se debe cerrar cortina");
             Curtain curtain = collider.gameObject.GetComponent<Curtain>();
-            if (curtain != null)
+            if (curtain != null && hasClosed)
             {
                 curtain.CloseCurtain();
                 combos.Combo();
+                hasClosed = false;
             }
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Services.Analytics;
+using Unity.Services.Core;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,11 +19,14 @@ public class GameWinLevel1 : MonoBehaviour
 
     private void Start()
     {
+        UnityServices.InitializeAsync();
+        AnalyticsService.Instance.StartDataCollection();
         timer = timerObject.gameObject.GetComponent<Timer>();
         respawnController = vlad.gameObject.GetComponent<RespawnController>();
         combos = vlad.gameObject.GetComponent<Combos>();
         blood = vlad.gameObject.GetComponent<Blood>();
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

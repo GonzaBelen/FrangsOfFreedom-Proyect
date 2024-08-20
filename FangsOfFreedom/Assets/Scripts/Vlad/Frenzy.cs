@@ -41,7 +41,7 @@ public class Frenzy : MonoBehaviour
 
     public void IsInFrenzy()
     {
-        CinemachineShake.Instance.ShakeCamera(7, 1);
+        CinemachineShake.Instance.ShakeCamera(10, .5f);
         combos.stopFrenzy = true;
         stats.movementSpeed *= 1.5f;
         stats.jumpForce *= 1.25f;

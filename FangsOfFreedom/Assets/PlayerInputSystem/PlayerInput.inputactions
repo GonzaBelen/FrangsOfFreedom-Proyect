@@ -119,6 +119,72 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Joystick stick",
+                    "id": "9e7785df-f4d5-49fa-bb5b-31c5abd946c2",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "2dcd6aca-c16c-4830-858c-00c00955a838",
+                    "path": "<XInputController>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "20b9cd42-ca39-437d-8267-1ec8dce599f3",
+                    "path": "<XInputController>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Joystick pad",
+                    "id": "185d6271-321a-4337-9710-421e6fa9ca8e",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "ae58dc13-46f0-429f-85f6-f28eb02f70b4",
+                    "path": "<XInputController>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "36e85b89-9430-4709-b859-ad61335d984c",
+                    "path": "<XInputController>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "8d73da32-d415-4520-80ec-7d6fb429d6f4",
                     "path": "<Keyboard>/w",
@@ -153,6 +219,17 @@
                 },
                 {
                     "name": "",
+                    "id": "49a01b1b-8727-4be4-8628-c2e42708d285",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3b45b2ca-4ae6-48dd-919e-84528c6269a9",
                     "path": "<Keyboard>/z",
                     "interactions": "",
@@ -166,6 +243,17 @@
                     "name": "",
                     "id": "76062dc8-32a5-4d9b-96d6-cc965327bb1e",
                     "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be57d956-2882-4497-aff2-dfc7a9601aa7",
+                    "path": "<XInputController>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -197,6 +285,17 @@
                 },
                 {
                     "name": "",
+                    "id": "33eae1c6-e25a-4e63-851f-11ba7bf2cc68",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a2a6514d-09f5-436d-a849-0372f3eb6e11",
                     "path": "<Keyboard>/k",
                     "interactions": "",
@@ -210,6 +309,17 @@
                     "name": "",
                     "id": "61d400d9-a086-41ec-a470-9719337eba2d",
                     "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Curtain",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9456197-76a4-469f-840d-5e8f9069d19d",
+                    "path": "<XInputController>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
