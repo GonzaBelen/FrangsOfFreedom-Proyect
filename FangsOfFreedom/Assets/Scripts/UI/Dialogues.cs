@@ -40,12 +40,15 @@ public class Dialogues : MonoBehaviour
         {
             if (!didDialogueStart)
             {
+                playerController.changeLine = false;
                 StartDialogue();
-            } else if (dialogueText.text == dialogueLines[lineIndex]  && Input.anyKeyDown)
+            } else if (dialogueText.text == dialogueLines[lineIndex]  && playerController.changeLine)
             {
+                playerController.changeLine = false;
                 NextDialogueLine();
-            } else if (dialogueText.text != dialogueLines[lineIndex] && Input.anyKeyDown)
+            } else if (dialogueText.text != dialogueLines[lineIndex] && playerController.changeLine)
             {
+                playerController.changeLine = false;
                 StopAllCoroutines();
                 dialogueText.text = dialogueLines[lineIndex];
             }

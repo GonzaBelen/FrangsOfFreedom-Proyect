@@ -188,6 +188,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 48c6e6c9-208c-40c5-9ff7-15d814972863
     m_ActionName: Controls/Curtain[/Keyboard/e,/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8535891261749310889}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PassLine
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9daed598-bb07-4759-bb0d-578aa4233ee1
+    m_ActionName: Controls/PassLine[/Keyboard/j,/Keyboard/z,/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Controls
@@ -374,6 +390,7 @@ MonoBehaviour:
   stop: 0
   shouldCloseCurtain: 0
   isInDialogue: 0
+  changeLine: 0
 --- !u!114 &213842607697079979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,7 +616,7 @@ MonoBehaviour:
   - {x: 0.021666214, y: 0.28567812, z: 0}
   m_ShapePathHash: 1373796918
   m_Mesh: {fileID: 0}
-  m_InstanceId: 41926
+  m_InstanceId: 39816
   m_LocalBounds:
     m_Center: {x: -0.001761362, y: 0.43076098, z: 0}
     m_Extent: {x: 0.15143128, y: 0.14508288, z: 0}

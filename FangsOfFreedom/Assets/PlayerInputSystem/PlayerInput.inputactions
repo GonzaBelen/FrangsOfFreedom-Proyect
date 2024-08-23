@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PassLine",
+                    "type": "Button",
+                    "id": "9daed598-bb07-4759-bb0d-578aa4233ee1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -132,7 +141,7 @@
                 {
                     "name": "left",
                     "id": "2dcd6aca-c16c-4830-858c-00c00955a838",
-                    "path": "<XInputController>/leftStick/left",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -143,7 +152,7 @@
                 {
                     "name": "right",
                     "id": "20b9cd42-ca39-437d-8267-1ec8dce599f3",
-                    "path": "<XInputController>/leftStick/right",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -165,7 +174,7 @@
                 {
                     "name": "left",
                     "id": "ae58dc13-46f0-429f-85f6-f28eb02f70b4",
-                    "path": "<XInputController>/dpad/left",
+                    "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -176,7 +185,7 @@
                 {
                     "name": "right",
                     "id": "36e85b89-9430-4709-b859-ad61335d984c",
-                    "path": "<XInputController>/dpad/right",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -220,7 +229,7 @@
                 {
                     "name": "",
                     "id": "49a01b1b-8727-4be4-8628-c2e42708d285",
-                    "path": "<XInputController>/buttonSouth",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -253,7 +262,7 @@
                 {
                     "name": "",
                     "id": "be57d956-2882-4497-aff2-dfc7a9601aa7",
-                    "path": "<XInputController>/buttonEast",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -286,7 +295,7 @@
                 {
                     "name": "",
                     "id": "33eae1c6-e25a-4e63-851f-11ba7bf2cc68",
-                    "path": "<XInputController>/buttonWest",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -319,11 +328,44 @@
                 {
                     "name": "",
                     "id": "e9456197-76a4-469f-840d-5e8f9069d19d",
-                    "path": "<XInputController>/buttonNorth",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Curtain",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "66b5f1ee-1be2-4e46-97f2-e8e2f0ed5d5d",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PassLine",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e881cf0-62b3-4976-9344-f289d93a6eea",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PassLine",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59a5802f-9532-4e4c-af5a-2e209e20a0a8",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PassLine",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

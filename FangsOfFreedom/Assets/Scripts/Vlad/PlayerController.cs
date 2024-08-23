@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool shouldCloseCurtain = false;
     public bool isInDialogue = false;
     private bool hasClosed = false;
+    public bool changeLine = false;
 
      private void Start()
     {
@@ -184,6 +185,14 @@ public class PlayerController : MonoBehaviour
             shouldCloseCurtain = true;
             hasClosed = true;
             StartCoroutine(StopCloseCurtain());
+        }
+    }
+
+    public void PassLine(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            changeLine = true;
         }
     }
 

@@ -24,6 +24,13 @@ public class GameWin : MonoBehaviour
         blood = vlad.gameObject.GetComponent<Blood>();
     }
 
+    private void Awake()
+    {
+        SessionData.doubleJumpUnlock = false;
+        SessionData.frenzyUnlock = false;
+        SessionData.dashUnlock = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Player"))

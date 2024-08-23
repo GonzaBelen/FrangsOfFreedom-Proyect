@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\UI\FrenzyBar.cs" />
     <Compile Include="Assets\Scripts\Vlad\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Analitycs\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Funcionalities\ResetUnlockables.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Scenes\GameWin.cs" />

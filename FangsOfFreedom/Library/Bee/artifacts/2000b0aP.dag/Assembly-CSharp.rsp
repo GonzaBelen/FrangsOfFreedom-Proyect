@@ -324,6 +324,7 @@
 "Assets/Scripts/Entities/AnimationController.cs"
 "Assets/Scripts/Funcionalities/GroundFixer.cs"
 "Assets/Scripts/Funcionalities/LightGlobal.cs"
+"Assets/Scripts/Funcionalities/ResetUnlockables.cs"
 "Assets/Scripts/Funcionalities/RespawnController.cs"
 "Assets/Scripts/Funcionalities/Stats.cs"
 "Assets/Scripts/Funcionalities/StopControl.cs"
