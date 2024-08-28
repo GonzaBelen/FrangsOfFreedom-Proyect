@@ -15,7 +15,7 @@ public class Dialogues : MonoBehaviour
     private Rigidbody2D rb2D;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject portrait;
-    //[SerializeField] private GameObject dialogueMark;
+    [SerializeField] private GameObject dialogueMark;
     [SerializeField] private GameObject movementBarrier;
     [SerializeField] private GameObject nextDialogue;
     [SerializeField] private TMP_Text dialogueText;
@@ -36,7 +36,7 @@ public class Dialogues : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerInRange)
+        if (isPlayerInRange && playerController.changeLine)
         {
             if (!didDialogueStart)
             {
@@ -63,7 +63,7 @@ public class Dialogues : MonoBehaviour
         playerController.stop = true;
         stats.hungerReduction = 0;
         didDialogueStart = true;
-        //dialogueMark.SetActive(false);
+        dialogueMark.SetActive(false);
         dialoguePanel.SetActive(true);
         portrait.SetActive(true);
         lineIndex = 0;
@@ -86,7 +86,8 @@ public class Dialogues : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isPlayerInRange = true;
-            //dialogueMark.SetActive(true);
+            playerController.isInDialogueRange = true;
+            dialogueMark.SetActive(true);
         }    
     }
 
@@ -95,7 +96,8 @@ public class Dialogues : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isPlayerInRange = false;
-            //dialogueMark.SetActive(false);
+            playerController.isInDialogueRange = false;
+            dialogueMark.SetActive(false);
         }    
     }
 
@@ -123,7 +125,7 @@ public class Dialogues : MonoBehaviour
             didDialogueStart = false;
             portrait.SetActive(false);
             dialoguePanel.SetActive(false);
-            //dialogueMark.SetActive(true);
+            dialogueMark.SetActive(true);
             DestroyBarrier();
         }
     }

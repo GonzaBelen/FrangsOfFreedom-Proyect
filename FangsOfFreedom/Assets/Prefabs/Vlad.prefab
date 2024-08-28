@@ -81,6 +81,7 @@ Transform:
   - {fileID: 851292197534837724}
   - {fileID: 6053518895030151490}
   - {fileID: 5239022850353140423}
+  - {fileID: 589280057967128246}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1995724392170891987
@@ -142,22 +143,6 @@ MonoBehaviour:
     m_ActionName: Controls/Jump[/Keyboard/w,/Keyboard/upArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2850998934252057034}
-        m_TargetAssemblyTypeName: Attack, Assembly-CSharp
-        m_MethodName: AttackAction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f3f93595-efbb-47dc-bae0-49fc1ca9c411
-    m_ActionName: Controls/Attack[/Keyboard/space,/Keyboard/z]
-  - m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 8535891261749310889}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: Dash
@@ -176,7 +161,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8535891261749310889}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Curtain
+        m_MethodName: Action
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -188,22 +173,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 48c6e6c9-208c-40c5-9ff7-15d814972863
     m_ActionName: Controls/Curtain[/Keyboard/e,/Keyboard/x]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8535891261749310889}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: PassLine
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9daed598-bb07-4759-bb0d-578aa4233ee1
-    m_ActionName: Controls/PassLine[/Keyboard/j,/Keyboard/z,/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Controls
@@ -373,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f1e9fd028be5042ae651bf6cf4cf81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionController: {fileID: 6477229836089771548}
   timerObject: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
@@ -382,6 +352,7 @@ MonoBehaviour:
   isGrounded: 0
   remainingJumps: 2
   isJumping: 0
+  jumpingUp: 0
   movementHor: 0
   canMove: 1
   isDashing: 0
@@ -389,7 +360,9 @@ MonoBehaviour:
   remainingDash: 1
   stop: 0
   shouldCloseCurtain: 0
+  isInCurtain: 0
   isInDialogue: 0
+  isInDialogueRange: 0
   changeLine: 0
 --- !u!114 &213842607697079979
 MonoBehaviour:
@@ -420,6 +393,7 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 128
+  isAttacking: 0
   canAttack: 1
   range: 1.3
 --- !u!114 &6093755256649054161
@@ -554,7 +528,7 @@ MonoBehaviour:
   dashingTime: 0.15
   coolDown: 1.5
   hungerReduction: 10
-  timeToReduceHunger: 3
+  timeToReduceHunger: 8
 --- !u!114 &5277752116846048866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frenzyMeter: {fileID: 0}
-  comboValue: 15
+  comboValue: 20
   timerObject: {fileID: 0}
   eyes:
   - {fileID: 840466224442211340}
@@ -616,7 +590,7 @@ MonoBehaviour:
   - {x: 0.021666214, y: 0.28567812, z: 0}
   m_ShapePathHash: 1373796918
   m_Mesh: {fileID: 0}
-  m_InstanceId: 39816
+  m_InstanceId: 49870
   m_LocalBounds:
     m_Center: {x: -0.001761362, y: 0.43076098, z: 0}
     m_Extent: {x: 0.15143128, y: 0.14508288, z: 0}
@@ -637,6 +611,98 @@ MonoBehaviour:
   globalLight: {fileID: 0}
   maxFlashLight: 8
   minFlashLight: 0.5
+--- !u!1 &3614784759213515044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 589280057967128246}
+  - component: {fileID: 8006544701298682061}
+  - component: {fileID: 6477229836089771548}
+  m_Layer: 5
+  m_Name: Action Controller
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &589280057967128246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614784759213515044}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.65, y: 0.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2321048029338819253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &8006544701298682061
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614784759213515044}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.248191, y: 0.15617253}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.496382, y: 1.3123449}
+  m_EdgeRadius: 0
+--- !u!114 &6477229836089771548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614784759213515044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91219620c53f19c429f726cc693d94f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInCollide: 0
+  isInCollideDialogue: 0
 --- !u!1 &8343491150980393767
 GameObject:
   m_ObjectHideFlags: 0

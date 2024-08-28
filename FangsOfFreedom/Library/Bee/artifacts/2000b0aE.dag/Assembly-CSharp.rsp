@@ -385,6 +385,7 @@
 "Assets/Scripts/Enemies/EnemiesController.cs"
 "Assets/Scripts/Enemies/EnemiesMovement.cs"
 "Assets/Scripts/Entities/AnimationController.cs"
+"Assets/Scripts/Funcionalities/ActionController.cs"
 "Assets/Scripts/Funcionalities/GroundFixer.cs"
 "Assets/Scripts/Funcionalities/LightGlobal.cs"
 "Assets/Scripts/Funcionalities/ResetUnlockables.cs"

@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
-                    "type": "Button",
-                    "id": "f3f93595-efbb-47dc-bae0-49fc1ca9c411",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Dash",
                     "type": "Button",
                     "id": "9d05ef78-a3da-4ac5-bfd6-ca20fd31c5b6",
@@ -42,18 +33,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Curtain",
+                    "name": "Action",
                     "type": "Button",
                     "id": "48c6e6c9-208c-40c5-9ff7-15d814972863",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "PassLine",
-                    "type": "Button",
-                    "id": "9daed598-bb07-4759-bb0d-578aa4233ee1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -239,39 +221,6 @@
                 },
                 {
                     "name": "",
-                    "id": "3b45b2ca-4ae6-48dd-919e-84528c6269a9",
-                    "path": "<Keyboard>/z",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "76062dc8-32a5-4d9b-96d6-cc965327bb1e",
-                    "path": "<Keyboard>/j",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "be57d956-2882-4497-aff2-dfc7a9601aa7",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "06857b81-5e14-4899-9e67-298afb491b59",
                     "path": "<Keyboard>/l",
                     "interactions": "",
@@ -295,7 +244,7 @@
                 {
                     "name": "",
                     "id": "33eae1c6-e25a-4e63-851f-11ba7bf2cc68",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -306,66 +255,33 @@
                 {
                     "name": "",
                     "id": "a2a6514d-09f5-436d-a849-0372f3eb6e11",
-                    "path": "<Keyboard>/k",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Curtain",
+                    "action": "Action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "61d400d9-a086-41ec-a470-9719337eba2d",
-                    "path": "<Keyboard>/x",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Curtain",
+                    "action": "Action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "e9456197-76a4-469f-840d-5e8f9069d19d",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Curtain",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "66b5f1ee-1be2-4e46-97f2-e8e2f0ed5d5d",
-                    "path": "<Keyboard>/j",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PassLine",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3e881cf0-62b3-4976-9344-f289d93a6eea",
-                    "path": "<Keyboard>/z",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PassLine",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "59a5802f-9532-4e4c-af5a-2e209e20a0a8",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PassLine",
+                    "action": "Action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

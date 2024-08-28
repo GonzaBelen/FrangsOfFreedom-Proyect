@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 749386583602912254}
   - component: {fileID: 4655739566619572721}
   - component: {fileID: 4832576702302299871}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Dialogue Object
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 0}
   portrait: {fileID: 0}
+  dialogueMark: {fileID: 0}
   movementBarrier: {fileID: 0}
   nextDialogue: {fileID: 0}
   dialogueText: {fileID: 0}

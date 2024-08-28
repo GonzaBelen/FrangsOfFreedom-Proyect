@@ -32,6 +32,7 @@ public class NewBehaviourScript : MonoBehaviour
     public void LoadTutorial()
     {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("UI"), LayerMask.NameToLayer("Checkpoint"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("UI"), LayerMask.NameToLayer("Objects"), true);
         SessionData.level = 0;
         LevelStartEvent levelStart = new LevelStartEvent
         {

@@ -135,6 +135,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\UI\CameraFit.cs" />
     <Compile Include="Assets\Scripts\Analitycs\StaticsVariables.cs" />
+    <Compile Include="Assets\Scripts\Funcionalities\ActionController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
   </ItemGroup>
   <ItemGroup>

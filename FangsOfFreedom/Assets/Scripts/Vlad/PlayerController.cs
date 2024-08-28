@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Combos combos;
     private AnimationController animationController;
     private Dialogues dialogues;
+    [SerializeField] private ActionController actionController;
 
     [Header("Components")]
     private Rigidbody2D rb2D;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isGrounded;
     [SerializeField] private int remainingJumps;
     [SerializeField] private bool isJumping = false;
+    [SerializeField] private bool jumpingUp;
 
     [Header("Movement")]
     [SerializeField] private float movementHor = 0;
@@ -40,7 +42,9 @@ public class PlayerController : MonoBehaviour
     public bool stop = false;
     private bool changeAnimation = false;
     [SerializeField] private bool shouldCloseCurtain = false;
+    public bool isInCurtain = false;
     public bool isInDialogue = false;
+    public bool isInDialogueRange = false;
     private bool hasClosed = false;
     public bool changeLine = false;
 
@@ -95,8 +99,12 @@ public class PlayerController : MonoBehaviour
 
         if (isJumping && rb2D.velocity.y <= 0)
         {
+            jumpingUp = false;
             isJumping = false;
-        }
+        } else if (rb2D.velocity.y >= 0)
+            {
+                jumpingUp = true;
+            }
 
         if (isJumping && isGrounded)
         {
@@ -121,8 +129,8 @@ public class PlayerController : MonoBehaviour
                 remainingJumps = 1;
             }
             remainingDash = 1;
-            attack.canAttack = true;
-            if (movementHor != 0)
+            // attack.canAttack = true;
+            if (movementHor != 0 && !attack.isAttacking)
             {
                 if(!SessionData.hasFrenzy)
                 {
@@ -131,7 +139,7 @@ public class PlayerController : MonoBehaviour
                 {
                     animationController.ChangeAnimation("Move-Frenzy");
                 }
-            } else 
+            } else if (!attack.isAttacking)
             {
                 if(!SessionData.hasFrenzy)
                 {
@@ -141,15 +149,22 @@ public class PlayerController : MonoBehaviour
                     animationController.ChangeAnimation("Idle-Frenzy");
                 }
             }
-        } else 
+        } else if (!attack.isAttacking)
         {
-            attack.canAttack = false;
-            if(!SessionData.hasFrenzy)
+            // attack.canAttack = false;
+            if(!SessionData.hasFrenzy && jumpingUp)
             {
                 animationController.ChangeAnimation("Jump");
-            } else
+            } else if (!jumpingUp)
+            {
+                animationController.ChangeAnimation("Jump-Down");
+            }
+            if (SessionData.hasFrenzy && jumpingUp)
             {
                 animationController.ChangeAnimation("Jump-Frenzy");
+            } else if (SessionData.hasFrenzy && !jumpingUp)
+            {
+                animationController.ChangeAnimation("Jump-Frenzy-Down");
             }
         }
     }
@@ -178,21 +193,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Curtain(InputAction.CallbackContext context)
+    public void Action(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            shouldCloseCurtain = true;
-            hasClosed = true;
-            StartCoroutine(StopCloseCurtain());
-        }
-    }
-
-    public void PassLine(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            changeLine = true;
+            if (isInDialogueRange && actionController.isInCollideDialogue)
+            {
+                changeLine = true;
+            } else if (isInCurtain && !actionController.isInCollide)
+            {
+                shouldCloseCurtain = true;
+                hasClosed = true;
+                StartCoroutine(StopCloseCurtain());
+            } else 
+            {
+                attack.AttackAction();
+            }
+            
         }
     }
 
@@ -230,6 +247,11 @@ public class PlayerController : MonoBehaviour
             }  
             remainingDash = 1;
         }
+
+        if (collider.gameObject.CompareTag("Curtain"))
+        {
+            isInCurtain = true;
+        }  
     }
 
     public void SmokeAnimation()
@@ -283,7 +305,6 @@ public class PlayerController : MonoBehaviour
     {
         if (shouldCloseCurtain && collider.gameObject.CompareTag("Curtain"))
         {
-            Debug.Log("Se debe cerrar cortina");
             Curtain curtain = collider.gameObject.GetComponent<Curtain>();
             if (curtain != null && hasClosed)
             {
@@ -292,5 +313,13 @@ public class PlayerController : MonoBehaviour
                 hasClosed = false;
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Curtain"))
+        {
+            isInCurtain = false;
+        }  
     }
 }

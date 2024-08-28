@@ -16,7 +16,7 @@ public class Attack : MonoBehaviour
     [SerializeField] private LayerMask enemiesLayer;
     private AnimationController animationController;
     private PlayerController playerController;
-    // public bool isAttacking = false;
+    public bool isAttacking = false;
     public bool canAttack = true;
     public float range;
 
@@ -43,21 +43,23 @@ public class Attack : MonoBehaviour
         }
     }
 
-    public void AttackAction (InputAction.CallbackContext context)
+    public void AttackAction ()
     {
-        if (context.performed && canAttack && !playerController.stop)
+        if (canAttack && !playerController.stop)
         {
-            rb2D.velocity = Vector2.zero;
-            rb2D.angularVelocity = 0;
+            Debug.Log("se reconocio el input de atacar");
+            // rb2D.velocity = Vector2.zero;
+            // rb2D.angularVelocity = 0;
             
             if (!SessionData.hasFrenzy)
             {
+                Debug.Log("se inicializa la animacion de ataque");
                 animationController.ChangeAnimation("Attack");
             } else
             {
                 animationController.ChangeAnimation("Attack-Frenzy");
             }
-            
+            Debug.Log("se crea el collide del ataque");
             Collider2D[] enemies = Physics2D.OverlapCircleAll(attackRange.transform.position, stats.attackRange, enemiesLayer);
             foreach (Collider2D enemie in enemies)
             {
@@ -76,5 +78,17 @@ public class Attack : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackRange.transform.position, range);
+    }
+
+    public void InAttack()
+    {
+        Debug.Log("se inicio el ataque desde el animator");
+        isAttacking = true;
+    }
+
+    public void FinishedAttack()
+    {
+        Debug.Log("se finalizo el ataque desde el animator");
+        isAttacking = false;
     }
 }
