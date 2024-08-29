@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Analytics.unity
     guid: a0091527bab8a1f4ab57ed1fbe1e2a96
   - enabled: 1

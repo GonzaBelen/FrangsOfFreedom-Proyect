@@ -17,6 +17,7 @@ public class StaticsVariables : MonoBehaviour
         public static bool doubleJumpUnlock = false;
         public static bool frenzyUnlock = false;
         public static bool dashUnlock = false;
+        public static bool controllerConnected = false;
     }
     
     private void Awake()

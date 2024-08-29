@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.Services.Analytics;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using static EventManager;
+using static StaticsVariables;
+
+public class ButtonPressJoystick : MonoBehaviour
+{
+    private bool isAlreadyChangeScene = false;
+    public UnityEvent OnPress;
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire1") && !isAlreadyChangeScene)
+        {
+            isAlreadyChangeScene = true;
+            OnPress?.Invoke();
+        }
+    }
+}

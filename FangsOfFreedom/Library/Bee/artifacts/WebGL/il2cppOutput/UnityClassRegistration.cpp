@@ -87,6 +87,9 @@ extern "C" void RegisterStaticallyLinkedModulesGranular()
 	void RegisterModule_VR();
 	RegisterModule_VR();
 
+	void RegisterModule_Video();
+	RegisterModule_Video();
+
 	void RegisterModule_WebGL();
 	RegisterModule_WebGL();
 
@@ -203,12 +206,14 @@ class VFXManager; template <> void RegisterUnityClass<VFXManager>(const char*);
 class VisualEffect; template <> void RegisterUnityClass<VisualEffect>(const char*);
 class VisualEffectAsset; template <> void RegisterUnityClass<VisualEffectAsset>(const char*);
 class VisualEffectObject; template <> void RegisterUnityClass<VisualEffectObject>(const char*);
+class VideoClip; template <> void RegisterUnityClass<VideoClip>(const char*);
+class VideoPlayer; template <> void RegisterUnityClass<VideoPlayer>(const char*);
 
 void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 100 non stripped classes
+	//Total: 102 non stripped classes
 	//0. Animation
 	RegisterUnityClass<Animation>("Animation");
 	//1. AnimationClip
@@ -409,5 +414,9 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<VisualEffectAsset>("VFX");
 	//99. VisualEffectObject
 	RegisterUnityClass<VisualEffectObject>("VFX");
+	//100. VideoClip
+	RegisterUnityClass<VideoClip>("Video");
+	//101. VideoPlayer
+	RegisterUnityClass<VideoPlayer>("Video");
 
 }

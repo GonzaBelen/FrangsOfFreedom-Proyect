@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 5479778394173456954}
   - component: {fileID: 2533473087689300472}
   - component: {fileID: 229804667224648814}
+  - component: {fileID: 41906937959131384}
   m_Layer: 6
   m_Name: Vlad
   m_TagString: Player
@@ -590,7 +591,7 @@ MonoBehaviour:
   - {x: 0.021666214, y: 0.28567812, z: 0}
   m_ShapePathHash: 1373796918
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49870
+  m_InstanceId: 89870
   m_LocalBounds:
     m_Center: {x: -0.001761362, y: 0.43076098, z: 0}
     m_Extent: {x: 0.15143128, y: 0.14508288, z: 0}
@@ -611,6 +612,19 @@ MonoBehaviour:
   globalLight: {fileID: 0}
   maxFlashLight: 8
   minFlashLight: 0.5
+--- !u!114 &41906937959131384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212179697958648302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0adb9b68de072c344a5a7d0c22d5e3b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isControllerConnected: 0
 --- !u!1 &3614784759213515044
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +690,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.248191, y: 0.15617253}
+  m_Offset: {x: 0.026708871, y: 0.15617251}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -687,7 +701,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.496382, y: 1.3123449}
+  m_Size: {x: 1.9393463, y: 1.3123449}
   m_EdgeRadius: 0
 --- !u!114 &6477229836089771548
 MonoBehaviour:
