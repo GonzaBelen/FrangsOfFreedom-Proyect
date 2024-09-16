@@ -15,6 +15,8 @@ public class EnemiesMovement : MonoBehaviour
 
     private void Start()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemies"), LayerMask.NameToLayer("Obstacles"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Death"), LayerMask.NameToLayer("Obstacles"), true);
         rb2D = GetComponent<Rigidbody2D>();
     }
 

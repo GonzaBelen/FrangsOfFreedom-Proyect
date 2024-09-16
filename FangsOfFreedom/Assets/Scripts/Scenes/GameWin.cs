@@ -14,22 +14,20 @@ public class GameWin : MonoBehaviour
     private Timer timer;
     [SerializeField] GameObject timerObject;
     private Combos combos;
-    private Blood blood;
 
     private void Start()
     {
         timer = timerObject.gameObject.GetComponent<Timer>();
         respawnController = vlad.gameObject.GetComponent<RespawnController>();
         combos = vlad.gameObject.GetComponent<Combos>();
-        blood = vlad.gameObject.GetComponent<Blood>();
     }
 
-    private void Awake()
-    {
-        SessionData.doubleJumpUnlock = false;
-        SessionData.frenzyUnlock = false;
-        SessionData.dashUnlock = false;
-    }
+    // private void Awake()
+    // {
+    //     SessionData.doubleJumpUnlock = false;
+    //     SessionData.frenzyUnlock = false;
+    //     SessionData.dashUnlock = false;
+    // }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -51,8 +49,7 @@ public class GameWin : MonoBehaviour
                 AnalyticsService.Instance.RecordEvent(levelComplete);
                 AnalyticsService.Instance.Flush();
 
-                SceneManager.LoadScene("Level1");
-                SessionData.level = 1;
+                SessionData.level++;
 
                 LevelStartEvent levelStart = new LevelStartEvent
                 {
@@ -63,6 +60,8 @@ public class GameWin : MonoBehaviour
                 AnalyticsService.Instance.Flush();
 
                 SessionData.hasFrenzy = false;
+                
+                SceneManager.LoadScene("LoadScreen");
             }
         }
     }

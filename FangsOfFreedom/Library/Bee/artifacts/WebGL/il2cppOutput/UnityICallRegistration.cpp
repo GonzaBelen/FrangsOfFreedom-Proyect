@@ -606,6 +606,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AsyncOperation_get_isDone();
 		Register_UnityEngine_AsyncOperation_get_isDone();
 
+		//System.Single UnityEngine.AsyncOperation::get_progress()
+		void Register_UnityEngine_AsyncOperation_get_progress();
+		Register_UnityEngine_AsyncOperation_get_progress();
+
 		//System.Void UnityEngine.AsyncOperation::InternalDestroy(System.IntPtr)
 		void Register_UnityEngine_AsyncOperation_InternalDestroy();
 		Register_UnityEngine_AsyncOperation_InternalDestroy();
@@ -626,9 +630,17 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AudioSource_get_isPlaying();
 		Register_UnityEngine_AudioSource_get_isPlaying();
 
+		//System.Void UnityEngine.AudioSource::Pause()
+		void Register_UnityEngine_AudioSource_Pause();
+		Register_UnityEngine_AudioSource_Pause();
+
 		//System.Void UnityEngine.AudioSource::PlayHelper(UnityEngine.AudioSource,System.UInt64)
 		void Register_UnityEngine_AudioSource_PlayHelper();
 		Register_UnityEngine_AudioSource_PlayHelper();
+
+		//System.Void UnityEngine.AudioSource::UnPause()
+		void Register_UnityEngine_AudioSource_UnPause();
+		Register_UnityEngine_AudioSource_UnPause();
 
 	//End Registrations for type : UnityEngine.AudioSource
 
@@ -5818,6 +5830,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Time_get_unscaledTime();
 		Register_UnityEngine_Time_get_unscaledTime();
 
+		//System.Void UnityEngine.Time::set_timeScale(System.Single)
+		void Register_UnityEngine_Time_set_timeScale();
+		Register_UnityEngine_Time_set_timeScale();
+
 	//End Registrations for type : UnityEngine.Time
 
 	//Start Registrations for type : UnityEngine.TouchScreenKeyboard
@@ -6305,6 +6321,14 @@ void RegisterAllStrippedInternalCalls()
 	//End Registrations for type : UnityEngine.VFX.VisualEffect
 
 	//Start Registrations for type : UnityEngine.Video.VideoPlayer
+
+		//System.Void UnityEngine.Video.VideoPlayer::Pause()
+		void Register_UnityEngine_Video_VideoPlayer_Pause();
+		Register_UnityEngine_Video_VideoPlayer_Pause();
+
+		//System.Void UnityEngine.Video.VideoPlayer::Play()
+		void Register_UnityEngine_Video_VideoPlayer_Play();
+		Register_UnityEngine_Video_VideoPlayer_Play();
 
 		//System.Void UnityEngine.Video.VideoPlayer::set_clip(UnityEngine.Video.VideoClip)
 		void Register_UnityEngine_Video_VideoPlayer_set_clip();

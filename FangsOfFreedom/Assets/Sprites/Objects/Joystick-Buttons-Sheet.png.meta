@@ -172,6 +172,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Joystick-Buttons-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a962412974aafce4fa9d54c9f17e6482
+      internalID: -622930503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -186,6 +207,7 @@ TextureImporter:
       Joystick-Buttons-Sheet_0: -2059369691
       Joystick-Buttons-Sheet_1: 1055669903
       Joystick-Buttons-Sheet_2: -1929723333
+      Joystick-Buttons-Sheet_3: -622930503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

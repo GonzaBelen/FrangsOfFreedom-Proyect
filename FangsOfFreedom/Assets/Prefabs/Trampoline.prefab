@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6ffcd4dab4bac4d8be5b0bf64911fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 10
+  strength: 33
   clip: {fileID: 8766839102203444426}
 --- !u!82 &8766839102203444426
 AudioSource:

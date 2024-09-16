@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using static StaticsVariables;
 
 public class LightExposure : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class LightExposure : MonoBehaviour
     {
         if (other.CompareTag("Light"))
         {
+            SessionData.changeState = false;
             hungerController.LightExposing();
             isInExposure = true;
         }
@@ -48,7 +50,8 @@ public class LightExposure : MonoBehaviour
     {
         if (other.CompareTag("Light"))
         {
-            hungerController.LightExposing();
+            SessionData.changeState = false;
+            hungerController.FinishLightExposing();
             isInExposure = false;
         }
     }

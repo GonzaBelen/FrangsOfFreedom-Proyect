@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bef1adb32be7f949b97fd11fc1d5b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnPress:
+  OnPressA:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 886085054}
@@ -673,6 +673,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnPressX:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1336799290
 MonoBehaviour:
   m_ObjectHideFlags: 0

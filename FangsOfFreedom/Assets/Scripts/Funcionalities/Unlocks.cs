@@ -19,4 +19,19 @@ public class Unlocks : MonoBehaviour
     {
         SessionData.dashUnlock = true;
     }
+
+    public void DisableDoubleJump()
+    {
+        SessionData.doubleJumpUnlock = false;
+    }
+
+    public void DisableFrenzy()
+    {
+        SessionData.frenzyUnlock = false;
+    }
+
+    public void DisableDash()
+    {
+        SessionData.dashUnlock = false;
+    }
 }

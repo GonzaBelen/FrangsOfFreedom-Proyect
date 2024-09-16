@@ -50,7 +50,7 @@ public class RespawnController : MonoBehaviour
 
     private void Respawn()
     {
-        Debug.Log("Checkpoint");
+        // Debug.Log("Checkpoint");
         positionToMove = lastCheckpoint.GetCheckpointPosition();
         lastCheckpointName = lastCheckpoint.name;
     }
@@ -79,8 +79,9 @@ public class RespawnController : MonoBehaviour
             }
         }
         stop = false;
-        FixGround();
+        StartCoroutine(FixGround());
         isTakingDamage = true;
+        SessionData.isRespanwning = true;
     }
 
     public void DoneRespawn()
@@ -112,6 +113,8 @@ public class RespawnController : MonoBehaviour
         stop = true;
         isTakingDamage = false;
         SessionData.canChange = true;
+        SessionData.isRespanwning = false;
+        Debug.Log("isRespawning termino y se puso en false");
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -121,7 +124,7 @@ public class RespawnController : MonoBehaviour
             if (!isTakingDamage)
             {
                 lastCheckpoint = other.GetComponent<CheckpointController>();
-                Debug.Log("Checkpoint alcanzado!");
+                // Debug.Log("Checkpoint alcanzado!");
                 Respawn();
             }
         }
@@ -156,12 +159,21 @@ public class RespawnController : MonoBehaviour
         }
     }
 
-    async void FixGround()
+    // async void FixGround()
+    // {
+    //     while (!stop)
+    //     {
+    //         rb2D.AddForce(direction * strength, ForceMode2D.Impulse);
+    //         await Task.Delay(2000);
+    //     }        
+    // }
+
+    private IEnumerator FixGround()
     {
         while (!stop)
         {
             rb2D.AddForce(direction * strength, ForceMode2D.Impulse);
-            await Task.Delay(2000);
-        }        
+            yield return new WaitForSeconds(2);
+        }    
     }
 }

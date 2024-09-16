@@ -13,7 +13,9 @@ public class HungerController : MonoBehaviour
     [SerializeField] private HungerBar hungerBar;
     private float hunger = 100;
     private float currentTimeToReduceHunger;
-    
+    private bool lightExposure = false;
+    [SerializeField] private float hungerReductionMultiplier = 1;
+    [SerializeField] private float timeCounter = 0;
 
     private void Start()
     {
@@ -25,7 +27,20 @@ public class HungerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        currentTimeToReduceHunger -= Time.deltaTime;
+        if (lightExposure)
+        {
+            timeCounter += Time.fixedDeltaTime;
+
+            if (timeCounter >= 1)
+                {
+                    hungerReductionMultiplier *= 2;
+                    timeCounter = 0;
+
+                    Debug.Log("El multiplicador de hambre ha sido aumentado.");
+                }
+        }
+
+        currentTimeToReduceHunger -= Time.deltaTime * hungerReductionMultiplier;
         if(currentTimeToReduceHunger <= 0)
         {
             hunger -= stats.hungerReduction;
@@ -40,8 +55,12 @@ public class HungerController : MonoBehaviour
         hungerBar.UpdateSlider(hunger);
 
 
-        if (hunger <= 0)
+        if (hunger <= 0 && !SessionData.isRespanwning)
         {
+            combos.isInFrenzy = false;
+            Frenzy frenzy = GetComponent<Frenzy>();
+            frenzy.FinishFrenzy();
+            SessionData.hasFrenzy = false;
             SessionData.deathsCounting++;
             SessionData.canCount = false;
             if(!stopReceivingData)
@@ -62,7 +81,6 @@ public class HungerController : MonoBehaviour
 
     public void GainHunger(int amount)
     {
-        //parametro para saber si junto botella
         hunger += amount;
         hunger = Mathf.Clamp(hunger, 0, 100);
         combos.Combo();
@@ -70,11 +88,13 @@ public class HungerController : MonoBehaviour
 
     public void LightExposing()
     {
-        stats.timeToReduceHunger = 2.5f;
+        lightExposure = true;
     }
 
     public void FinishLightExposing()
     {
-        stats.timeToReduceHunger = 5;
+        lightExposure = false;
+        hungerReductionMultiplier = 1;
+        timeCounter = 0;
     }
 }

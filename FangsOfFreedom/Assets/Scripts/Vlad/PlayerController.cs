@@ -26,17 +26,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 boxDimensions;
     [SerializeField] private bool isGrounded;
     [SerializeField] private int remainingJumps;
-    [SerializeField] private bool isJumping = false;
+    [SerializeField] public bool isJumping = false;
     [SerializeField] private bool jumpingUp;
 
     [Header("Movement")]
     [SerializeField] private float movementHor = 0;
     [SerializeField] private bool canMove = true;
+    [SerializeField] private float targetSpeed;
 
     [Header("Dash")]    
     public bool isDashing;
     [SerializeField] private bool canDash = true;
     [SerializeField] private int remainingDash = 1;
+
+    [Header("Platforms")]
+    public bool isOnPlatform;
+    public Rigidbody2D rb2DPlatform;
+    public float platformDirection;
 
     [Header("Secondary variables")]
     public bool stop = false;
@@ -93,7 +99,14 @@ public class PlayerController : MonoBehaviour
 
         if (canMove)
         {
-            rb2D.velocity = new Vector2(movementHor * stats.movementSpeed, rb2D.velocity.y);
+            targetSpeed = movementHor * stats.movementSpeed;
+            rb2D.velocity = new Vector2(targetSpeed, rb2D.velocity.y);
+
+            if (isOnPlatform)
+            {
+                rb2D.velocity = new Vector2(targetSpeed + rb2DPlatform.velocity.x, rb2D.velocity.y);
+            }
+
             Flip(movementHor);
         }
 
@@ -116,6 +129,14 @@ public class PlayerController : MonoBehaviour
             if (!isJumping && !isGrounded)
             {
                 remainingJumps = 1;
+            }
+        }
+
+        if (!SessionData.doubleJumpUnlock)
+        {
+            if (!isJumping && !isGrounded)
+            {
+                remainingJumps = 0;
             }
         }
 
@@ -173,6 +194,10 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && remainingJumps > 0 && !stop && !isDashing)
         {
+            if (isOnPlatform)
+            {
+                rb2D.gravityScale /= 50;
+            }
             rb2D.velocity = new Vector2(rb2D.velocity.x, stats.jumpForce);
             isJumping = true;
             remainingJumps--;
@@ -210,6 +235,16 @@ public class PlayerController : MonoBehaviour
                 attack.AttackAction();
             }
             
+        }
+    }
+
+    public void BatJump()
+    {
+        rb2D.velocity = new Vector2(rb2D.velocity.x, stats.jumpForce);
+        isJumping = true;
+        if (SessionData.doubleJumpUnlock)
+        {
+            remainingJumps = 1;
         }
     }
 

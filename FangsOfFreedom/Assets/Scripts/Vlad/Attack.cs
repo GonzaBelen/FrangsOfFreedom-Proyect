@@ -39,6 +39,7 @@ public class Attack : MonoBehaviour
             {
                 EnemiesController enemiesController = enemie.GetComponentInChildren<EnemiesController>();
                 enemiesController.TakeDamage();
+                combos.Combo();
             }
         }
     }
@@ -47,19 +48,19 @@ public class Attack : MonoBehaviour
     {
         if (canAttack && !playerController.stop)
         {
-            Debug.Log("se reconocio el input de atacar");
+            // Debug.Log("se reconocio el input de atacar");
             // rb2D.velocity = Vector2.zero;
             // rb2D.angularVelocity = 0;
             
             if (!SessionData.hasFrenzy)
             {
-                Debug.Log("se inicializa la animacion de ataque");
+                // Debug.Log("se inicializa la animacion de ataque");
                 animationController.ChangeAnimation("Attack");
             } else
             {
                 animationController.ChangeAnimation("Attack-Frenzy");
             }
-            Debug.Log("se crea el collide del ataque");
+            // Debug.Log("se crea el collide del ataque");
             Collider2D[] enemies = Physics2D.OverlapCircleAll(attackRange.transform.position, stats.attackRange, enemiesLayer);
             foreach (Collider2D enemie in enemies)
             {
@@ -82,13 +83,13 @@ public class Attack : MonoBehaviour
 
     public void InAttack()
     {
-        Debug.Log("se inicio el ataque desde el animator");
+        // Debug.Log("se inicio el ataque desde el animator");
         isAttacking = true;
     }
 
     public void FinishedAttack()
     {
-        Debug.Log("se finalizo el ataque desde el animator");
+        // Debug.Log("se finalizo el ataque desde el animator");
         isAttacking = false;
     }
 }

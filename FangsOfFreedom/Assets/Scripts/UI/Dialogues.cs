@@ -34,10 +34,15 @@ public class Dialogues : MonoBehaviour
     [SerializeField] private VideoClip tutorialClip;
     [SerializeField] private GameObject videoObject;
     [SerializeField] private GameObject tutorialVideos;
+    private VideoChanger videoChanger;
     private bool isInVideo = false;
     
     private void Start()
     {
+        if (videoObject != null)
+        {
+            videoChanger = videoObject.gameObject.GetComponent<VideoChanger>();
+        }
         UnityServices.InitializeAsync();
         AnalyticsService.Instance.StartDataCollection();
         player = GameObject.FindWithTag("Player");
@@ -91,6 +96,8 @@ public class Dialogues : MonoBehaviour
         {
             if (!didDialogueStart)
             {
+                videoChanger?.ChangeVideo(tutorialClip);
+                videoChanger?.PauseClip();
                 playerController.changeLine = false;
                 StartDialogue();
             } else if (dialogueText.text == dialogueLines[lineIndex]  && playerController.changeLine)
@@ -160,14 +167,13 @@ public class Dialogues : MonoBehaviour
             StartCoroutine(ShowLine());
         } else
         {
-            if (tutorialVideos != null)
+            if (videoObject!= null)
             {
+                videoChanger?.PlayClip();
                 isInVideo = true;
                 portrait.SetActive(false);
                 dialoguePanel.SetActive(false);
                 tutorialVideos.SetActive(true);
-                VideoChanger videoChanger = videoObject.gameObject.GetComponent<VideoChanger>();
-                videoChanger.ChangeVideo(tutorialClip);
                 return;
             }     
             FinishDialogue();

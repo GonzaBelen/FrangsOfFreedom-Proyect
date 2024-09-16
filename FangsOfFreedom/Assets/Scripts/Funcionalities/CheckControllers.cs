@@ -41,7 +41,7 @@ public class CheckControllers : MonoBehaviour
                 SessionData.controllerConnected = true;
                 Debug.Log("Controller connected: " + device.name);
             }
-            else if (change == InputDeviceChange.Removed)
+            else if (change == InputDeviceChange.Removed && device is Gamepad)
             {
                 isControllerConnected = false;
                 SessionData.controllerConnected = false;
