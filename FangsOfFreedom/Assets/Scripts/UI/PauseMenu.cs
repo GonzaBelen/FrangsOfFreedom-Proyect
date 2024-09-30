@@ -22,14 +22,6 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-
-        if(SessionData.isPaused && Input.GetKeyDown(KeyCode.JoystickButton1))
-        {
-            LoadMenu();
-        } else if (SessionData.isPaused && Input.GetKeyDown(KeyCode.JoystickButton0))
-        {
-            Resume();
-        }
     }
 
     public void Resume()
@@ -48,15 +40,9 @@ public class PauseMenu : MonoBehaviour
         SessionData.isPaused = true;
     }
 
-    public void LoadMenu()
+    public void ChangeScene()
     {
         StopAllCoroutines();
-        Time.timeScale = 1f;
-        //SceneManager.LoadScene("MainMenu");
-    }
-
-    public void UnPaused()
-    {
         Time.timeScale = 1f;
     }
 }

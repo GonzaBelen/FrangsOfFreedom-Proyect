@@ -12,7 +12,12 @@ public class LightExposure : MonoBehaviour
     [SerializeField] private Light2D globalLight;
     [SerializeField] private float maxFlashLight;
     [SerializeField] private float minFlashLight;
-    private bool isInExposure;
+    [SerializeField] private bool isInExposure;
+    [SerializeField] private GameObject lightTransmitter;
+    [SerializeField] private GameObject rayCastReceptor;
+    [SerializeField] private float rayLength;
+    [SerializeField] private LayerMask player;
+    [SerializeField] private bool isInLight = false;
 
     private void Start()
     {
@@ -34,15 +39,52 @@ public class LightExposure : MonoBehaviour
                 globalLight.intensity -= exposureEnd * Time.deltaTime;
             }
         }
+
+        if (lightTransmitter != null && rayCastReceptor != null && isInLight)
+        {
+            Vector2 direction = (rayCastReceptor.transform.position - lightTransmitter.transform.position).normalized;
+            RaycastHit2D hit = Physics2D.Raycast(lightTransmitter.transform.position, direction, rayLength, player);
+
+            Debug.DrawRay(lightTransmitter.transform.position, direction * rayLength, Color.red);
+
+            if (hit.collider != null) 
+            {
+                if (!hit.collider.CompareTag("Player"))
+                {
+                    hungerController.FinishLightExposing();
+                    isInExposure = false;
+                    SessionData.changeState = false;
+                    
+                    Debug.DrawRay(lightTransmitter.transform.position, direction * hit.distance, Color.red);
+                }
+                else
+                {
+                    SessionData.changeState = false;
+                    hungerController.LightExposing();
+                    isInExposure = true;
+                }
+            }
+        }
+    }
+
+    private void Update()
+    {
+       
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Light"))
         {
-            SessionData.changeState = false;
-            hungerController.LightExposing();
-            isInExposure = true;
+            isInLight = true;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Light"))
+        {
+            lightTransmitter = other.gameObject;
         }
     }
 
@@ -50,9 +92,17 @@ public class LightExposure : MonoBehaviour
     {
         if (other.CompareTag("Light"))
         {
-            SessionData.changeState = false;
-            hungerController.FinishLightExposing();
-            isInExposure = false;
+            ExitLightExposure();
         }
+    }
+
+    public void ExitLightExposure()
+    {
+        Debug.Log("Exit exposure");
+        lightTransmitter = null;
+        SessionData.changeState = false;
+        hungerController.FinishLightExposing();
+        isInExposure = false;
+        isInLight = false;
     }
 }

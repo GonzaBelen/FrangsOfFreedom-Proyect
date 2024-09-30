@@ -13,7 +13,7 @@ public class HungerController : MonoBehaviour
     [SerializeField] private HungerBar hungerBar;
     private float hunger = 100;
     private float currentTimeToReduceHunger;
-    private bool lightExposure = false;
+    public bool lightExposure = false;
     [SerializeField] private float hungerReductionMultiplier = 1;
     [SerializeField] private float timeCounter = 0;
 
@@ -33,7 +33,7 @@ public class HungerController : MonoBehaviour
 
             if (timeCounter >= 1)
                 {
-                    hungerReductionMultiplier *= 2;
+                    hungerReductionMultiplier *= 5;
                     timeCounter = 0;
 
                     Debug.Log("El multiplicador de hambre ha sido aumentado.");
@@ -88,11 +88,13 @@ public class HungerController : MonoBehaviour
 
     public void LightExposing()
     {
+        Debug.Log("esta en contacto con la luz");
         lightExposure = true;
     }
 
     public void FinishLightExposing()
     {
+        Debug.Log("no esta en contacto con la luz");
         lightExposure = false;
         hungerReductionMultiplier = 1;
         timeCounter = 0;

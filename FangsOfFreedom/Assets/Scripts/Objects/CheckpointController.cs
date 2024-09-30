@@ -10,7 +10,7 @@ public class CheckpointController : MonoBehaviour
     [SerializeField] private AudioSource clip;
     [SerializeField] private AnimationController animationController;
     [SerializeField] private Light2D[] candles;
-    private bool isActive = false;
+    public bool isActive = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

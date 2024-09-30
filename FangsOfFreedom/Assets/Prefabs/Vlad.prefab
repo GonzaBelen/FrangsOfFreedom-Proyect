@@ -83,6 +83,7 @@ Transform:
   - {fileID: 6053518895030151490}
   - {fileID: 5239022850353140423}
   - {fileID: 589280057967128246}
+  - {fileID: 5808153305030555967}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1995724392170891987
@@ -328,7 +329,8 @@ PolygonCollider2D:
       - {x: -0.12910458, y: 0.87045723}
       - {x: -0.2472853, y: 0.5625639}
       - {x: -0.24826415, y: 0.006403815}
-      - {x: 0.26211786, y: 0.00623689}
+      - {x: -0.2367726, y: 0.005881413}
+      - {x: 0.25031817, y: 0.069446325}
       - {x: 0.24825417, y: 0.5865947}
   m_UseDelaunayMesh: 0
 --- !u!114 &8535891261749310889
@@ -369,6 +371,8 @@ MonoBehaviour:
   isInDialogue: 0
   isInDialogueRange: 0
   changeLine: 0
+  hangCounter: 0
+  hangTime: 0.2
 --- !u!114 &213842607697079979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hungerBar: {fileID: 0}
+  lightExposure: 0
   hungerReductionMultiplier: 1
   timeCounter: 0
 --- !u!114 &994760613921336272
@@ -586,7 +591,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 0
+  m_SelfShadows: 1
   m_ApplyToSortingLayers: 0000000073912673792a14a2a9beb49d
   m_ShapePath:
   - {x: -0.15319264, y: 0.34287724, z: 0}
@@ -597,7 +602,7 @@ MonoBehaviour:
   - {x: 0.021666214, y: 0.28567812, z: 0}
   m_ShapePathHash: 1373796918
   m_Mesh: {fileID: 0}
-  m_InstanceId: 191418
+  m_InstanceId: -16610
   m_LocalBounds:
     m_Center: {x: -0.001761362, y: 0.43076098, z: 0}
     m_Extent: {x: 0.15143128, y: 0.14508288, z: 0}
@@ -618,6 +623,12 @@ MonoBehaviour:
   globalLight: {fileID: 0}
   maxFlashLight: 8
   minFlashLight: 0.5
+  lightTransmitter: {fileID: 0}
+  rayCastReceptor: {fileID: 8063826221716629145}
+  rayLength: 15
+  player:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!114 &41906937959131384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +734,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInCollide: 0
   isInCollideDialogue: 0
+--- !u!1 &8063826221716629145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5808153305030555967}
+  m_Layer: 6
+  m_Name: Raycast Receptor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5808153305030555967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8063826221716629145}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.15600006, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2321048029338819253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8343491150980393767
 GameObject:
   m_ObjectHideFlags: 0

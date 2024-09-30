@@ -124,8 +124,12 @@ public class RespawnController : MonoBehaviour
             if (!isTakingDamage)
             {
                 lastCheckpoint = other.GetComponent<CheckpointController>();
+                if (!lastCheckpoint.isActive)
+                {
+                    Respawn();
+                }
                 // Debug.Log("Checkpoint alcanzado!");
-                Respawn();
+                
             }
         }
     }

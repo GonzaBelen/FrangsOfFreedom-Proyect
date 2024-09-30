@@ -327,6 +327,7 @@ UnityEngine.CullingGroup::set_targetCamera
 UnityEngine.Cursor::SetCursor_Injected
 UnityEngine.Cursor::get_lockState
 UnityEngine.Debug::ExtractStackTraceNoAlloc
+UnityEngine.Debug::DrawLine_Injected
 UnityEngine.DebugLogHandler::Internal_Log
 UnityEngine.DebugLogHandler::Internal_LogException
 UnityEngine.Display::RequiresSrgbBlitToBackbufferImpl
@@ -1093,6 +1094,7 @@ UnityEngine.Rigidbody::get_mass
 UnityEngine.Rigidbody::get_velocity_Injected
 UnityEngine.Rigidbody::set_detectCollisions
 UnityEngine.Rigidbody::set_isKinematic
+UnityEngine.Rigidbody2D::get_gravityScale
 UnityEngine.Rigidbody2D::get_mass
 UnityEngine.Rigidbody2D::AddForce_Injected
 UnityEngine.Rigidbody2D::get_velocity_Injected

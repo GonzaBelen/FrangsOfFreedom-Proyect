@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
     public bool isInDialogueRange = false;
     private bool hasClosed = false;
     public bool changeLine = false;
+    [SerializeField] private float hangCounter;
+    [SerializeField] private float hangTime = .2f;
 
      private void Start()
     {
@@ -97,6 +99,14 @@ public class PlayerController : MonoBehaviour
 
         isGrounded = Physics2D.OverlapBox(groundController.position, boxDimensions, 0f, whatIsGround);
 
+        if (isGrounded)
+        {
+            hangCounter = hangTime;
+        } else
+        {
+            hangCounter -= Time.deltaTime;
+        }
+
         if (canMove)
         {
             targetSpeed = movementHor * stats.movementSpeed;
@@ -126,7 +136,7 @@ public class PlayerController : MonoBehaviour
 
         if (remainingJumps == 2)
         {
-            if (!isJumping && !isGrounded)
+            if (!isJumping && !isGrounded && hangCounter <=0)
             {
                 remainingJumps = 1;
             }
@@ -134,7 +144,7 @@ public class PlayerController : MonoBehaviour
 
         if (!SessionData.doubleJumpUnlock)
         {
-            if (!isJumping && !isGrounded)
+            if (!isJumping && !isGrounded && hangCounter <=0)
             {
                 remainingJumps = 0;
             }
