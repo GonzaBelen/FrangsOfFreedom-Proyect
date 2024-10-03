@@ -6,23 +6,31 @@ using UnityEngine;
 public class RetractableSpikes : MonoBehaviour
 {
     private AnimationController animationController;
-    [SerializeField] private int timeToDeploy;
-    [SerializeField] private int timeToRetract;
+    [SerializeField] private int delayDeploy;
+    [SerializeField] private int delayRetract;
+    [SerializeField] private int delayBetween;
     private PolygonCollider2D polygonCollider2D;
     private bool isDeploy = true;
+    public bool hasDelay = false;
 
     private void Start()
     {
         animationController = GetComponent<AnimationController>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
-        Deploy();
+        if (hasDelay)
+        {
+            Delay();
+        } else
+        {
+            Deploy();
+        }        
     }
 
     private async void Deploy()
     {
         isDeploy = true;
         animationController.ChangeAnimation("Activation");
-        await Task.Delay(timeToRetract);
+        await Task.Delay(delayDeploy);
         Retract();
     }
 
@@ -31,7 +39,7 @@ public class RetractableSpikes : MonoBehaviour
         isDeploy = false;
         ManageCollider();
         animationController.ChangeAnimation("Desactivation");
-        await Task.Delay(timeToDeploy);
+        await Task.Delay(delayRetract);
         Deploy();
     }
 
@@ -44,5 +52,11 @@ public class RetractableSpikes : MonoBehaviour
         {
             polygonCollider2D.enabled = false;
         }
+    }
+
+    private async void Delay()
+    {
+        await Task.Delay(delayRetract - delayBetween);
+        Deploy();
     }
 }

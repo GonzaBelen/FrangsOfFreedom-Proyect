@@ -411,6 +411,7 @@ UnityEngine.GameObject::GetComponentInChildren
 UnityEngine.GameObject::GetComponentInParent
 UnityEngine.GameObject::Internal_AddComponentWithType
 UnityEngine.GameObject::TryGetComponentInternal
+UnityEngine.GameObject::Find
 UnityEngine.GameObject::FindGameObjectWithTag
 UnityEngine.GameObject::get_transform
 UnityEngine.GeometryUtility::TestPlanesAABB_Injected

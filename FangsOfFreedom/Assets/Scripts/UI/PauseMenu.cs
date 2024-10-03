@@ -26,6 +26,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Debug.Log("resume");
         audioSrc.UnPause();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
@@ -34,6 +35,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Pause()
     {
+        Debug.Log("pause");
         audioSrc.Pause();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
@@ -42,6 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ChangeScene()
     {
+        Debug.Log("cambio de escena");
         StopAllCoroutines();
         Time.timeScale = 1f;
     }

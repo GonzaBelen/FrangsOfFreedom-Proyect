@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385165922623073555}
   - component: {fileID: 7200202817484139421}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light Range
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6457833106638498141}
   - component: {fileID: 246539299451849629}
   - component: {fileID: 7536297506497493481}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Curtain
   m_TagString: Curtain
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069927607589432357}
   - component: {fileID: 561717112024215222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8644498469852179496}
   - component: {fileID: 2056829926944812097}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -17,7 +17,8 @@ public class LightExposure : MonoBehaviour
     [SerializeField] private GameObject rayCastReceptor;
     [SerializeField] private float rayLength;
     [SerializeField] private LayerMask player;
-    [SerializeField] private bool isInLight = false;
+    public bool stopLightning = false;
+    private bool isInLight = false;
 
     private void Start()
     {
@@ -40,7 +41,7 @@ public class LightExposure : MonoBehaviour
             }
         }
 
-        if (lightTransmitter != null && rayCastReceptor != null && isInLight)
+        if (lightTransmitter != null && rayCastReceptor != null)
         {
             Vector2 direction = (rayCastReceptor.transform.position - lightTransmitter.transform.position).normalized;
             RaycastHit2D hit = Physics2D.Raycast(lightTransmitter.transform.position, direction, rayLength, player);
@@ -64,6 +65,9 @@ public class LightExposure : MonoBehaviour
                     isInExposure = true;
                 }
             }
+        } else
+        {
+            ExitLightExposure();
         }
     }
 
@@ -76,7 +80,8 @@ public class LightExposure : MonoBehaviour
     {
         if (other.CompareTag("Light"))
         {
-            isInLight = true;
+            stopLightning = false;
+            lightTransmitter = other.gameObject;
         }
     }
 
@@ -84,7 +89,19 @@ public class LightExposure : MonoBehaviour
     {
         if (other.CompareTag("Light"))
         {
-            lightTransmitter = other.gameObject;
+            if (lightTransmitter == other.gameObject)
+            {
+                return;
+            } else if (lightTransmitter != other.gameObject)
+            {
+                lightTransmitter = other.gameObject;
+            } else 
+            {
+                lightTransmitter = null;
+            }
+        } else
+        {
+            lightTransmitter = null;
         }
     }
 
@@ -92,17 +109,22 @@ public class LightExposure : MonoBehaviour
     {
         if (other.CompareTag("Light"))
         {
-            ExitLightExposure();
+            if (lightTransmitter == other.gameObject)
+            {
+                stopLightning = true;
+                ExitLightExposure();
+                lightTransmitter = null;
+            }
         }
     }
 
     public void ExitLightExposure()
     {
-        Debug.Log("Exit exposure");
+        stopLightning = true;
         lightTransmitter = null;
         SessionData.changeState = false;
         hungerController.FinishLightExposing();
         isInExposure = false;
-        isInLight = false;
+        //isInLight = false;
     }
 }

@@ -33,11 +33,11 @@ public class ReflectorController : MonoBehaviour
             zRotation -= 360;
         }
 
-        if (zRotation < -40)
+        if (zRotation < -20)
         {
             rotateRight = true;
         }
-        else if (zRotation > 40)
+        else if (zRotation > 20)
         {
             rotateRight = false;
         }

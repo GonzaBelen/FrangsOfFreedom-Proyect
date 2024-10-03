@@ -61,6 +61,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6123198378081639272}
+  - {fileID: 482433449458638470}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3469902232179031879
@@ -97,8 +98,7 @@ Transform:
   m_LocalPosition: {x: -4.3266525, y: -0.89011145, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 482433449458638470}
+  m_Children: []
   m_Father: {fileID: 2007939020789401427}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1903723029649904015
@@ -296,7 +296,7 @@ MonoBehaviour:
   - {x: 2, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -64624
+  m_InstanceId: 56966
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 2, y: 0.5, z: 0}
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ways: {fileID: 5125441402855553443}
   wayPoints: []
-  waitDuration: 300
+  waitDuration: 1000
   speed: 4
   rb2D: {fileID: 5666163248568522067}
   moveDirection: {x: 0, y: 0, z: 0}
@@ -374,11 +374,11 @@ Transform:
   m_GameObject: {fileID: 5125441402855553443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.3266525, y: -0.89011145, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6352267540707551104}
   - {fileID: 9139601996757559786}
-  m_Father: {fileID: 6123198378081639272}
+  m_Father: {fileID: 2007939020789401427}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

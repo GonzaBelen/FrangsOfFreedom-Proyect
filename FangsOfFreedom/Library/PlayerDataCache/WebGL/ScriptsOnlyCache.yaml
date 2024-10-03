@@ -34,6 +34,7 @@ ScriptsOnlyBuild:
     - ReflectorController
     - ResetUnlockables
     - RespawnController
+    - RetractableSpikes
     - SceneChanger
     - StaticsVariables
     - Stats
@@ -47,7 +48,6 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineFramingTransposer
     - Cinemachine.CinemachinePipeline
-    - Cinemachine.CinemachineTransposer
     - Cinemachine.CinemachineVirtualCamera
     - Cinemachine.NoiseSettings
     Unity.2D.Animation.Editor.dll:
@@ -118,7 +118,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.UI.DebugUIHandlerVector4
     - UnityEngine.Rendering.UI.UIFoldout
     Unity.RenderPipelines.Universal.Editor.dll:
-    - UnityEditor.Rendering.Universal.Path2D.ScriptablePathInspector
     - UnityEditor.Rendering.Universal.UniversalProjectSettings
     Unity.RenderPipelines.Universal.Runtime.dll:
     - UnityEngine.Rendering.Universal.Light2D
@@ -130,6 +129,8 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.ShaderGraph.Editor.dll:
+    - UnityEditor.ShaderGraph.ShaderGraphProjectSettings
     Unity.TextMeshPro:
     - TMPro.TMP_ColorGradient
     - TMPro.TMP_FontAsset
@@ -138,9 +139,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
-    - TMPro.TMP_Settings
-    - TMPro.TMP_SpriteAsset
-    - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
@@ -297,6 +295,114 @@ ScriptsOnlyBuild:
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: StopControl
+    methodName: NeedToStop
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: SmokeAnimation
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: SmokeAnimation
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Move
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Jump
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Dash
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Action
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: LoadMenu
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
@@ -333,30 +439,18 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: PlayerController
     methodName: Action
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
   - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: UnPaused
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: UnPaused
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
@@ -378,90 +472,6 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: UnPaused
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: UnPaused
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: Assembly-CSharp
-    fullTypeName: StopControl
-    methodName: NeedToStop
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: SmokeAnimation
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: SmokeAnimation
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: Move
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: Jump
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: Dash
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: Action
   - assembly: Assembly-CSharp
     fullTypeName: Unlocks
     methodName: DoubleJump
@@ -469,39 +479,6 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
   - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: UnPaused
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: UnPaused
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
   - assembly: UnityEngine.CoreModule
@@ -526,15 +503,6 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
   - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
   - assembly: UnityEngine.CoreModule
@@ -543,33 +511,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: EnemiesMovement
     methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
@@ -609,236 +550,533 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: PlayerController
     methodName: Action
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: LoadMenu
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: StopControl
+    methodName: NeedToStop
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: SmokeAnimation
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: SmokeAnimation
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Move
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Jump
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Dash
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Action
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: LoadMenu
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: Assembly-CSharp
+    fullTypeName: Unlocks
+    methodName: Frenzy
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: LoadMenu
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: StopControl
+    methodName: NeedToStop
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: SmokeAnimation
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: SmokeAnimation
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Move
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Jump
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Dash
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: Action
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: Assembly-CSharp
+    fullTypeName: Unlocks
+    methodName: Dash
+  - assembly: Assembly-CSharp
+    fullTypeName: Unlocks
+    methodName: Frenzy
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemiesMovement
+    methodName: IsDeath
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NewBehaviourScript
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Unlocks
+    methodName: DoubleJump
   - assembly: Assembly-CSharp
     fullTypeName: Unlocks
     methodName: Frenzy
   - assembly: Assembly-CSharp
     fullTypeName: Unlocks
-    methodName: DoubleJump
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: Assembly-CSharp
-    fullTypeName: StopControl
-    methodName: NeedToStop
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: SmokeAnimation
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: SmokeAnimation
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: Move
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: Jump
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: Dash
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: Action
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: UnPaused
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: UnPaused
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: Assembly-CSharp
-    fullTypeName: Unlocks
     methodName: Dash
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
@@ -861,45 +1099,6 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NewBehaviourScript
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
@@ -946,15 +1145,6 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
   - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
   - assembly: UnityEngine.CoreModule
@@ -963,30 +1153,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: EnemiesMovement
     methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemiesMovement
-    methodName: IsDeath
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: Unlocks
-    methodName: DisableFrenzy
   - assembly: Assembly-CSharp
     fullTypeName: NewBehaviourScript
     methodName: LoadMenu
@@ -1337,8 +1503,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
-    - Class: 84
-      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -1351,8 +1515,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1782}
     - Class: 114
       Script: {instanceID: 1784}
-    - Class: 114
-      Script: {instanceID: 1786}
     - Class: 114
       Script: {instanceID: 1832}
     - Class: 114
@@ -1370,6 +1532,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4144}
     - Class: 114
+      Script: {instanceID: 4448}
+    - Class: 114
       Script: {instanceID: 4494}
     - Class: 114
       Script: {instanceID: 4634}
@@ -1377,6 +1541,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5234}
     - Class: 114
       Script: {instanceID: 5264}
+    - Class: 114
+      Script: {instanceID: 5388}
     - Class: 114
       Script: {instanceID: 5496}
     - Class: 114
@@ -1412,8 +1578,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9064}
     - Class: 114
-      Script: {instanceID: 9272}
-    - Class: 114
       Script: {instanceID: 9428}
     - Class: 114
       Script: {instanceID: 9504}
@@ -1440,19 +1604,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12008}
     - Class: 114
+      Script: {instanceID: 12416}
+    - Class: 114
       Script: {instanceID: 12542}
     - Class: 114
       Script: {instanceID: 12584}
-    - Class: 114
-      Script: {instanceID: 12722}
     - Class: 114
       Script: {instanceID: 12768}
     - Class: 114
       Script: {instanceID: 12802}
     - Class: 114
-      Script: {instanceID: 13476}
-    - Class: 114
       Script: {instanceID: 13680}
+    - Class: 114
+      Script: {instanceID: 14126}
     - Class: 114
       Script: {instanceID: 14162}
     - Class: 114
@@ -1483,9 +1647,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    - Class: 328
-      Script: {instanceID: 0}
-    - Class: 329
+    - Class: 251
       Script: {instanceID: 0}
     - Class: 19719996
       Script: {instanceID: 0}
@@ -1723,6 +1885,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -1736,6 +1900,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1784}
     - Class: 114
+      Script: {instanceID: 1786}
+    - Class: 114
       Script: {instanceID: 1832}
     - Class: 114
       Script: {instanceID: 2172}
@@ -1747,6 +1913,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3380}
     - Class: 114
       Script: {instanceID: 3592}
+    - Class: 114
+      Script: {instanceID: 3808}
     - Class: 114
       Script: {instanceID: 4144}
     - Class: 114
@@ -1776,6 +1944,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7238}
     - Class: 114
+      Script: {instanceID: 7254}
+    - Class: 114
       Script: {instanceID: 7452}
     - Class: 114
       Script: {instanceID: 7788}
@@ -1787,6 +1957,199 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8444}
     - Class: 114
       Script: {instanceID: 8478}
+    - Class: 114
+      Script: {instanceID: 9064}
+    - Class: 114
+      Script: {instanceID: 9272}
+    - Class: 114
+      Script: {instanceID: 9428}
+    - Class: 114
+      Script: {instanceID: 9504}
+    - Class: 114
+      Script: {instanceID: 9638}
+    - Class: 114
+      Script: {instanceID: 9752}
+    - Class: 114
+      Script: {instanceID: 9828}
+    - Class: 114
+      Script: {instanceID: 9994}
+    - Class: 114
+      Script: {instanceID: 10030}
+    - Class: 114
+      Script: {instanceID: 10194}
+    - Class: 114
+      Script: {instanceID: 10578}
+    - Class: 114
+      Script: {instanceID: 10636}
+    - Class: 114
+      Script: {instanceID: 11886}
+    - Class: 114
+      Script: {instanceID: 11926}
+    - Class: 114
+      Script: {instanceID: 12008}
+    - Class: 114
+      Script: {instanceID: 12542}
+    - Class: 114
+      Script: {instanceID: 12584}
+    - Class: 114
+      Script: {instanceID: 12722}
+    - Class: 114
+      Script: {instanceID: 12768}
+    - Class: 114
+      Script: {instanceID: 12802}
+    - Class: 114
+      Script: {instanceID: 13476}
+    - Class: 114
+      Script: {instanceID: 13680}
+    - Class: 114
+      Script: {instanceID: 14162}
+    - Class: 114
+      Script: {instanceID: 14496}
+    - Class: 114
+      Script: {instanceID: 14900}
+    - Class: 114
+      Script: {instanceID: 14920}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 328
+      Script: {instanceID: 0}
+    - Class: 329
+      Script: {instanceID: 0}
+    - Class: 19719996
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
+      Script: {instanceID: 0}
+    Assets/Scenes/LevelBoss.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 62
+      Script: {instanceID: 0}
+    - Class: 66
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 832}
+    - Class: 114
+      Script: {instanceID: 1782}
+    - Class: 114
+      Script: {instanceID: 1784}
+    - Class: 114
+      Script: {instanceID: 1832}
+    - Class: 114
+      Script: {instanceID: 2172}
+    - Class: 114
+      Script: {instanceID: 2638}
+    - Class: 114
+      Script: {instanceID: 2850}
+    - Class: 114
+      Script: {instanceID: 3380}
+    - Class: 114
+      Script: {instanceID: 3592}
+    - Class: 114
+      Script: {instanceID: 3808}
+    - Class: 114
+      Script: {instanceID: 4144}
+    - Class: 114
+      Script: {instanceID: 4448}
+    - Class: 114
+      Script: {instanceID: 4494}
+    - Class: 114
+      Script: {instanceID: 4634}
+    - Class: 114
+      Script: {instanceID: 5234}
+    - Class: 114
+      Script: {instanceID: 5264}
+    - Class: 114
+      Script: {instanceID: 5388}
+    - Class: 114
+      Script: {instanceID: 5496}
+    - Class: 114
+      Script: {instanceID: 6212}
+    - Class: 114
+      Script: {instanceID: 6560}
+    - Class: 114
+      Script: {instanceID: 6844}
+    - Class: 114
+      Script: {instanceID: 6902}
+    - Class: 114
+      Script: {instanceID: 6994}
+    - Class: 114
+      Script: {instanceID: 7096}
+    - Class: 114
+      Script: {instanceID: 7224}
+    - Class: 114
+      Script: {instanceID: 7238}
+    - Class: 114
+      Script: {instanceID: 7254}
+    - Class: 114
+      Script: {instanceID: 7282}
+    - Class: 114
+      Script: {instanceID: 7452}
+    - Class: 114
+      Script: {instanceID: 7788}
+    - Class: 114
+      Script: {instanceID: 8136}
+    - Class: 114
+      Script: {instanceID: 8146}
+    - Class: 114
+      Script: {instanceID: 8444}
     - Class: 114
       Script: {instanceID: 9064}
     - Class: 114
@@ -1827,8 +2190,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12802}
     - Class: 114
       Script: {instanceID: 13680}
-    - Class: 114
-      Script: {instanceID: 13782}
     - Class: 114
       Script: {instanceID: 14126}
     - Class: 114
@@ -2159,6 +2520,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3878}
     - Class: 114
+      Script: {instanceID: 4144}
+    - Class: 114
       Script: {instanceID: 4494}
     - Class: 114
       Script: {instanceID: 4634}
@@ -2166,8 +2529,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5234}
     - Class: 114
       Script: {instanceID: 5264}
-    - Class: 114
-      Script: {instanceID: 5388}
     - Class: 114
       Script: {instanceID: 5496}
     - Class: 114
@@ -2228,8 +2589,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11926}
     - Class: 114
       Script: {instanceID: 12008}
-    - Class: 114
-      Script: {instanceID: 12416}
     - Class: 114
       Script: {instanceID: 12542}
     - Class: 114
@@ -2831,7 +3190,7 @@ ScriptsOnlyBuild:
     className: Bloom
   - hash:
       serializedVersion: 2
-      Hash: 57e06f894b06d97556dce78c134bf7be
+      Hash: 05e28805a471faeaac1f5d5eea507577
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: RetractableSpikes
@@ -3389,7 +3748,7 @@ ScriptsOnlyBuild:
     className: UnityOnSubmitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 6cbb6fc9b0a9b3c7d1f64e10aace8e3c
+      Hash: d93aa14a46aea43ee835eb0706b4fb33
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: StaticsVariables
@@ -4415,7 +4774,7 @@ ScriptsOnlyBuild:
     className: HungerBar
   - hash:
       serializedVersion: 2
-      Hash: ede02fba97216d2905a9b7e60c9010c4
+      Hash: 32b37850d5ad89bac9ef2cf285f57e83
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: LightExposure
@@ -4757,6 +5116,7 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level2.unity
   - Assets/Scenes/Level3.unity
   - Assets/Scenes/Level4.unity
+  - Assets/Scenes/LevelBoss.unity
   - Assets/Scenes/GameWin.unity
   - Assets/Scenes/GameOver.unity
   - Assets/Scenes/LoadScreen.unity

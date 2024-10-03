@@ -20,11 +20,8 @@ public class FeetDamage : MonoBehaviour
         {
             combos.Combo();
             playerController.BatJump();
-            if (SessionData.level != 5)
-            {
-                EnemiesController enemiesController = other.GetComponentInChildren<EnemiesController>();
-                enemiesController.TakeDamage();
-            }
+            EnemiesController enemiesController = other.GetComponentInChildren<EnemiesController>();
+            enemiesController.TakeDamage();
         }
     }
 }

@@ -17,6 +17,8 @@ TagManager:
   - Dialogue
   - FallingPlatform
   - Moving Platforms
+  - Arrow
+  - Boss
   layers:
   - Default
   - TransparentFX

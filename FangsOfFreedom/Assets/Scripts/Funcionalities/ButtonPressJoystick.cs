@@ -14,11 +14,15 @@ public class ButtonPressJoystick : MonoBehaviour
     public UnityEvent OnPressX;
     public UnityEvent OnPressB;
 
+    private void Awake()
+    {
+        isAlreadyChangeScene = false;
+    }
+
     private void Update()
     {
         if (Input.GetButtonDown("Fire1") && !isAlreadyChangeScene)
         {
-            isAlreadyChangeScene = true;
             OnPressA?.Invoke();
         }
 

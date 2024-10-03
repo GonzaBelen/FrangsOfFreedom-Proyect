@@ -363,6 +363,8 @@
 "Assets/Scripts/Objects/MovingPlatforms.cs"
 "Assets/Scripts/Objects/ParticleEyesController.cs"
 "Assets/Scripts/Objects/Pylon.cs"
+"Assets/Scripts/Objects/ReflectorController.cs"
+"Assets/Scripts/Objects/RetractableSpikes.cs"
 "Assets/Scripts/Objects/Trampoline.cs"
 "Assets/Scripts/Scenes/GameWin.cs"
 "Assets/Scripts/Scenes/SceneChanger.cs"

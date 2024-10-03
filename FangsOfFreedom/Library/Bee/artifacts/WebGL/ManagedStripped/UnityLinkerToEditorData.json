@@ -17,6 +17,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -29,6 +30,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -41,6 +43,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 1,
@@ -96,6 +99,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -112,6 +116,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -127,6 +132,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -149,6 +155,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -164,6 +171,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
@@ -208,6 +216,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -254,6 +263,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -276,6 +286,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -310,6 +321,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -344,6 +356,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -364,6 +377,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -378,6 +392,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -404,6 +419,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -426,6 +442,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -442,6 +459,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -482,6 +500,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -504,6 +523,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -515,8 +535,8 @@
             "name": "RenderTexture",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
+              "Assets/Scenes/Level4.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -547,6 +567,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -581,6 +602,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -601,6 +623,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -633,6 +656,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -867,6 +891,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -988,6 +1013,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1000,6 +1026,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1064,6 +1091,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1076,6 +1104,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1094,6 +1123,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1102,7 +1132,8 @@
           {
             "name": "Effector2D",
             "scenes": [
-              "Assets/Scenes/Level4.unity"
+              "Assets/Scenes/Level2.unity",
+              "Assets/Scenes/LevelBoss.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1120,6 +1151,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1128,7 +1160,8 @@
           {
             "name": "PlatformEffector2D",
             "scenes": [
-              "Assets/Scenes/Level4.unity"
+              "Assets/Scenes/Level2.unity",
+              "Assets/Scenes/LevelBoss.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1140,6 +1173,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1152,6 +1186,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1437,6 +1472,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -1492,6 +1528,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1504,6 +1541,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1516,6 +1554,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1535,6 +1574,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -1557,6 +1597,7 @@
               "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
               "Assets/Scenes/Level4.unity",
+              "Assets/Scenes/LevelBoss.unity",
               "Assets/Scenes/LoadScreen.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/Tutorial.unity"
@@ -1684,8 +1725,8 @@
             "name": "VideoClip",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
+              "Assets/Scenes/Level4.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,
@@ -1695,8 +1736,8 @@
             "name": "VideoPlayer",
             "scenes": [
               "Assets/Scenes/Level1.unity",
-              "Assets/Scenes/Level2.unity",
               "Assets/Scenes/Level3.unity",
+              "Assets/Scenes/Level4.unity",
               "Assets/Scenes/Tutorial.unity"
             ],
             "dependencyType": 0,

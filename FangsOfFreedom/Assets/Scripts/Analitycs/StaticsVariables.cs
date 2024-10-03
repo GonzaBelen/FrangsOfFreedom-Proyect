@@ -22,6 +22,8 @@ public class StaticsVariables : MonoBehaviour
         public static bool isRespanwning = false;
         public static bool changeState = false;
     }
+
+    public bool doubleJumpUnlock;
     
     private void Awake()
     {

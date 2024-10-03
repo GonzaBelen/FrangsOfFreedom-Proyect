@@ -273,8 +273,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3aa66ea560aaee47a3a83a89049e5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDeploy: 5000
-  timeToRetract: 2000
+  delayDeploy: 2000
+  delayRetract: 3000
+  delayBetween: 500
+  hasDelay: 0
 --- !u!114 &4885121132646178631
 MonoBehaviour:
   m_ObjectHideFlags: 0

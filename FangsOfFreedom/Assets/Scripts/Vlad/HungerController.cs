@@ -33,10 +33,8 @@ public class HungerController : MonoBehaviour
 
             if (timeCounter >= 1)
                 {
-                    hungerReductionMultiplier *= 5;
+                    hungerReductionMultiplier *= 60;
                     timeCounter = 0;
-
-                    Debug.Log("El multiplicador de hambre ha sido aumentado.");
                 }
         }
 
@@ -88,15 +86,18 @@ public class HungerController : MonoBehaviour
 
     public void LightExposing()
     {
-        Debug.Log("esta en contacto con la luz");
         lightExposure = true;
     }
 
     public void FinishLightExposing()
     {
-        Debug.Log("no esta en contacto con la luz");
         lightExposure = false;
         hungerReductionMultiplier = 1;
         timeCounter = 0;
+    }
+
+    public void ReduceHunger(int amount)
+    {
+        hunger -= amount;
     }
 }

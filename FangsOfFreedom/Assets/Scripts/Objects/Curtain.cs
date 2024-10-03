@@ -15,10 +15,11 @@ public class Curtain : MonoBehaviour
 
     public void CloseCurtain()
     {
-        GameObject vlad = GameObject.Find("Vlad");
-        LightExposure lightExposure = vlad.GetComponent<LightExposure>();
-        lightExposure.ExitLightExposure();
         OnCloseCurtain?.Invoke();
         animationController.ChangeAnimation("Close");
+        GameObject vlad = GameObject.Find("Vlad");
+        LightExposure lightExposure = vlad.GetComponent<LightExposure>();
+        lightExposure.stopLightning = true;
+        lightExposure.ExitLightExposure();
     }
 }

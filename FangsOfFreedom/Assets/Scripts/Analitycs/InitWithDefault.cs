@@ -28,9 +28,9 @@ public class NewBehaviourScript : MonoBehaviour
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("UI"), LayerMask.NameToLayer("Objects"), true);
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("UI"), LayerMask.NameToLayer("Obstacles"), true);
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("UI"), LayerMask.NameToLayer("Curtain"), true);
-        SessionData.doubleJumpUnlock = false;
-        SessionData.frenzyUnlock = false;
-        SessionData.dashUnlock = false;
+        // SessionData.doubleJumpUnlock = false;
+        // SessionData.frenzyUnlock = false;
+        // SessionData.dashUnlock = false;
 		AnalyticsService.Instance.StartDataCollection();
 	}
 
