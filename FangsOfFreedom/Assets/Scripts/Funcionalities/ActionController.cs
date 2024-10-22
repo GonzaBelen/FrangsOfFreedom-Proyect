@@ -33,4 +33,15 @@ public class ActionController : MonoBehaviour
             isInCollideDialogue = false;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemie"))
+        {
+            isInCollide = true;
+        } else 
+        {
+            isInCollide = false;
+        }
+    }
 }

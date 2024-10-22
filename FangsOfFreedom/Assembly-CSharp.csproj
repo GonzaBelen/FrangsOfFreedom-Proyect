@@ -68,6 +68,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Funcionalities\RespawnController.cs" />
+    <Compile Include="Assets\Scripts\Objects\FrenzyFlask.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Funcionalities\Trailer.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemiesMovement.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Objects\Trampoline.cs" />
+    <Compile Include="Assets\Scripts\Boss\ArmController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Scripts\Boss\BossController.cs" />
     <Compile Include="Assets\Scripts\Analitycs\InitWithDefault.cs" />
@@ -100,14 +102,18 @@
     <Compile Include="Assets\Scripts\Objects\Curtain.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Objects\MovingPlatforms.cs" />
+    <Compile Include="Assets\Scripts\Boss\Activation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Analitycs\Timer.cs" />
     <Compile Include="Assets\Scripts\Objects\RetractableSpikes.cs" />
     <Compile Include="Assets\Scripts\Funcionalities\LightGlobal.cs" />
+    <Compile Include="Assets\Scripts\Scenes\ChangeLevel.cs" />
     <Compile Include="Assets\Scripts\Vlad\Frenzy.cs" />
     <Compile Include="Assets\Scripts\UI\VideoChanger.cs" />
+    <Compile Include="Assets\Scripts\Objects\WindowLight.cs" />
     <Compile Include="Assets\Scripts\UI\CinemachineShake.cs" />
     <Compile Include="Assets\Scripts\Scenes\SceneChanger.cs" />
+    <Compile Include="Assets\Scripts\Boss\RaycastGenerator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />

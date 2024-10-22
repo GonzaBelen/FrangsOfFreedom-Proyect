@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
+using static StaticsVariables;
 
 public class Trampoline : MonoBehaviour
 {
+    public bool twoForces;
     [SerializeField] private float strength = 10f;
+    [SerializeField] private float strengthX = 20f;
     [SerializeField] private AudioSource clip;
     private Animator animator;
 
@@ -18,6 +21,13 @@ public class Trampoline : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (twoForces)
+            {
+                PlayerController playerController;
+                playerController = other.gameObject.GetComponent<PlayerController>();
+                playerController.trampolineJump = true;
+                playerController.canMove = false;
+            }
             ApplyImpulse(other.gameObject.GetComponent<Rigidbody2D>());
             animator.Play("Trampoline");
             clip.Play();
@@ -27,7 +37,22 @@ public class Trampoline : MonoBehaviour
     private void ApplyImpulse(Rigidbody2D rb)
     {
         rb.velocity = Vector2.zero;
-        rb.AddForce(Vector2.up * strength, ForceMode2D.Impulse);
+
+        Vector2 combinedForce = new Vector2(strengthX, strength);
+
+        Debug.Log("Applying combined force: " + combinedForce);
+
+        if (twoForces)
+        {
+            if (SessionData.hasFrenzy)
+            {
+                rb.gravityScale = 3.5f;
+            }
+            rb.AddForce(combinedForce, ForceMode2D.Impulse);
+        } else
+        {
+            rb.AddForce(Vector2.up * strength, ForceMode2D.Impulse);
+        }
     }
 
     public void ResetAnimation()

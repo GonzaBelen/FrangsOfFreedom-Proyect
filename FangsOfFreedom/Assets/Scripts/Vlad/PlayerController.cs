@@ -28,10 +28,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int remainingJumps;
     [SerializeField] public bool isJumping = false;
     [SerializeField] private bool jumpingUp;
+    public bool trampolineJump = false;
 
     [Header("Movement")]
     [SerializeField] private float movementHor = 0;
-    [SerializeField] private bool canMove = true;
+    public bool canMove = true;
     [SerializeField] private float targetSpeed;
 
     [Header("Dash")]    
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             remainingJumps = 1;
         }
+        SessionData.canChangeLevel = true;
     }
 
     private void FixedUpdate()
@@ -118,6 +120,16 @@ public class PlayerController : MonoBehaviour
             }
 
             Flip(movementHor);
+        }
+
+        if (trampolineJump && isGrounded && !isJumping)
+        {
+            if (SessionData.hasFrenzy)
+            {
+                rb2D.gravityScale = 5f;
+            }
+            trampolineJump = false;
+            canMove = true;
         }
 
         if (isJumping && rb2D.velocity.y <= 0)
@@ -208,9 +220,9 @@ public class PlayerController : MonoBehaviour
             {
                 rb2D.gravityScale /= 50;
             }
+            remainingJumps--;
             rb2D.velocity = new Vector2(rb2D.velocity.x, stats.jumpForce);
             isJumping = true;
-            remainingJumps--;
         }
     }
 

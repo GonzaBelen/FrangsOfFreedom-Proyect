@@ -114,7 +114,6 @@ public class RespawnController : MonoBehaviour
         isTakingDamage = false;
         SessionData.canChange = true;
         SessionData.isRespanwning = false;
-        Debug.Log("isRespawning termino y se puso en false");
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -162,15 +161,6 @@ public class RespawnController : MonoBehaviour
             BeginRespawn();
         }
     }
-
-    // async void FixGround()
-    // {
-    //     while (!stop)
-    //     {
-    //         rb2D.AddForce(direction * strength, ForceMode2D.Impulse);
-    //         await Task.Delay(2000);
-    //     }        
-    // }
 
     private IEnumerator FixGround()
     {

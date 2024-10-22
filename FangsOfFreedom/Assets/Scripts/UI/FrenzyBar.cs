@@ -9,6 +9,7 @@ public class FrenzyBar : MonoBehaviour
     public float frenzyReduction;
     public float currentFrenzy;
     private float initialFrenzy = 0;
+    public bool beginInFrenzy = false;
 
     private void Start()
     {

@@ -357,6 +357,7 @@ MonoBehaviour:
   remainingJumps: 2
   isJumping: 0
   jumpingUp: 0
+  trampolineJump: 0
   movementHor: 0
   canMove: 1
   targetSpeed: 0
@@ -560,6 +561,7 @@ MonoBehaviour:
   eyes:
   - {fileID: 840466224442211340}
   - {fileID: 6087707222418423442}
+  beginInFrenzy: 0
 --- !u!114 &5479778394173456954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +605,7 @@ MonoBehaviour:
   - {x: 0.021666214, y: 0.28567812, z: 0}
   m_ShapePathHash: 1373796918
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1468
+  m_InstanceId: -184848
   m_LocalBounds:
     m_Center: {x: -0.001761362, y: 0.43076098, z: 0}
     m_Extent: {x: 0.15143128, y: 0.14508288, z: 0}
@@ -984,10 +986,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eye 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6807109103703570940, guid: 6a36d9b191b47aa4ab3251b746cdd9ab, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1066,10 +1064,6 @@ PrefabInstance:
     - target: {fileID: 6807109103703570940, guid: 6a36d9b191b47aa4ab3251b746cdd9ab, type: 3}
       propertyPath: m_Name
       value: Eye 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6807109103703570940, guid: 6a36d9b191b47aa4ab3251b746cdd9ab, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

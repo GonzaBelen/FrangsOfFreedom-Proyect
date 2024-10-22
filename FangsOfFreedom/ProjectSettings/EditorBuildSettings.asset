@@ -6,38 +6,47 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/FinalLevels/MainMenu.unity
     guid: 0c15d735d7292134582801d192189f0a
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
+    path: Assets/FinalLevels/Level1.unity
     guid: 59582ad3db71d7d4c8b30c293b8bbd7f
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/FinalLevels/Level2.unity
     guid: 0fbaa29c79cfe2d41a9501557b7d7cf8
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/FinalLevels/Level3.unity
+    guid: 9a7dfc4a3b814cb4cbf4604894db67db
+  - enabled: 1
+    path: Assets/FinalLevels/Level4.unity
     guid: 20dca46316c7d3d4fa12943ecfff9713
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/FinalLevels/Level5.unity
     guid: de4363a5b99740a45853720331672e22
   - enabled: 1
+    path: Assets/Scenes/Level3 (boss battle 1).unity
+    guid: b7c75f112447a4b43b5036494de05525
+  - enabled: 0
     path: Assets/Scenes/Level4.unity
     guid: f34361431bc02df4eaae1d9dc8f0be2f
+  - enabled: 1
+    path: Assets/FinalLevels/LevelPreFinal.unity
+    guid: e2c1f761f28cbdb41bff66670f256f1a
   - enabled: 1
     path: Assets/Scenes/LevelBoss.unity
     guid: af2a5ba2ffde6624e988164cbedccca2
   - enabled: 1
-    path: Assets/Scenes/GameWin.unity
+    path: Assets/FinalLevels/GameWin.unity
     guid: 74bbe2343ea0cd642a47abff502d3e0a
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/FinalLevels/GameOver.unity
     guid: 540a99eb7207b884694d51ee0644c300
+  - enabled: 0
+    path: Assets/FinalLevels/LevelTemplate.unity
+    guid: 201832654499564498425fec1a82c28c
   - enabled: 0
     path: Assets/Scenes/Trailer.unity
     guid: cb83f400588b63d4c93c090018c8db6f
-  - enabled: 0
-    path: Assets/Scenes/LevelTemplate.unity
-    guid: 246f2667807c4d44daca875418052e46
   - enabled: 0
     path: Assets/Scenes/Analytics.unity
     guid: a0091527bab8a1f4ab57ed1fbe1e2a96
@@ -45,7 +54,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level6.unity
     guid: b71c5c30a183d0642aa3d72d59d78493
   - enabled: 1
-    path: Assets/Scenes/LoadScreen.unity
+    path: Assets/FinalLevels/LoadScreen.unity
     guid: f8b0a854e8133a847a23fe90124acc9d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2e00250a9d03859408efec505bd60b4c, type: 2}

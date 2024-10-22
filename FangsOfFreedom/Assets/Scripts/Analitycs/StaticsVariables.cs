@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StaticsVariables : MonoBehaviour
 {
@@ -21,10 +22,9 @@ public class StaticsVariables : MonoBehaviour
         public static bool isPaused = false;
         public static bool isRespanwning = false;
         public static bool changeState = false;
+        public static bool canChangeLevel = true;
     }
-
-    public bool doubleJumpUnlock;
-    
+      
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

@@ -34,6 +34,25 @@ public class NewBehaviourScript : MonoBehaviour
 		AnalyticsService.Instance.StartDataCollection();
 	}
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void LoadMenuSimple()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Quit()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
+    }
+
     async public void LoadMenu()
     {
         SessionData.hasFrenzy = false;

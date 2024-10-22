@@ -58,4 +58,12 @@ public class EnemiesMovement : MonoBehaviour
         rb2D.constraints = RigidbodyConstraints2D.None;  
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemie"))
+        {
+            Flip();
+        }
+    }
 }

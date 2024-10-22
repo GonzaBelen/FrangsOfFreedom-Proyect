@@ -11,6 +11,8 @@ public class Arrow : MonoBehaviour
     private GameObject vlad;
     private GameObject arrowReceptor;
     private Vector2 direction;
+    private float timer;
+    public float lifeTime = 5;
 
     private void Start()
     {
@@ -24,16 +26,24 @@ public class Arrow : MonoBehaviour
         rb2D.AddForce(direction * force, ForceMode2D.Impulse);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void FixedUpdate()
+    {
+        timer += Time.fixedDeltaTime;
+
+        if (timer >= lifeTime)
+        {
+            Destroy(gameObject);
+            timer = 0;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             HungerController hungerController;
             hungerController = vlad.GetComponent<HungerController>();
             hungerController.ReduceHunger(damage);
-            Destroy(gameObject);
-        } else if (!other.gameObject.CompareTag("Player"))
-        {
             Destroy(gameObject);
         }
     }

@@ -18,7 +18,7 @@ public class LightExposure : MonoBehaviour
     [SerializeField] private float rayLength;
     [SerializeField] private LayerMask player;
     public bool stopLightning = false;
-    private bool isInLight = false;
+    private bool isInWindowLight = false;
 
     private void Start()
     {
@@ -67,7 +67,7 @@ public class LightExposure : MonoBehaviour
             }
         } else
         {
-            ExitLightExposure();
+            //ExitLightExposure();
         }
     }
 
@@ -82,6 +82,13 @@ public class LightExposure : MonoBehaviour
         {
             stopLightning = false;
             lightTransmitter = other.gameObject;
+        }
+
+        if (other.CompareTag("WindowLight"))
+        {
+            hungerController.LightExposing();
+            isInExposure = true;
+            isInWindowLight = true;
         }
     }
 
@@ -116,6 +123,13 @@ public class LightExposure : MonoBehaviour
                 lightTransmitter = null;
             }
         }
+
+         if (other.CompareTag("WindowLight"))
+        {
+            hungerController.FinishLightExposing();
+            isInExposure = false;
+            isInWindowLight = false;
+        }
     }
 
     public void ExitLightExposure()
@@ -125,6 +139,5 @@ public class LightExposure : MonoBehaviour
         SessionData.changeState = false;
         hungerController.FinishLightExposing();
         isInExposure = false;
-        //isInLight = false;
     }
 }

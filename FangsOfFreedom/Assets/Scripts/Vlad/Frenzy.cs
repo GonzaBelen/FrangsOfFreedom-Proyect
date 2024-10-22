@@ -16,6 +16,7 @@ public class Frenzy : MonoBehaviour
     private Timer timer;
     [SerializeField] GameObject timerObject;
     [SerializeField] GameObject[] eyes;
+    public bool beginInFrenzy = false;
 
     private void Start()
     {
@@ -28,6 +29,10 @@ public class Frenzy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (beginInFrenzy && combos.isInFrenzy)
+        {
+            return;
+        }
         if (!combos.isInFrenzy && frenzyBar.currentFrenzy >= 99.5f && SessionData.frenzyUnlock)
         {
             combos.isInFrenzy = true;
@@ -64,6 +69,8 @@ public class Frenzy : MonoBehaviour
 
         AnalyticsService.Instance.RecordEvent(power);
         AnalyticsService.Instance.Flush();
+
+        Debug.Log("se llamo al finish frenzy" + SessionData.hasFrenzy);
         
         SessionData.hasFrenzy = false;
         timer.frenzyTime = 0;
@@ -72,6 +79,7 @@ public class Frenzy : MonoBehaviour
 
     public void GainFrenzy()
     {
+        Debug.Log("Se gana frenesi");
         frenzyBar.UpdateSlider(comboValue);
     }
 

@@ -19,6 +19,7 @@ TagManager:
   - Moving Platforms
   - Arrow
   - Boss
+  - WindowLight
   layers:
   - Default
   - TransparentFX
