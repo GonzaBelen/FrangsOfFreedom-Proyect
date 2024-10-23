@@ -17,6 +17,7 @@ public class EnemiesMovement : MonoBehaviour
     {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemies"), LayerMask.NameToLayer("Obstacles"), true);
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Death"), LayerMask.NameToLayer("Obstacles"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemies"), LayerMask.NameToLayer("Death"), true);
         rb2D = GetComponent<Rigidbody2D>();
     }
 
@@ -24,6 +25,8 @@ public class EnemiesMovement : MonoBehaviour
     {
         if (isDeath)
         {
+            rb2D.velocity = Vector2.zero;
+            rb2D.angularVelocity = 0; 
             return;
         }
         RaycastHit2D groundInformation = Physics2D.Raycast(groundController.position, Vector2.down, distance, whatIsGround);
